@@ -1,0 +1,105 @@
+\documentclass{article}
+\author{Max Springenberg, 177792}
+\title{
+    RvS Skript\\
+    Notizen
+}
+\date{}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+% \Theta \Omega \omega
+\newcommand{\tab}{\null \qquad}
+\newcommand{\lA}{$\leftarrow$}
+\newcommand{\ue}{$\infty$}
+\newcommand{\gap}{\\ \ \\}
+
+\begin{document}
+\maketitle
+\newpage
+
+\section{Einfuehrung, Internet und Protokolle}
+\subsection{Systeme}
+\subsubsection{Wie ist ein verteiltes System aufgebaut?}
+\begin{tabular}{|lp{0.6\linewidth}|}
+    \hline
+    Rechnernetz: & 
+        Autonome Rechnerknoten, die durch Telekommunikationssysteme verbunden sind.\\
+    \hline
+    Telekommunikationssystem: &
+        System, das seinen Teilnehmern Kommunikationsdienste anbietet.\\
+    \hline
+    Verteiltes System: &
+        Anwendung, mit Komponenten, die an verschiedenen Orten sind.
+        Die Komponenten sind im Rechnerknoten installiert.
+        Ausfuehrung der Komponenten von Rechnerknoten aus.
+        Kommunikation mithilfe eine Telekommunikationssystems.\\
+    \hline
+\end{tabular}\\
+\subsubsection{Nachteile verteilter Systeme}
+\begin{tabular}{|lp{0.6\linewidth}|}
+    \hline
+    Kopplung &
+        Kommunikation findet selten statt, dementsprechend die Synchronosationsrate schwach
+        und eine Fehlertoleranz mkuss existieren.\\
+    \hline
+    Nebenlaeufigkeit/ Concurrency &
+        Es existieren weitestgehend unabhaengige Fortschritte.\\
+    \hline
+    Dezentrale Kontrolle &
+        Autonomie der Rechnerknoten, lolkale Kontrolle auf der Basis partieller Sichten.
+        Eine Vollstaendige Sicht auf das globale System wird vermieden.\\
+    \hline
+\end{tabular}\\
+\subsection{Kommunikationsdienste}
+\subsubsection{Kommunikationsformen}
+\begin{tabular}{|lp{0.6\linewidth}|}
+    \hline
+    Unicast &
+        Kommunikation mit einem Partner.\\
+    \hline
+    Multicast &
+        Kommunikation mit mehreren Partnern (Gruppe).\\
+    \hline
+    Broadcast &
+        Kommunikation mit ALLEN.\\
+    \hline
+\end{tabular}\\
+\subsubsection{Rihtungsbetrieb}
+\begin{tabular}{|lp{0.6\linewidth}|}
+    \hline
+    Simplex & 
+        Ein Simplex sendet Nachrichten von Sender nach Empfaenger.\\
+    \hline
+    Duplex & 
+        Ein Duplex sendet Nachrichten an einen Empfaenger und empfaengt auch Nachrichten.
+        Dies passiert vorallem auch simultan.\\
+    \hline
+    Halbduplex & 
+        Ein Halbduplex sendet und empfaengt Nachrichten wie auch ein Duplex, jedoch passiert
+        dies nie simultan.\\
+    \hline
+\end{tabular}
+\subsubsection{Dienstleistende Systeme}
+Bei dienstleistenden Systemen gilt es zu differenzieren zwischen Dienstnehmern und Dienstbringern.\\
+Kommunikation zwischen Dienstnehmern wickelt Dienstleistungen ab.\\
+Der Diensterbringer interpretiert Nachrichten nicht.\\
+\\
+Wichtige Eigenschaften von Dienstleistungen sind:\\
+\tab Partneradressierung\\
+\tab Datagramme (UDP)\\
+\tab Verbindungsorientierung (TCP)\\
+\tab Unicast / Multicast / Broadcast\\
+\tab Simplex / Duplex / Halbduplex
+\subsubsection{Sichten}
+statisch:\\
+\tab Darstellung/ Gliederung in Dienstzugangspunkte\\
+\\
+dynamisch:\\
+\tab Darstellung/ Gliederung in Dienstzugangspunkte\\
+\tab zusaetzlicher Aspekt des Zeitlichen Ablaufs.\\
+\tab \tab Dienststimuli und Dienstreaktion gehoeren zur Sicht.\\
+\subsubsection{Nachrichtenreihenfolge}
+
+\end{document}

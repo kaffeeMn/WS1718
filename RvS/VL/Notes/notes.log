@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.3.9)  16 OCT 2017 13:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.3.9)  16 OCT 2017 14:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -129,7 +129,7 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen112
 \Gin@req@width=\dimen113
 )
-No file notes.aux.
+(./notes.aux)
 \openout1 = `notes.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
@@ -144,7 +144,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count100
 \scratchdimen=\dimen114
@@ -217,31 +217,101 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for U+stmry on input line 19.
 
-(/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-Overfull \hbox (7.83572pt too wide) in paragraph at lines 22--37
+(/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (7.83572pt too wide) in paragraph at lines 25--40
 [] 
  []
 
-[1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./notes.aux) ) 
+Underfull \hbox (badness 10000) in paragraph at lines 25--40
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--46
+[]\OT1/cmr/m/n/10 Kommunikation findet sel-ten statt, de-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--46
+\OT1/cmr/m/n/10 mentsprechend die Syn-chrono-sa-tion-srate
+ []
+
+
+Underfull \hbox (badness 1264) in paragraph at lines 44--46
+\OT1/cmr/m/n/10 schwach und eine Fehler-tol-er-anz mkuss ex-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
+[]\OT1/cmr/m/n/10 Es ex-istieren weitest-ge-hend un-ab-haengige
+ []
+
+
+Overfull \hbox (21.89128pt too wide) in paragraph at lines 41--55
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--55
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
+[]\OT1/cmr/m/n/10 Kommunikation mit mehreren Part-nern
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--69
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--82
+[]\OT1/cmr/m/n/10 Ein Halbdu-plex sendet und emp-faengt
+ []
+
+
+Underfull \hbox (badness 3449) in paragraph at lines 80--82
+\OT1/cmr/m/n/10 Nachrichten wie auch ein Du-plex, je-doch
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 85--95
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--103
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--103
+
+ []
+
+[3] (./notes.aux) ) 
 Here is how much of TeX's memory you used:
- 2534 strings out of 493105
- 32975 string characters out of 6137073
- 90039 words of memory out of 5000000
- 5963 multiletter control sequences out of 15000+600000
- 12112 words of font info for 49 fonts, out of 8000000 for 9000
+ 2539 strings out of 493105
+ 33031 string characters out of 6137073
+ 93039 words of memory out of 5000000
+ 5965 multiletter control sequences out of 15000+600000
+ 12727 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,8n,26p,248b,199s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on notes.pdf (1 page, 47674 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
+12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on notes.pdf (3 pages, 71995 bytes).
 PDF statistics:
- 24 PDF objects out of 1000 (max. 8388607)
- 16 compressed objects within 1 object stream
+ 34 PDF objects out of 1000 (max. 8388607)
+ 23 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
