@@ -65,23 +65,59 @@ Damit ist uneingeschraenkte Nutzung auch hier nicht moeglich.\\
     Welche Vor- und Nachteile bieten beide Strategien für 
     verschiedene Applikationen?
 }
+\headline{Paketvermittelnd}
+\begin{tabular}{l|l}
+    PRO & CON\\
+    \hline
+    Hohe Kapazitaet&
+        keine garantierte Bandbreite\\
+\end{tabular}\\
+\gap
+\headline{Leitungsvermittelnd}
+\begin{tabular}{l|l}
+    PRO & CON\\
+    \hline
+    Volle Bandbreite&
+        Geringere Kapazitaet\\
+    Keine Nutzungskonkurrenz&
+        \\
+\end{tabular}\\
 
 \subsubsection{
     Bei den paketvermittelnden Netzen werden verbindungslose und 
     verbindungsorientierte Dienste angeboten.
 }
 \headline{Wo liegen die Unterschiede?}
-\headline{
-    Gibt es diese Unterscheidung auch bei leitungsvermittelnden 
-    Netzen?
-} 
+\begin{tabular}{l|c|c}
+        &Verbindungsorientiert&Verbindungslos\\
+    Handshake&
+        Ja&Nein\\
+    \hline
+    Protokoll&
+        TCP&UDP\\
+    Zuverlaessiger Datentransfer&
+        Ja&Nein\\
+    Flusskontrolle&
+        Ja&Nein\\
+    Ueberlastkontrolle&
+        Ja&Nein\\
+    \hline
+    Paketverluste&
+        Nein&Moeglich\\
+\end{tabular}\\
+\gap
+\headline{Gibt es diese Unterscheidung auch bei leitungsvermittelnden Netzen?} 
+Nein, das Problem behandelt eine konkurrente Paketuebertragung.\\
 
 \subsection{TCP/IP}
 \subsubsection{
-    Geben Sie für den TCP/IP-Protokollstack beispielhaft die 
+    Geben Sie fuer den TCP/IP-Protokollstack beispielhaft die 
     Protokolle der einzelnen Schichten, sowie die Dienste,
     welche diese zur Verfügung stellen, an.
 }
-
+%\includegraphics[width=1\textwidth]{TCP_IP_stack.png}
+\begin{tabular}{l|l|l}
+    Schicht & Protokolle & Dienste\\
+\end{tabular}
 \subsection{ISO/ OSI-Basisfrequenzmodell}
 \end{document}
