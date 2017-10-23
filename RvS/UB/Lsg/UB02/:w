@@ -1,0 +1,67 @@
+\documentclass{article}
+\author{Max Springenberg, 177792}
+\title{
+    RvS UB01\\
+    Gruppe 4
+}
+\date{}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\setcounter{section}{2}
+% \Theta \Omega \omega
+\newcommand{\tab}{\null \qquad}
+\newcommand{\lA}{$\leftarrow$}
+\newcommand{\ue}{$\infty$}
+\newcommand{\gap}{\\ \ \\}
+
+\begin{document}
+\maketitle
+\newpage
+
+\subsection{Multiplexing}
+
+\subsubsection{Skizzieren sie Frequenzmultiplexing}
+%\includegraphics[width=1\textwidth]{FreqMult.png}
+
+\subsubsection{
+    Die Technik des Frequenzmultiplexing (FDM) erlaubt es in der 
+    Theorie, uneingeschränkt viele Nutzer zu einem Zeitpunkt 
+    übertragen zu lassen. Warum ist dies praktisch nicht umsetzbar?
+}
+
+\subsubsection{Skizzieren Sie Zeitmultiplexing (TDM)}
+%\includegraphics[width=1\textwidth]{TimeMult.png}
+
+\subsubsection{
+    Die Technik des Zeitmultiplexing (TDM) erlaubt es in der Theorie
+    uneingeschränkt viele Nutzer nacheinander übertragen zu lassen. 
+    Zu welchem Problem würde die Größenordnung der Nutzer bei 
+    dieser Technik führen?
+}
+
+\subsection{Paket- und leitungsvermittelnde Netze}
+
+\subsubsection{
+    Vergleichen Sie paketvermittelnde und leitungsvermittelnde Netze.
+    Welche Vor- und Nachteile bieten beide Strategien für 
+    verschiedene Applikationen?
+}
+
+\subsubsection{
+    Bei den paketvermittelnden Netzen werden verbindungslose und 
+    verbindungsorientierte Dienste angeboten.
+}
+(i) Wo liegen die Unterschiede?\\
+\gap
+(ii) Gibt es diese Unterscheidung auch bei leitungsvermittelnden 
+Netzen?\\
+
+\subsection{TCP/IP}
+\subsubsection{
+    Geben Sie für den TCP/IP-Protokollstack beispielhaft die 
+    Protokolle der einzelnen Schichten, sowie die Dienste,
+    welche diese zur Verfügung stellen, an.
+}
+\end{document}
