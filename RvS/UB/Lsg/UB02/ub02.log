@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.3.9)  23 OCT 2017 15:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.3.9)  23 OCT 2017 16:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -131,18 +131,18 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 ) (./ub02.aux)
 \openout1 = `ub02.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
  (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count100
@@ -204,17 +204,17 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 21.
+LaTeX Font Info:    Try loading font information for U+msa on input line 22.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 21.
+LaTeX Font Info:    Try loading font information for U+msb on input line 22.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 21.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 22.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) [1
 
@@ -222,21 +222,21 @@ LaTeX Font Info:    Try loading font information for U+stmry on input line 21.
 <FreqMult.png, id=9, 956.57375pt x 369.38pt>
 File: FreqMult.png Graphic file (type png)
  <use FreqMult.png>
-Package pdftex.def Info: FreqMult.png used on input line 27.
+Package pdftex.def Info: FreqMult.png used on input line 28.
 (pdftex.def)             Requested size: 345.0pt x 133.21906pt.
 Missing character: There is no Ã in font cmbx10!
 Missing character: There is no ¤ in font cmbx10!
 Missing character: There is no Ã in font cmbx10!
 Missing character: There is no ¼ in font cmbx10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--42
+Underfull \hbox (badness 10000) in paragraph at lines 41--43
 
  []
 
 <TimeMult.png, id=11, 933.4875pt x 340.27126pt>
 File: TimeMult.png Graphic file (type png)
  <use TimeMult.png>
-Package pdftex.def Info: TimeMult.png used on input line 44.
+Package pdftex.def Info: TimeMult.png used on input line 45.
 (pdftex.def)             Requested size: 345.0pt x 125.7582pt.
 Missing character: There is no Ã in font cmbx10!
 Missing character: There is no ¤ in font cmbx10!
@@ -253,69 +253,188 @@ Missing character: There is no ¼ in font cmbx10!
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¼ in font cmr10!
  [2 <./FreqMult.png> <./TimeMult.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 58--60
+Underfull \hbox (badness 10000) in paragraph at lines 59--61
 
  []
 
 Missing character: There is no Ã in font cmbx10!
 Missing character: There is no ¼ in font cmbx10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--85
+Underfull \hbox (badness 10000) in paragraph at lines 69--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--85
+Underfull \hbox (badness 10000) in paragraph at lines 69--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--85
+Underfull \hbox (badness 10000) in paragraph at lines 69--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--111
+Underfull \hbox (badness 10000) in paragraph at lines 91--112
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--111
+Underfull \hbox (badness 10000) in paragraph at lines 91--112
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--111
+Underfull \hbox (badness 10000) in paragraph at lines 91--112
 
  []
 
 Missing character: There is no Ã in font cmbx10!
 Missing character: There is no ¼ in font cmbx10!
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¶ in font cmr10!
+
+Overfull \hbox (20.36179pt too wide) in paragraph at lines 120--138
+[] 
+ []
+
+[3]
+Overfull \hbox (16.7272pt too wide) in paragraph at lines 139--139
+[]\OT1/cmr/bx/n/10 Aus welchen Schichten besteht das ISO/OSI-Basisreferenzmodel
+l? 
+ []
+
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¼ in font cmr10!
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¶ in font cmr10!
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¶ in font cmr10!
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¼ in font cmr10!
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¶ in font cmr10!
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¶ in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 173--174
+
+ []
+
+Missing character: There is no Ã in font cmbx10!
+Missing character: There is no ¶ in font cmbx10!
+Missing character: There is no Ã in font cmbx10!
+Missing character: There is no ¶ in font cmbx10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--181
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
+
+ []
+
 Missing character: There is no Ã in font cmbx10!
 Missing character: There is no ¼ in font cmbx10!
-[3] [4] (./ub02.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--189
+
+ []
+
+[5] (./ub02.aux) ) 
 Here is how much of TeX's memory you used:
- 2551 strings out of 493105
- 33183 string characters out of 6137073
- 93049 words of memory out of 5000000
- 5973 multiletter control sequences out of 15000+600000
+ 2552 strings out of 493105
+ 33186 string characters out of 6137073
+ 94066 words of memory out of 5000000
+ 5974 multiletter control sequences out of 15000+600000
  12481 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,6n,26p,321b,199s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti1
-0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on ub02.pdf (4 pages, 145490 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
+2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy7.pfb>
+Output written on ub02.pdf (5 pages, 153592 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
- 41 compressed objects within 1 object stream
+ 65 PDF objects out of 1000 (max. 8388607)
+ 43 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
