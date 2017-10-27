@@ -69,18 +69,34 @@ kl <- function(x){
     }
 }
 
-gradient = function(w, x, y){
+# unser Ansatz
+our_gradient = function(w, x, y){
   
   # identify all incorrectly classified datapoints
   ###### CODE HERE ########
     w = t(as.matrix(w))
-    predVec = w %*% x #sigmoid(w %*% x, FALSE) *2) - 1
+    predVec = w %*% x 
     errorVec = predVec * y
     errorSums = -(x %*% t(errorVec))
  
   # return gradient
   ###### CODE HERE ########
     return(errorSums)
+}
+
+# Musterloesung
+gradient = function(w, x, y){
+  
+  # identify all incorrectly classified datapoints
+  d = y * (w %*% x)
+  ind = (d < 0)
+  
+  # return gradient
+  if(sum(ind) == 1){
+    return(y[ind] * x[,ind])
+  }else{
+    return(rowSums(y[ind] * x[,ind]))
+  }
 }
 
 # Function err: compute number of classification errors
@@ -91,12 +107,13 @@ gradient = function(w, x, y){
   # Output
     # number of classification errors
 
-err = function(w, x, y){
+# unser Ansatz
+our_err = function(w, x, y){
   
   # identify all incorrectly classified datapoints
   ###### CODE HERE ########
     w = t(as.matrix(w))
-    predVec = w %*% x #(sigmoid(w %*% x, FALSE) *2) - 1
+    predVec = w %*% x 
     errorVec = predVec * y
     errosSum = sum(apply(errorVec, 2, kl))
 
@@ -105,8 +122,19 @@ err = function(w, x, y){
     return(errosSum)
 }
 
+# Musterloesung
+err = function(w, x, y){
+
+  # identify all incorrectly classified datapoints
+  d = y * (w %*% x)
+  ind=(d < 0)
+
+  # return number of classification errors
+  return(sum(ind))
+}
+
 # read data from file
-data = read.table("set2.txt", header = TRUE, sep = "\t")
+data = read.table("../set2.txt", header = TRUE, sep = "\t")
 names(data) = c("V1", "V2", "V3")
 
 # separate and format data
@@ -134,4 +162,3 @@ ablinePanel = function(x, y, ...) {
 # plot data and seperator line
 dev.new()
 print(xyplot(V2 ~ V1, groups = V3, data, panel = ablinePanel, main = "Perceptron"))
-

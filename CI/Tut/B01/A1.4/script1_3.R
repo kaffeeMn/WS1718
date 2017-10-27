@@ -8,6 +8,55 @@
   # Output
     # w - ANN weights
 
+# unser Ansatz
+our_backpropLearn = function(input, output, r, eps, it){
+  
+  # random initialisation of weights
+  set.seed(1) # deterministic for comparison
+  w = runif(6)
+  
+  # initialisation of vector for error
+  err = rep(100, it)
+  i = 1
+  
+  # update weights until error is small enough or maximum number of iterations is reached
+  while( i == 1 || (err[i-1] > eps & i <= it)){
+    
+    err[i] = 0
+    
+    # iterate over all data points
+    for(j in 1:length(output)){
+      
+      # compute current output
+      out = annEval(w, input[j, ])
+      d = vector(length = 3)
+  
+      # compute d and update w
+      ###### CODE HERE ########
+      #                          typo here v
+      d[3] = out[3] * (1- out[3]) *(out[3] * output[j])
+      d[1] = out[1] * (1 - out[1]) * d[3] * w[5]
+      d[2] = out[2] * (1 - out[2]) * d[3] * w[6]
+
+      w[1] = w[1] - r*(input[j,1] * d[1])
+      w[2] = w[2] - r*(input[j,1] * d[2])
+      w[3] = w[3] - r*(input[j,2] * d[1])
+      w[4] = w[4] - r*(input[j,2] * d[2])
+      w[5] = w[5] - r*(out[1] * d[3])
+      w[6] = w[6] - r*(out[2] * d[3])
+      
+      # calculate error
+      err[i] = err[i] + abs(annEval(w, input[j, ])[3] - output[j])
+    }
+    i = i + 1
+  }
+  # plot error over number of iterations
+  plot(1:(i-1), err[1:i-1], main = "Errors")
+  
+  return(w)
+}
+
+# Musterloesung
 backpropLearn = function(input, output, r, eps, it){
   
   # random initialisation of weights
@@ -32,17 +81,19 @@ backpropLearn = function(input, output, r, eps, it){
   
       # compute d and update w
       ###### CODE HERE ########
-      d[3] = out[3] * (1- out[3]) *(out[3] * output[j])
-      d[1] = out[1] * (1 - out[1]) * d[3] * w[5]
-      d[2] = out[2] * (1 - out[2]) * d[3] * w[6]
+      #compute output layer values
+      d[3]=out[3]*(1-out[3])*(out[3]-output[j])
 
-      w[1] = w[1] - r*(input[j,1] * d[1])
-      w[2] = w[2] - r*(input[j,1] * d[2])
-      w[3] = w[3] - r*(input[j,2] * d[1])
-      w[4] = w[4] - r*(input[j,2] * d[2])
-      w[5] = w[5] - r*(out[1] * d[3])
-      w[6] = w[6] - r*(out[2] * d[3])
+      #compute first layer values
+      d[1]=out[1]*(1-out[1])*d[3]*w[5]
+      d[2]=out[2]*(1-out[2])*d[3]*w[6]
       
+      w[1]=w[1]-r*input[j,1]*d[1]
+      w[2]=w[2]-r*input[j,1]*d[2]
+      w[3]=w[3]-r*input[j,2]*d[1]
+      w[4]=w[4]-r*input[j,2]*d[2]
+      w[5]=w[5]-r*out[1]*d[3]
+      w[6]=w[6]-r*out[2]*d[3]     
       # calculate error
       err[i] = err[i] + abs(annEval(w, input[j, ])[3] - output[j])
     }
@@ -53,7 +104,6 @@ backpropLearn = function(input, output, r, eps, it){
   
   return(w)
 }
-
 # Function annEval: evaluation of specific ANN
   # Input
     # w - weights in ANN
@@ -101,5 +151,3 @@ print(w)
 #
 #w = backpropLearn(x, label, 1, 0.2, 1000)
 #print(w)
-
-
