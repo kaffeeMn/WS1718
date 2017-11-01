@@ -2,7 +2,6 @@
 import ev3dev.ev3 as ev3
 from time import sleep, time
 
-
 class Robot:
     '''
     This Robot class provides methods for:
@@ -27,8 +26,6 @@ class Robot:
             self.us          -- ultrasonic sensor
             self.cs          -- color sensor
             self.stateList   -- List containg states collected
-
-        after initialization the roboter changes into its initial state
         """
         self.motor_left = ev3.LargeMotor('outB')
         self.motor_right = ev3.LargeMotor('outC')
@@ -36,8 +33,7 @@ class Robot:
         self.us.mode = 'US-DIST-CM'
         self.cs = ev3.ColorSensor()
         self.cs.mode = 'COL-COLOR'
-        self.stateList = ['neutral']
-        self.neutral_state()
+        self.stateList = []
 
     # "public" methods
     def drive(self, lcyc, rcyc, time=0.5):
@@ -61,23 +57,35 @@ class Robot:
         This Method simply calls the method corresponding to the color
         :param colVal: Integer or Long n 2<=n<=5, representing a color, to a method
         '''
-        stateList.append('color')
-        COLOR_METHOD_DICT[colVal]
+        stateList.append(colVal)
 
     def evade_obsticle(self):
         '''
         Method to evade an obsticle
         '''
-        self.stateList.append
-        pass
+        self.drive(-50,-50,0.5)
+        self.drive(50,-50,0.5)
+        self.drive(50,50,0.5)
+        self.drive(-50,50,0.5)
+        self.drive(50,50,1)
+        self.drive(-50,50,0.5)
+        self.drive(50,50,0.5)
+        self.drive(50,-50,0.5)
 
     def neutral_state(self):
         '''
         In its neutral state the roboter drives back and forth, slowly
         '''
-        while len(self.stateList) == 1:
-            self.drive(10,10,0.5)
-            self.drive(-10,-10,0.5)
+        self.drive(10,10,0.5)
+        self.drive(-10,-10,0.5)
+
+    def do_states(self):
+        '''
+        Method to empty the state list and fulfill tasks
+        '''
+        while len(self.stateList) > 0:
+            self.COLOR_METHOD_DICT[self.stateList[0]]()
+            del self.stateList[0]
 
     # "private" methods
     ## methods for their corresponding colors
