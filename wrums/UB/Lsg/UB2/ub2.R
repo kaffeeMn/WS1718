@@ -80,8 +80,8 @@ quantity_order <- function(lst){
 quartiles <- function(vals){
     results = list()
     quart = quantile(vals)
-    results$lower = c(quart[2],quart[3])
-    results$higher= c(quart[3],quart[4])
+    results$lower = quart[2]
+    results$higher= quart[4]
     return(results)
 }
 if(!interactive()){
@@ -105,4 +105,29 @@ if(!interactive()){
     quartsHei = quartiles(klData$Groesse)
     print(quartsAge)
     print(quartsHei)
+    " 
+    A5:
+    D = {-2,0,0,2,5}
+    a) 
+        Modus        = 0
+        Median       = 0
+        arithm. Mit. = 1
+    b)
+        n = length(D) = 5
+
+        unt.(25%):
+            n*0.25 = 1.25
+            ungerade -> aufrunden und Wert uebernehmen
+            D[2] = 0
+        ob.(75%):
+            n*0.75 = 3.75
+            ungerade -> aufrunden und Wert uebernehmen
+            D[4] = 2
+
+        80%:
+            pos = length(D) * 0.8 = 5*0.8 = 4
+            gerade -> Mittel aus wert und nachfolger
+            D[4] = 2, D[5] = 5
+            (5+2)/2 = 3.5
+    "
 }
