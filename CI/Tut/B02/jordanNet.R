@@ -3,6 +3,7 @@ library(RSNNS)
 
 # constants
 SEED = 78
+ITERATIONS = 1000
 
 # helpfull methods
 create_dataSet <- function(vec){
@@ -18,11 +19,14 @@ create_dataSet <- function(vec){
 
 # main
 dSet = create_dataSet(as.matrix(read.table('data.txt',header=FALSE, sep=';')))
-print(dSet)
-#print(dSet$x)
-#print(dSet$y)
-#patterns = splitForTrainingAndTest(dSet, dSet)
-#
-#modelJordan <- jordan(
-#    
-#)
+
+set.seed(SEED)
+patterns    = splitForTrainingAndTest(t(dSet$x), t(dSet$y), ratio=0.15)
+jordanModel = jordan(
+    patterns$inputsTrain, patterns$targetsTrain, targetTest=patterns$targetsTest,
+    maxit=ITERATIONS
+)
+names(jordanModel)
+
+plotIterativeError(jordanModel)
+plotRegressionError(patterns$targetsTrain, jordanModel$fitted.values)
