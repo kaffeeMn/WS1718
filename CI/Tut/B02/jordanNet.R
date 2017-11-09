@@ -53,3 +53,5 @@ hist(
     xlab='fitted.values - targetsTrain', col="lightblue"
     , main='Histogram Of Training Data'
 )
+plot(dSet$y[1:500], col='red', type='l', xlab='index', ylab='input', main='Prediction Results')
+lines(jordanModel$fitted.values[1:500], col='green')
