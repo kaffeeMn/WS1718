@@ -1,0 +1,16 @@
+After reviewing the plots, one can obtain that the RBGA does well on the sphere and rastrigin problems, but has
+difficulties with the rosenbrock problem.
+Meanwhile the CMA-ES performs very good on the the sphere and rosenbrock problem, but has its difficulties with the 
+rastrigin problem.
+
+After comparing the average best values for each problem, the CMA-ES outperforms the RBGA in the sphere and rosenbrock 
+problem, while the RBGA outperforms the CMA-ES in the rastrigin problem.
+
+As said before both algorithm do well on the sphere problem. 
+Still, when looking at the best values per repetition, the patterns of the CMA-ES generally seems to be that its return
+values often hit a number close to a constant, with a few outbreaks of greater values. If that constant is low,
+the average best value remains low as well.
+The pattern of the RBGA seems more noisy in general. As in that its best values do not revolve around a recognizable
+constant, though they orbit in a close integral, with the exception of the rosenbrock problem.
+
+The CMA-ES outperforms the RBGA in the sphere problem, due to its lack of noise in its pattern.

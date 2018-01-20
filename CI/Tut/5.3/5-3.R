@@ -1,0 +1,45 @@
+library(cmaes)
+library(genalg)
+
+main <- function(reps=10, n=10, iter=10000){
+    # restricted range
+    low = rep(-5, n)
+    up  = rep(5,n)
+    par = rep(0,n)
+
+    rbga  = matrix(0,3,reps)
+    cmaes = matrix(0,3,reps)
+    avgRbga  = c(0,0,0)
+    avgCmaes = c(0,0,0)
+
+    # repeating algorithms
+    for(i in (1:reps)){
+        rbga [1,i] = rbga(stringMin=low,popSize=20, stringMax=up, iters=iter, evalFunc= f_sphere)$best[iter]
+        rbga [2,i] = rbga(stringMin=low,popSize=20, stringMax=up, iters=iter, evalFunc= f_rastrigin)$best[iter]
+        rbga [3,i] = rbga(stringMin=low,popSize=20, stringMax=up, iters=iter, evalFunc= f_rosenbrock)$best[iter]
+        print(rbga)
+        cmaes[1,i] = cma_es(par, f_sphere, lower=low, upper=up, control=list(maxit=iter))$value
+        cmaes[2,i] = cma_es(par, f_rastrigin, lower=low, upper=up, control=list(maxit=iter))$value
+        cmaes[3,i] = cma_es(par, f_rosenbrock, lower=low, upper=up, control=list(maxit=iter))$value
+        print(cmaes)
+    
+        # summing up for averages
+        for(j in (1:3)){
+            avgRbga[j]  = avgRbga[j] + rbga[j,i]
+            avgCmaes[j] = avgCmaes[j] + cmaes[j,i]
+        }
+    }
+    avgRbga  = avgRbga / reps
+    avgCmaes = avgCmaes / reps
+    plot(rbga[1,], main="RBGA sphere", xlab="repetition", ylab="value")
+    plot(rbga[2,], main="RBGA rastrigin", xlab="repetition", ylab="value")
+    plot(rbga[3,], main="RBGA rosenbrock", xlab="repetition", ylab="value")
+    plot(cmaes[1,], main="CMA-ES sphere", xlab="repetition", ylab="value")
+    plot(cmaes[2,], main="CMA-ES rastrigin", xlab="repetition", ylab="value")
+    plot(cmaes[3,], main="CMA-ES rosenbrock", xlab="repetition", ylab="value")
+    names = c("averages sphere","averages rastrigin","averages rosenbrock")
+    for(j in (1:3)){
+        plot(c(avgRbga[j], avgCmaes[j]), main=names[j], xlab="1=RBGA, 2=CMA-ES")
+    }
+}
+main()

@@ -213,6 +213,7 @@ maxDom <- function(domList){
     max = 0
     for(i in (1:length(domList))){
         if(!is.null(domList[[i]]) && domList[[i]] > max){
+            max = domList[[i]]
             rowIdx = i
         }
     }
@@ -227,7 +228,7 @@ minSM <- function(pop, ref){
        vals[i,] = c(evaluation(pop[i,], 1), evaluation(pop[i,],2), i)
     }
     # sorting by x value
-    vals = vals[order(vals[1]),]
+    vals = vals[order(vals[,1]),]
     # now that we can be reference nieghbouring points, we may calculate the s-metric contributions
     # contributions to the hypervolume ( volumes = [[volume, rowNum]] )
     volumes     = matrix(0,nrow(pop),2)
@@ -240,7 +241,7 @@ minSM <- function(pop, ref){
         volumes[i] = c((vals[i-1,2] - vals[i,2]) * (vals[i+1,1] - vals[i,1]), vals[i,3])
     }
     # sort for minimum volumes
-    min = volumes[order(volumes[1]),]
+    min = volumes[order(volumes[,1]),]
     # returning the original row number
     return(min[1,3])
 }
@@ -281,6 +282,26 @@ SMSEMOA <- function(refP, mat=HAP_II, popSize=3, maxIt=100){
         # order-based crossover (OBX) as variation operator
         pop[popSize+1,] = variate(pop[1:popSize,])
 
+        # plotting to check
+        if(it %% 10 == 0){
+            print(paste("at iteration:", it))
+            print(pop)
+            objective1 = c()
+            objective2 = c()
+            for(j in (1:(popSize+1))){
+                current = pop[j,]
+                objective1[j] = evaluation(current, mat,1)
+                objective2[j] = evaluation(current, mat,2)
+            }
+            print("x and y values")
+            print(objective1)
+            print(objective2)
+            # reference point
+            objective1[popSize+2] = 25
+            objective2[popSize+2] = 5
+            plot(x=objective1,y=objective2, main=paste("(with offspring) after ", it, " iterations (top right is the reference point)"))
+        }
+
         # deciding the dominant indivuals
         dom = dominance(pop, mat)
         if(length(dom) == 0){
@@ -290,8 +311,17 @@ SMSEMOA <- function(refP, mat=HAP_II, popSize=3, maxIt=100){
             # maximal dominace-value
             a = maxDom(dom)
         }
+        if(it %% 10 == 0){
+            print("deleting ")
+            print(pop[a,])
+        }
         # filtering for a
         pop = clean(pop, a)
+        if(it %% 10 == 0){
+            print("new population")
+            print(pop)
+            print("")
+        }
 
         # storing the generation and incrementing the generation counter
         generations[[gen+1]] = pop
@@ -299,11 +329,22 @@ SMSEMOA <- function(refP, mat=HAP_II, popSize=3, maxIt=100){
     }
     return(generations)
 }
-plotSMSEMOA <- function(ref){
+plotSMSEMOA <- function(ref, mat=HAP_II, popSize=3, maxIt=100){
     # running the algorithm
-    results = SMSEMOA(ref)
+    results = SMSEMOA(ref, mat, popSize, maxIt)
+    #print(results)
     for(i in (1:10)){
-        plot()
+        objective1 = c()
+        objective2 = c()
+        current = as.matrix(results[[i*10]])
+        for(j in (1:popSize)){
+            objective1[j] = evaluation(current[j,], mat,1)
+            objective2[j] = evaluation(current[j,], mat,2)
+        }
+        # reference point
+        objective1[6] = 25
+        objective2[6] = 5
+        plot(x=objective1,y=objective2, main=paste("(without offspring) after ", i*10, " iterations (top right is the reference point)"))
     }
 }
 #######################################################################################################################
@@ -323,8 +364,8 @@ Q3 <- function(mat=HAP_II, id=3){
 }
 
 
-# for Q 4 (Explain by S-Metric, draw the graph)
-SOL = t(matrix(
+# for Q 4 (Explain by S-Metric and/ or dominance, draw the graph)
+SOL_STRING = t(matrix(
     c('C','A','B','D','E',
       'D','A','E','C','B',
       'A','D','B','E','C')
@@ -348,10 +389,10 @@ Q5 <- function(){
 }
 
 main <- function(){
-    #Q1()
+    Q1()
     #Q2()
     #Q3()
-    Q5()
+    #Q5()
 }
 
 
