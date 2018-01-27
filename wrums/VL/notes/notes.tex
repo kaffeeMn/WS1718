@@ -1,0 +1,82 @@
+\documentclass{article}
+\author{Max Springenberg, 177792}
+\title{
+    Wahrscheinlichkeitsrechnung Und Mathematische Statistik\\
+    WS 1718
+}
+\date{}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+% \Theta \Omega \omega
+\newcommand{\tab}{\null \qquad}
+\newcommand{\lA}{$\leftarrow$}
+\newcommand{\ue}{$\infty$}
+\newcommand{\gap}{\\ \ \\}
+\newcommand{\img}[1]{\includegraphics[\width=1/\textwidth]{#1}}
+\newcommand{\headline}[1]{\textbf{\textit{#1}}\\}
+
+\begin{document}
+\maketitle
+\section{Merkmale und Datentypen}
+Datentypen\\
+\begin{tabular}{ll}
+    Skalentyp   &Aussagen\\
+    \hline
+    Nominal     &Gleich/Verschieden\\
+    Ordinal     &Groesser/Kleiner\\
+    \hline
+    Interval    &Differenz\\
+    Verhaeltnis &Verhaeltnis\\
+\end{tabular}\\
+\gap
+Diskrete Datentypen sind endlich oder abzaehlbar unendlich\\
+Stetige Datentypen sind ueberabzaehlbar viele\\
+\gap
+Generell koennen Datentypen unter Informationsverlust in Datentypen niederer
+Ordnung ueberfuehrt werden,\\
+\section{Tabellerische und grafische Darstellung von univarianten Daten}
+\subsection{Quantitativ diskrete Daten}
+\begin{tabular}{ll}
+    $M_N =\{e_1, ..., e_N\}$    &Population bestehend aus Objekten $e_i$\\
+    $X$                         &Quantitatives Merkmal\\
+    $x,x \in W_x$               &Merkmalsauspraegung von X\\
+    $W_x = \{x(1),...,x(J)\}$   &Wertebereich von X mit Merkmalsauspraegung\\
+    $D_N = \{x_1,...,x_N\}$     &Urliste aus der Messung von X in der Population $M_N$\\
+\end{tabular}
+\subsubsection{Formeln}
+\headline{Absolute Haeufigkeit}
+$
+N_j$ von $x(j):\\
+N_j = N[x(j)] = \sum_{i=1}^J d_i(j), I_{x(e_i)=x(j)}\\
+\Rightarrow N = \sum_{j=1}^J N_j\\
+$
+Hierbei is $d_i$ die i-te Spalte und $x(j)$ das j-te Object, dem Werte zugeordnet werden.\\
+\gap
+\headline{Relative Haeufigkeit}
+$
+f_j$ von $x(j) = \frac{N_j}{N}\\
+\Rightarrow \sum_{j=1}{J} f_j= 1\\
+$
+\gap
+\headline{Empirische Verteilungsfunktion}
+$
+F_N(x) = \begin{cases}
+    0 & , x < x(1)\\
+    s_j = \sum_{k=1}^j f_k & , x(1) \geq x\\
+\end{cases}
+$
+Diese Funktion steigt wie eine Treppe und nimmt den Wert bis zum naechst kleineren x.\\
+\subsection{Quantitativ stetige Daten}
+\begin{tabular}{ll}
+    $M_N =\{e_1, ..., e_N\}$                &Population bestehend aus Objekten $e_i$\\
+    $X$                                     &Quantitatives Merkmal\\
+    $x,x \in W_x$                           &Merkmalsauspraegung von X\\
+    $W_X = (-\inf,\inf) = \bigcup_{j=1}^J K_j$ &Klassierter (vorallem kategorisierter) Wertebereich von X\\
+    $K_j = (v_{j-1},V_j), K_J=(v_{J-1},v{J})$ &Merkmalsklassen mit Klassengrenzen\\
+    $D_N = \{x_1,...,x_N\}$                 &Urliste aus der Messung von X in der Population $M_N$\\
+\end{tabular}
+\subsection{Histogramm}
+
+\end{document}

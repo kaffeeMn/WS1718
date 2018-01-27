@@ -1,6 +1,6 @@
-### libraries
-#library(emoa)
-
+# make sure you have installed combinat prior to the execution of this script
+#packages.install('combinat')
+library('combinat')
 
 ### constants
 # for Q 1
@@ -21,31 +21,74 @@ HAP_II = t(matrix(
       3,4,1,2,5)
     , nrow = 5, ncol = 5
 ))
-# identity matrix of B^5
+# for Q 4
+#
+# Assume you have 3 solutions listed in the following table, where A is short for Annie, B for Bernie etc.:
+# 
+# solution	T1	T2	T3	T4	T5
+# i1	    C	A	B	D	E
+# i2	    D	A	E	C	B
+# i3	    A	D	B   E   C
+#
+# Which solutions would an SMS-EMOA with population size μ=2 select? Explain your answer visually.
+SOL_STRING = t(matrix(
+    c('C','A','B','D','E',
+      'D','A','E','C','B',
+      'A','D','B','E','C')
+    , nrow = 5, ncol = 3
+))
+SOL_NUMERIC= t(matrix(
+    c(2,3,1,4,5,
+      2,5,4,1,3,
+      1,3,5,2,4)
+    , nrow = 5, ncol = 3
+))
+
+# identity matrix of B^5 
+# (non neccessarily needed, since we can look up values inside the matrix rather than filtering with matrix multiplications)
 E5 = list( c(1,0,0,0,0)
          , c(0,1,0,0,0)
          , c(0,0,1,0,0)
          , c(0,0,0,1,0)
          , c(0,0,0,0,1))
-# list of the objective names
+# list of the objective names (for plotting)
 METHODS = c('minimum', 'minimal maximum', 'combined')
 
 
-#######################################################################################################################
-### functions for the EA(1+1)
+
+### mehtods for Q1 and Q2
+validate <- function(perList, mat){
+    all = matrix(0, length(perList), 2)
+    for(i in (1:length(perList))){
+        all[i,1] = evaluation(perList[[i]], mat, 1)
+        all[i,2] = evaluation(perList[[i]], mat, 2)
+    }
+    return(all)
+}
+plotAllSolutions <- function(mat){
+    per = permn((1:ncol(mat)))
+    vals = validate(per, mat)
+    print(vals[order(vals[,2]),])
+    print(as.matrix(per)[order(vals[,2]),])
+    plot(x=vals[,1], y=vals[,2], main="All Solutions",xlab="objective1", ylab="objective2")
+}
+
+
+
+### functions for EAs
 evaluation <- function(x, mat, methodID){
     if(methodID == 1){
         # return sum of happyness values
         sum = 0
         for(i in (1:5)){
-            sum = sum + E5[[i]] %*% mat %*% E5[[x[i]]]
+            sum = sum + mat[i,x[i]] #E5[[i]] %*% mat %*% E5[[x[i]]]
         }
         return(sum)
     }else if(methodID == 2){
         # returns the maximum happyness value (the least happy value)
         vals = c(0,0,0,0,0)
         for(i in (1:5)){
-            vals[i] = E5[[i]] %*% mat %*% E5[[x[i]]]
+            vals[i] = mat[i,x[i]] #E5[[i]] %*% mat %*% E5[[x[i]]]
         }
         return(max(vals)) 
     }else{
@@ -53,8 +96,8 @@ evaluation <- function(x, mat, methodID){
         sum = 0
         vals = c(0,0,0,0,0)
         for(i in (1:5)){
-            sum = sum + E5[[i]] %*% mat %*% E5[[x[i]]]
-            vals[i] = E5[[i]] %*% mat %*% E5[[x[i]]]
+            sum = sum + mat[i, x[i]] # E5[[i]] %*% mat %*% E5[[x[i]]]
+            vals[i] = mat[i, x[i]] #E5[[i]] %*% mat %*% E5[[x[i]]]
         }
         return(max(vals) + sum)
     }
@@ -74,6 +117,9 @@ kSwap <- function(x, range=10){
     return(x)
 }
 
+
+
+### functions for a (1+1)EA
 EA11 <- function(mat, methodID=1, stopMax=10){
     print(METHODS[methodID])
 
@@ -105,7 +151,7 @@ EA11 <- function(mat, methodID=1, stopMax=10){
         # evaluate offspring
         eval2S[2] = evaluation(vec2S, mat, methodID)
         evalKS[2] = evaluation(vecKS, mat, methodID)
-        # printing states if supervision is desired
+        # printing states if supervision is desired at this point
         #print(evalKS)
         #print(eval2S)
         #print(list(parentKS=vecKS, childKS=cldKS))
@@ -158,12 +204,10 @@ plotEA11 <- function(mat, id){
     title = paste("Happyness best solution (objective", METHODS[id], ")")
     plot(hapMin, type="h", main=title)
 }
-#######################################################################################################################
 
 
-#######################################################################################################################
+
 ### functions for the SMS-EMOA
-
 variate <- function(mat){
     # obx for variation
     ret = c(0,0,0,0,0)
@@ -185,8 +229,6 @@ variate <- function(mat){
     # 2Swap for mutation
     return(tSwap(ret))
 }
-
-
 dominance <- function(pop, mat){
     maxRow = nrow(mat)
     # dom[[rowIdx]] = domination number
@@ -256,8 +298,6 @@ minSM <- function(pop, ref){
     # returning the original row number
     return(min[1,3])
 }
-
-
 clean <- function(mat, row){
     # deletes row and shifts rows left logically
     maxRow = nrow(mat)
@@ -270,12 +310,8 @@ clean <- function(mat, row){
     return(retMat)
 }
 
-
-
 SMSEMOA <- function(refP, mat=HAP_II, popSize=3, maxIt=100){
-    # SMS_EMOA (S-Metrik Selektion Evolutionaerrer Mehrziel Optimierungs Algorithmus):
-
-    # lists for population and offspring
+    # list for population and offspring
     generations = list()
     # filling our population with <popSize> random individuals
     pop = matrix(0,(popSize+1),5)
@@ -286,7 +322,7 @@ SMSEMOA <- function(refP, mat=HAP_II, popSize=3, maxIt=100){
     gen = 1
     generations[[gen]] = pop
     pop = NULL
-    # repeating while the termination criterium is invalid
+    # repeating while the termination criterium is invalid (in this case a fixed number of iterations)
     it = 1
     for(it in (1:maxIt)){
         pop = generations[[gen]]
@@ -349,8 +385,8 @@ plotSMSEMOA <- function(ref, mat=HAP_II, popSize=3, maxIt=100){
         objective2 = c()
         current = as.matrix(results[[i*10]])
         for(j in (1:popSize)){
-            objective1[j] = evaluation(current[j,], mat,1)
-            objective2[j] = evaluation(current[j,], mat,2)
+            objective1[j] = evaluation(current[j,], mat, 1)
+            objective2[j] = evaluation(current[j,], mat, 2)
         }
         # reference point
         objective1[6] = 25
@@ -358,41 +394,32 @@ plotSMSEMOA <- function(ref, mat=HAP_II, popSize=3, maxIt=100){
         plot(x=objective1,y=objective2, main=paste("(without offspring) after ", i*10, " iterations (top right is the reference point)"))
     }
 }
-#######################################################################################################################
+
 
 
 ### questions / tasks
-Q1 <- function(mat=HAP_I, methodIDs=c(1,2)){
-    for(id in methodIDs){
-        plotEA11(mat, id)
-    }
+Q1 <- function(mat=HAP_I){
+    plotAllSolutions(mat)
 }
 Q2 <- function(mat=HAP_II){
-    Q1(mat)
+    plotAllSolutions(mat)
 }
-Q3 <- function(mat=HAP_II, id=3){
-    Q1(mat, c(id))
+Q3 <- function(mat=HAP_II){
+    plotEA11(mat, c(3))
 }
-
-
-# for Q 4 (Explain by S-Metric and/ or dominance, draw the graph)
-SOL_STRING = t(matrix(
-    c('C','A','B','D','E',
-      'D','A','E','C','B',
-      'A','D','B','E','C')
-    , nrow = 5, ncol = 3
-))
-#
-# Assume you have 3 solutions listed in the following table, where A is short for Annie, B for Bernie etc.:
-# 
-# solution	T1	T2	T3	T4	T5
-# i1	    C	A	B	D	E
-# i2	    D	A	E	C	B
-# i3	    A	D	B   E   C
-#
-# Which solutions would an SMS-EMOA with population size μ=2 select? Explain your answer visually.
-
-
+Q4 <- function(mat=HAP_II){
+    xVals = c()
+    yVals = c()
+    for(i in (1:nrow(SOL_NUMERIC))){
+        xVals[i] = evaluation(SOL_NUMERIC[i,],mat,1)
+        yVals[i] = evaluation(SOL_NUMERIC[i,],mat,2)
+    }
+    xVals[nrow(SOL_NUMERIC)+1] = 25
+    yVals[nrow(SOL_NUMERIC)+1] = 5
+    # validating and printing the values
+    plot(x=xVals, y=yVals, main="All Solutions and reference point (points)",xlab="objective1", ylab="objective2")
+    plot(x=xVals[(1:3)], y=yVals[(1:3)], main="All Solutions (stairs)",xlab="objective1", ylab="objective2", type="s")
+}
 Q5 <- function(){
     # worst for evalmethod1 = 25, worst for evalmethod2 = 5
     ref = c(25, 5)
@@ -400,12 +427,15 @@ Q5 <- function(){
 }
 
 main <- function(){
+    # Just uncomment for whatever plots you want
     #Q1()
     #Q2()
     #Q3()
+    #Q4()
     Q5()
 }
 
 
-### fucntion calls
+
+### function calls
 main()

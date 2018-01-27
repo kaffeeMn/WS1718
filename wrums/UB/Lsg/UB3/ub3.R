@@ -1,11 +1,21 @@
 # helpful methods
-simps_d <- function(vec, norm=FALSE){
+#simps_d <- function(vec, norm=FALSE){
+#    if(norm){
+#        # D = J * (1 - (occurrences^2/ J^2) / (J-1)
+#        return(length(vec) * (1 - (sum(table(vec)^2) / length(vec)^2)) / (length(vec)-1))
+#    }
+#    # D = 1 - (occurrences^2/ J^2)
+#    return(1 - (sum(table(vec)^2) / length(vec)^2))
+#}
+simps_d <- function(vec, norm=T){
+    J = length(table(vec))
+    occurences = table(vec) 
+    rel = occurences / length(vec)
     if(norm){
-        # D = J * (1 - (occurrences^2/ J^2) / (J-1)
-        return(length(vec) * (1 - (sum(table(vec)^2) / length(vec)^2)) / (length(vec)-1))
+        # D = J * (1 - ()^2) / (J-1)
+        return( J * (1-sum(rel^2)) / (J-1) )
     }
-    # D = 1 - (occurrences^2/ J^2)
-    return(1 - (sum(table(vec)^2) / length(vec)^2))
+    # D = 
 }
 entropie <- function(){
 }

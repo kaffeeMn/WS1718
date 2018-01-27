@@ -9,6 +9,7 @@
 \usepackage{amssymb}
 \usepackage{stmaryrd}
 \usepackage{graphicx}
+\usepackage{caption}
 % \Theta \Omega \omega
 \newcommand{\tab}{\null \qquad}
 \newcommand{\lA}{$\leftarrow$}
@@ -101,5 +102,38 @@ dynamisch:\\
 \tab zusaetzlicher Aspekt des Zeitlichen Ablaufs.\\
 \tab \tab Dienststimuli und Dienstreaktion gehoeren zur Sicht.\\
 \subsubsection{Nachrichtenreihenfolge}
+Die Nachrichtenreihenfolge bei Kommunikationsdiensten funkrioniert generell nach dem FIFO Prinzip.
+An einem Dienstzugangspunkt befindet sich ein Verbindungssendepunkt. Die Nachricht wird gepuffert,
+wie auch bei einer Queue ueber die Verbindung weitergereicht.\\
+\subsubsection{Zuverlaessigkeit}
+Bei der Kommunikation koennen Fehler auftreten. Diese sind:\\
+\\
+\begin{tabular}{l|l}
+    Verfaelschung&  Es wird anstatt der Nachricht A die Nachricht X empfangen\\
+    Phantom&        Es wird eine Nachricht empfangen, obwohl der Sender nichts geschickt hat\\
+    Dublikat&       Eine Nachricht wird mehrfach empfangen\\
+    Verlust&        Eine Nachricht wird nicht empfangen\\
+    Vertauschung&   Nachrichten werden an den Falschen Empfaenger weiter gereicht\\
+\end{tabular}
+\section{Kommunikationsprotokolle}
+\subsubsection{Definition}
+Ein Protokoll ist eine Menge von Regeln und Formaten (semantusch und syntaktisch), die das Kimmunikationsvergalten von
+Instanzen zur Ausfuehrung von Funktionen regelt.\\
+\gap
+Alle Kommunikationsakrivitaeten im Internet werden von Protokollen bestimmt\\
+Protokollstandards ermoeglichen die Offenheit des Internets fuer Komponenten\\
+\gap
+Ein Kommunikationsprotokoll definiert sich ueber:\\
+\\
+\begin{tabular}{l}
+    Zieldienst\\
+    Basisdienst\\
+    Instanzenverhalten\\
+    PDU-Formate\\
+\end{tabular}
+\subsubsection{Schichtenmodelle}
+\begin{textit}
+    ISO/OSI\\
+\end{textit}
 
 \end{document}
