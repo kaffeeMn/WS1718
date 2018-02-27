@@ -722,28 +722,203 @@ Inspiriert durch das senden von &quot;duplicate ACK&quot;</p>
 </div>
 </div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="tcp-verbindungsverwaltung">
 <h1>TCP Verbindungsverwaltung</h1>
-<!-- todo
-Kap3 63-68 -->
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="verbindungsaufbau">
+<h2 class="text-secondary">Verbindungsaufbau</h2>
+<p class="text-info">TCP Sender und Empfaenger muessen erst eine Verbingung etablieren, bevor sie Daten Austauschen.
+Typischer Weise passiert soetwas ueber einen <a class="text-white bg-info" class="reference external" href="../html/handshake.html">3 Wege Handshake</a></p>
+<ol class="arabic simple">
+<li class="text-primary"><dl class="first docutils">
+<dt>Initialisiere die TCP Variablen:</dt>
+<dd><ul class="first last">
+<li class="text-primary">Sequenznummern</li>
+<li class="text-primary">buffers</li>
+<li class="text-primary">flow control info (e.g. RcvWindow)</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li class="text-primary"><dl class="first docutils">
+<dt>Client initiert die Verbindung</dt>
+<dd><ul class="first last">
+<li class="text-primary">Socket clientSkt = new Socket(&quot;hostname&quot;, portNumber);</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li class="text-primary"><dl class="first docutils">
+<dt>Server wird vom Client kontaktiert</dt>
+<dd><ul class="first last">
+<li class="text-primary">Socket connectionSocket = welcomeSocket.accept();</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="schliessen-einer-verbindung">
+<h2 class="text-secondary">Schliessen einer Verbindung</h2>
+<p class="text-info">Socket.close();</p>
+<ol class="arabic simple">
+<li class="text-primary">Client sender TCP FIN - Kontrollsegment an Server</li>
+<li class="text-primary">Server empfaengt FIN, sendet ACK, beendet die Verbindung und sendet FIN simultan.</li>
+<li class="text-primary">Client empfaengt FIN sendet ACK geht in warte zustand</li>
+<li class="text-primary">Server empfaengt ACK, Verbindung beendet.</li>
+</ol>
 <div class="line-block">
 <div class="line"><br /></div>
+</div>
 </div>
 </div>
 </div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="tcp-client">
 <h1>TCP Client</h1>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id16">
+<h2 class="text-secondary">Ablauf</h2>
+<ol class="arabic simple">
+<li class="text-primary">CLOSED       -&gt; sendSYN (initiert Verbindung)</li>
+<li class="text-primary">SYN_SEND     -&gt; receiveSYN &amp;&amp; ACK then sendACK</li>
+<li class="text-primary">ESTABLISHED  -&gt; Datentransfer, bis Transfer abgeschlossen ist</li>
+<li class="text-primary">ESTABLISHED  -&gt; sendFIN</li>
+<li class="text-primary">FIN_WAIT_1   -&gt; receiveACK then sendNothing</li>
+<li class="text-primary">FIN_WAIT_2   -&gt; receiveFIN then sendACK</li>
+<li class="text-primary">TIME_WAIT    -&gt; wait30sec</li>
+<li class="text-primary">start at 1</li>
+</ol>
 <div class="line-block">
 <div class="line"><br /></div>
+</div>
 </div>
 </div>
 </div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="tcp-server">
 <h1>TCP Server</h1>
+<ol class="arabic simple">
+<li class="text-primary">CLOSED       -&gt; initiere Empfangssocket</li>
+<li class="text-primary">LISTEN       -&gt; receiveSYN then sendSYN; sendACK</li>
+<li class="text-primary">SYN_RCVD     -&gt; receiveACK then sendNothing</li>
+<li class="text-primary">ESTABLISHED  -&gt; Datentransfer, bis Transfer abgeschlossen ist</li>
+<li class="text-primary">ESTABLISHED  -&gt; receiveFIN then sendACK</li>
+<li class="text-primary">CLOSE_WAIT   -&gt; sendFIN</li>
+<li class="text-primary">LAST_ACK     -&gt; receiveACK then sendNothing</li>
+<li class="text-primary">start at 1</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 </div>
 </div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="tcp-ueberlastungskontrolle">
 <h1>TCP Ueberlastungskontrolle</h1>
-<p class="text-info">fuer eine Einleitung zur Ueberlastungskontrolle, siehe das <a class="text-white bg-info" class="reference external" href="../html/ueberlastungskontrolle.html">Dokument zu Ueberlastungskontrolle</a>.</p>
-<!-- todo
-Kap3 76-80 -->
+<p class="text-info">Die Ueberlastungskontrolle wurd im <a class="text-white bg-info" class="reference external" href="../html/ueberlastungskontrolle.html">Dokument zu Ueberlastungskontrolle</a> abgehandelt.</p>
+<p class="text-info">Im folgenden wird die Ueberlastungskontrolle in TCP erlaeutert.
+TCP verwendet eine Ende zu Ende Ueberlastungskontrolle.</p>
+<p class="text-info">Es gilt:</p>
+<div class="formula text-success">
+<span class="environment"><span class="arrayrow">
+<span class="arraycell align-r text-left">
+<i>w</i> = <i>LastByteSent</i> − <i>LastByteAcked</i>
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+<i>w</i> ≤ <sup>!</sup> <i>Sendefenstergroesse</i><sub><i>aktuell</i></sub>
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+
+</span>
+
+</span>
+</span>
+</div>
+<p class="text-info">ein Sender darf nur dann ein neues Paket senden, wenn die Fenstergroesse noch nicht erschoeft ist.
+Die aktuelle Sendefenstergroesse wird als Minimum aus 2 Werten bestimmt</p>
+<div class="formula text-success">
+<span class="environment"><span class="arrayrow">
+<span class="arraycell align-r text-left">
+<i>RcvWin</i> = <sup><i>def</i></sup> <span class="text">der den Empfaenger zugeteilte Kredit</span>
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+<i>ConWin</i> = <sup><i>def</i></sup> <span class="text">vom Sender emsprechend des Stau-mechanismus bestimmt</span>
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+<i>Sendefenstergroesse</i> = <i>min</i>(<i>RcvWin</i>, <i>ConWin</i>)
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+
+</span>
+
+</span>
+</span>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="algorithmus">
+<h2 class="text-secondary">Algorithmus</h2>
 <div class="line-block">
 <div class="line"><br /></div>
+</div>
 </div>
 </div>
 </div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="fairness">

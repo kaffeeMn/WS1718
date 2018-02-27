@@ -400,26 +400,95 @@ Fuer den Sender gilt das Gleichgewicht:
 TCP Verbindungsverwaltung
 =========================
 
-.. todo 
-    Kap3 63-68
+
+Verbindungsaufbau
+-----------------
+
+TCP Sender und Empfaenger muessen erst eine Verbingung etablieren, bevor sie Daten Austauschen.
+Typischer Weise passiert soetwas ueber einen `3 Wege Handshake <../html/handshake.html>`_ 
+
+1. Initialisiere die TCP Variablen:
+    * Sequenznummern
+    * buffers
+    * flow control info (e.g. RcvWindow)
+2. Client initiert die Verbindung
+    * Socket clientSkt = new Socket("hostname", portNumber);
+3. Server wird vom Client kontaktiert
+    * Socket connectionSocket = welcomeSocket.accept();
+
+Schliessen einer Verbindung
+---------------------------
+
+Socket.close();
+
+1. Client sender TCP FIN - Kontrollsegment an Server
+2. Server empfaengt FIN, sendet ACK, beendet die Verbindung und sendet FIN simultan.
+3. Client empfaengt FIN sendet ACK geht in warte zustand
+4. Server empfaengt ACK, Verbindung beendet.
 
 |
 
 TCP Client
 ==========
 
+Ablauf
+------
+
+1. CLOSED       -> sendSYN (initiert Verbindung)
+2. SYN_SEND     -> receiveSYN && ACK then sendACK
+3. ESTABLISHED  -> Datentransfer, bis Transfer abgeschlossen ist
+4. ESTABLISHED  -> sendFIN
+5. FIN_WAIT_1   -> receiveACK then sendNothing
+6. FIN_WAIT_2   -> receiveFIN then sendACK
+7. TIME_WAIT    -> wait30sec
+8. start at 1
+
 |
 
 TCP Server
 ==========
 
+1. CLOSED       -> initiere Empfangssocket
+2. LISTEN       -> receiveSYN then sendSYN; sendACK
+3. SYN_RCVD     -> receiveACK then sendNothing
+4. ESTABLISHED  -> Datentransfer, bis Transfer abgeschlossen ist
+5. ESTABLISHED  -> receiveFIN then sendACK
+6. CLOSE_WAIT   -> sendFIN
+7. LAST_ACK     -> receiveACK then sendNothing
+8. start at 1
+
+|
+
+
 TCP Ueberlastungskontrolle
 ==========================
 
-fuer eine Einleitung zur Ueberlastungskontrolle, siehe das `Dokument zu Ueberlastungskontrolle <../html/ueberlastungskontrolle.html>`_.
+Die Ueberlastungskontrolle wurd im `Dokument zu Ueberlastungskontrolle <../html/ueberlastungskontrolle.html>`_ abgehandelt.
 
-.. todo
-    Kap3 76-80
+Im folgenden wird die Ueberlastungskontrolle in TCP erlaeutert.
+TCP verwendet eine Ende zu Ende Ueberlastungskontrolle.
+
+Es gilt:
+
+.. math::
+
+    w = LastByteSent - LastByteAcked\\
+    \\
+    w \leq^! \ Sendefenstergroesse_{aktuell}\\
+
+
+ein Sender darf nur dann ein neues Paket senden, wenn die Fenstergroesse noch nicht erschoeft ist.
+Die aktuelle Sendefenstergroesse wird als Minimum aus 2 Werten bestimmt
+
+.. math::
+
+    RcvWin =^{def} \ \text{der den Empfaenger zugeteilte Kredit}\\
+    ConWin =^{def} \ \text{vom Sender emsprechend des Stau-mechanismus bestimmt}\\
+    \\
+    Sendefenstergroesse = min(RcvWin, ConWin)\\
+
+Algorithmus
+-----------
 
 |
 

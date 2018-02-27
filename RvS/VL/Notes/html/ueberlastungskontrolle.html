@@ -1,0 +1,97 @@
+<link rel="stylesheet" type="text/css" href="/home/max/Documents/BootStrap/bootstrap-4.0.0-dist/css/bootstrap.css"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.14: http://docutils.sourceforge.net/" />
+<title>Ueberlastungskontrolle</title>
+
+
+    <div class="card mx-2 my-2 bg-dark" id="segment-0">
+        <div class="ml-2 my-2 text-light">
+            <h1>Welcome</h1>
+            <h3>This HTML-page was created using the version 1.2 of the rstToHtml.py script with BootStrap</h3>
+        </div>
+    </div>
+    <div class="mx-2" id="segment-1"><div class="ml-2"><div class="document" id="ueberlastungskontrolle">
+<h1 class="title">Ueberlastungskontrolle</h1>
+
+<p class="text-info">Die Ueberlastungskontrolle dient dazu Stau zu verhindern.</p>
+<p class="text-info">Dabei wird auf die Flusskontrolle zurueck gegriffen.</p>
+<blockquote>
+<ul class="simple">
+<li class="text-primary">Messen der momentanen Belastung</li>
+<li class="text-primary">Berechnen des moeglichen Flusses</li>
+<li class="text-primary">Entsprechendes Drosseln des Flusses</li>
+</ul>
+</blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="mx-5 my-3"><div class="ml-1"><div class="section" id="staus">
+<h1>Staus</h1>
+<p class="text-info">Staus koennen verschiedene Ursachen haben.</p>
+<p class="text-info">e.g.:</p>
+<ul class="simple">
+<li class="text-primary">unbeschraenkter Buffer -&gt; Prozesse ueberlasten das System und klauen sich gegenseitig die Kapazitaeten</li>
+<li class="text-primary"><dl class="first docutils">
+<dt>beschraenkter Buffer ...</dt>
+<dd><ul class="first last">
+<li class="text-primary">... aber Segmente gehen ueber Buffer-Ueberlaufe verloren. Wiederholte Uebertragungen erzeugen zusaetzliche
+Last und damit zusaetzlichen verkehr</li>
+<li class="text-primary">... aber gemeinsame Routen fuehren zu Paketverlusten bei allen Verbindungen und damit auch zu Wiederhilen auf
+allen Verbindungen</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="ansaetze">
+<h1>Ansaetze</h1>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="ende-zu-ende-ueberlastungskontrolle">
+<h2 class="text-secondary">Ende zu Ende Ueberlastungskontrolle</h2>
+<ul class="simple">
+<li class="text-primary">Die Vermittlungsschicht unterstuetzt nicht explizit</li>
+<li class="text-primary">Ueberlastung wird durch Paketverlust und -verzoegerung festgestellt. Fenstergroesse wird</li>
+</ul>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="ueberlastungskontrolle-im-netz">
+<h2 class="text-secondary">Ueberlastungskontrolle im Netz</h2>
+<ul class="simple">
+<li class="text-primary"><dl class="first docutils">
+<dt>Komponenten der Vermittlungsschicht (Router) geben dem Sender explizit Feedback ueber Ueblastzustaende</dt>
+<dd><ul class="first last">
+<li class="text-primary">e.g. DECnet, TCP/IP ECN, ATM ABR</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li class="text-primary">Sender bekommt eine expliziete Senderate zugeteilt</li>
+</ul>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="atm-abr">
+<h3 class="text-secondary">ATM ABR</h3>
+<p class="text-info">ABR (available bit rate):</p>
+<ul class="simple">
+<li class="text-primary">Elastischer Dienst</li>
+<li class="text-primary">Wenn Pfad vom Sender zum Empfaenger nicht ausgelastett ist soll der Sender die verfuegbare Bandbreite nutzen.</li>
+<li class="text-primary">Wenn der Pfad vom Sender zum Empfaenger ueberlastet isr darf der Sender nur eine minimale garantierte Bandbreite nutzen.</li>
+</ul>
+<p class="text-info">ABR wird durch das senden von RM zwischen den Datenzellen realisiert.
+Der empfaenger sendet RM zurueck.</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="rm-zellen-resource-management">
+<h3 class="text-secondary">RM - Zellen (resource management):</h3>
+<ul class="simple">
+<li class="text-primary">Informationen ueber Netzzustand, werden von switches gesetzt</li>
+<li class="text-primary">NI bit inidiziert leichte ueberlastung</li>
+<li class="text-primary">CI bit indiziert Ueberlast</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</div></div>
