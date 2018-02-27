@@ -4,7 +4,286 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="Docutils 0.14: http://docutils.sourceforge.net/" />
 <title>Zusammenfassung Der Protokolle</title>
+<style type="text/css">
 
+/*
+*   math2html: convert LaTeX equations to HTML output.
+*
+*   Copyright (C) 2009,2010 Alex Fernández
+*
+*   Released under the terms of the `2-Clause BSD license'_, in short:
+*   Copying and distribution of this file, with or without modification,
+*   are permitted in any medium without royalty provided the copyright
+*   notice and this notice are preserved.
+*   This file is offered as-is, without any warranty.
+*
+* .. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause
+*
+*   Based on eLyXer: convert LyX source files to HTML output.
+*   http://elyxer.nongnu.org/
+*/
+/* --end--
+* CSS file for LaTeX formulas.
+*/
+
+/* Formulas */
+.formula {
+	text-align: center;
+	font-family: "Droid Serif", "DejaVu Serif", "STIX", serif;
+	margin: 1.2em 0;
+}
+span.formula {
+	white-space: nowrap;
+}
+div.formula {
+	padding: 0.5ex;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Basic features */
+a.eqnumber {
+	display: inline-block;
+	float: right;
+	clear: right;
+	font-weight: bold;
+}
+span.unknown {
+	color: #800000;
+}
+span.ignored, span.arraydef {
+	display: none;
+}
+.formula i {
+	letter-spacing: 0.1ex;
+}
+
+/* Alignment */
+.align-left, .align-l {
+	text-align: left;
+}
+.align-right, .align-r {
+	text-align: right;
+}
+.align-center, .align-c {
+	text-align: center;
+}
+
+/* Structures */
+span.overline, span.bar {
+	text-decoration: overline;
+}
+.fraction, .fullfraction {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+}
+.fraction .fraction {
+	font-size: 80%;
+	line-height: 100%;
+}
+span.numerator {
+	display: block;
+}
+span.denominator {
+	display: block;
+	padding: 0ex;
+	border-top: thin solid;
+}
+sup.numerator, sup.unit {
+	font-size: 70%;
+	vertical-align: 80%;
+}
+sub.denominator, sub.unit {
+	font-size: 70%;
+	vertical-align: -20%;
+}
+span.sqrt {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0.1ex;
+}
+sup.root {
+	font-size: 70%;
+	position: relative;
+	left: 1.4ex;
+}
+span.radical {
+	display: inline-block;
+	padding: 0ex;
+	font-size: 150%;
+	vertical-align: top;
+}
+span.root {
+	display: inline-block;
+	border-top: thin solid;
+	padding: 0ex;
+	vertical-align: middle;
+}
+span.symbol {
+	line-height: 125%;
+	font-size: 125%;
+}
+span.bigsymbol {
+	line-height: 150%;
+	font-size: 150%;
+}
+span.largesymbol {
+	font-size: 175%;
+}
+span.hugesymbol {
+	font-size: 200%;
+}
+span.scripts {
+	display: inline-table;
+	vertical-align: middle;
+}
+.script {
+	display: table-row;
+	text-align: left;
+	line-height: 150%;
+}
+span.limits {
+	display: inline-table;
+	vertical-align: middle;
+}
+.limit {
+	display: table-row;
+	line-height: 99%;
+}
+sup.limit, sub.limit {
+	line-height: 100%;
+}
+span.symbolover {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	float: right;
+	right: 100%;
+	bottom: 0.5em;
+	width: 0px;
+}
+span.withsymbol {
+	display: inline-block;
+}
+span.symbolunder {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	float: right;
+	right: 80%;
+	top: 0.3em;
+	width: 0px;
+}
+
+/* Environments */
+span.array, span.bracketcases, span.binomial, span.environment {
+	display: inline-table;
+	text-align: center;
+	border-collapse: collapse;
+	margin: 0em;
+	vertical-align: middle;
+}
+span.arrayrow, span.binomrow {
+	display: table-row;
+	padding: 0ex;
+	border: 0ex;
+}
+span.arraycell, span.bracket, span.case, span.binomcell, span.environmentcell {
+	display: table-cell;
+	padding: 0ex 0.2ex;
+	line-height: 99%;
+	border: 0ex;
+}
+/*
+* CSS file for LaTeX formulas, extra stuff:
+* binomials, vertical braces, stackrel, fonts and colors.
+*/
+
+/* Inline binomials */
+span.binom {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 80%;
+}
+span.binomstack {
+	display: block;
+	padding: 0em;
+}
+
+/* Over- and underbraces */
+span.overbrace {
+	border-top: 2pt solid;
+}
+span.underbrace {
+	border-bottom: 2pt solid;
+}
+
+/* Stackrel */
+span.stackrel {
+	display: inline-block;
+	text-align: center;
+}
+span.upstackrel {
+	display: block;
+	padding: 0em;
+	font-size: 80%;
+	line-height: 64%;
+	position: relative;
+	top: 0.15em;
+
+}
+span.downstackrel {
+	display: block;
+	vertical-align: bottom;
+	padding: 0em;
+}
+
+/* Fonts */
+span.mathsf, span.textsf {
+	font-style: normal;
+	font-family: sans-serif;
+}
+span.mathrm, span.textrm {
+	font-style: normal;
+	font-family: serif;
+}
+span.text, span.textnormal {
+	font-style: normal;
+}
+span.textipa {
+	color: #008080;
+}
+span.fraktur {
+	font-family: "Lucida Blackletter", eufm10, blackletter;
+}
+span.blackboard {
+	font-family: Blackboard, msbm10, serif;
+}
+span.scriptfont {
+	font-family: "Monotype Corsiva", "Apple Chancery", "URW Chancery L", cursive;
+	font-style: italic;
+}
+
+/* Colors */
+span.colorbox {
+	display: inline-block;
+	padding: 5px;
+}
+span.fbox {
+	display: inline-block;
+	border: thin solid black;
+	padding: 2px;
+}
+span.boxed, span.framebox {
+	display: inline-block;
+	border: thin solid black;
+	padding: 5px;
+}
+
+
+</style>
 
     <div class="card mx-2 my-2 bg-dark" id="segment-0">
         <div class="ml-2 my-2 text-light">
@@ -15,6 +294,9 @@
     <div class="mx-2" id="segment-1"><div class="ml-2"><div class="document" id="zusammenfassung-der-protokolle">
 <h1 class="title">Zusammenfassung Der Protokolle</h1>
 
+<!-- todo
+Kapitel 3:
+pruefsummen ausarbeiten Folien (12-15) -->
 <div class="mx-5 my-3"><div class="ml-1"><div class="section" id="tcp">
 <h1>TCP</h1>
 <p class="text-info">Transmission Control Protocol</p>
@@ -34,6 +316,9 @@
 </div>
 </div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="funktionsweise">
 <h2 class="text-secondary">Funktionsweise</h2>
+<ul class="simple">
+<li class="text-primary"><a class="text-white bg-info" class="reference internal" href="#tcp-transport">tcp_transport</a></li>
+</ul>
 </div>
 </div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="anwendungsbeispiele">
 <h2 class="text-secondary">Anwendungsbeispiele</h2>
@@ -70,6 +355,9 @@
 </div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id3">
 <h2 class="text-secondary">Funktionsweise</h2>
 <p class="text-info">1:1 Weitergabe der IP-Pakete mit wenig Overhead (einfaches Protokoll)</p>
+<ul class="simple">
+<li class="text-primary"><a class="text-white bg-info" class="reference internal" href="#udp-transport">udp_transport</a></li>
+</ul>
 </div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="header">
 <h3 class="text-secondary">Header:</h3>
 <ul class="simple">
@@ -190,6 +478,35 @@ in das im header angegebene Format.</p>
 </div>
 </div>
 </div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="udp-pdu-format">
+<span id="udp-transport"></span><h1>UDP PDU-Format</h1>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id14">
+<h2 class="text-secondary">Header</h2>
+<ul class="simple">
+<li class="text-primary">Quellportnummer</li>
+<li class="text-primary">Zielprtnummer</li>
+<li class="text-primary">Laenge</li>
+<li class="text-primary">Pruefsumme</li>
+</ul>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="pruefsummen">
+<h2 class="text-secondary">Pruefsummen</h2>
+<p class="text-info">Pruefsummen werden fuer <a class="text-white bg-info" class="reference internal" href="#udp-transport">udp_transport</a> und <a class="text-white bg-info" class="reference internal" href="#tcp-transport">tcp_transport</a> gleich berechnet.</p>
+<p class="text-info">Siehe das <a class="text-white bg-info" class="reference external" href="../html/pruefsummen.html">Pruefsummen Dokument</a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="sicherer-transfer-durch-transferdienste">
+<h1>Sicherer Transfer Durch Transferdienste</h1>
+<p class="text-info">Bei Datentransfer koennen Fehler Auftreten.
+Um sicherzustellen, dass trotzdem Daten richtig versendet werden wurden Dienste wie <a class="text-white bg-info" class="reference external" href="../html/dienste.html">rdt</a>
+eingefuehrt.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
 </div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="pipeline-protokolle">
 <h1>Pipeline Protokolle</h1>
 </div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="motivation">
@@ -286,9 +603,167 @@ fuer das letzte Paket das korrekt in richtiger Reihenfolge empfangen wurde</li>
 </tr>
 </tbody>
 </table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 </div>
 </div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="tcp-pdu-format">
-<h1>TCP PDU-Format</h1>
+<span id="tcp-transport"></span><h1>TCP PDU-Format</h1>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id15">
+<h2 class="text-secondary">Header</h2>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="komponenten">
+<h3 class="text-secondary">Komponenten</h3>
+<ul class="simple">
+<li class="text-primary">Source Port</li>
+<li class="text-primary">Destination Port</li>
+<li class="text-primary">Sequence Number</li>
+<li class="text-primary">ACK-Number</li>
+<li class="text-primary">Header Length</li>
+<li class="text-primary">Optionale zusaetzliche Kontrollinformationen</li>
+<li class="text-primary">Receive Window (Zeitfenster???)</li>
+<li class="text-primary"><dl class="first docutils">
+<dt>Flags indizieren wann die obigigen Komponenten gueltig sind</dt>
+<dd><ul class="first last">
+<li class="text-primary">U: Urg data pointer gestzt</li>
+<li class="text-primary">A: ACK gesetzt</li>
+<li class="text-primary">P: Dateb sofort an die Anwendungsschicht weiterreichen</li>
+<li class="text-primary">S: Sequenznummer???</li>
+<li class="text-primary">F: ???</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="tcp-timeout">
+<h1>TCP Timeout</h1>
+<p class="text-info">Problem:</p>
+<p class="text-info">Ist das Timeout zu klein entstehen unnoetige Wiederholungen, ist es zu gross wird zu lange gewartet.</p>
+<p class="text-info">Man muss also ein Timeout waehlen, dass maginal groesser als die RTT ist.</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="rtt-schaetzen">
+<h2 class="text-secondary">RTT schaetzen</h2>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="samplertt">
+<h3 class="text-secondary">SampleRTT:</h3>
+<ul class="simple">
+<li class="text-primary">Zeitspanne eines Semgments bis zum Empfang des ACKS (Wiederholungen nicht beruecksichtigt)</li>
+<li class="text-primary">Problem: aendert sich bei jedem Paket</li>
+</ul>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="estimatedrtt">
+<h3 class="text-secondary">EstimatedRTT:</h3>
+<div class="formula text-success">
+<i>EstimatedRTT</i>≔(1 − <i>α</i>)⋅<i>EstimatedRTT</i> + <i>α</i>⋅<i>SampleRTT</i>
+</div>
+<ul class="simple">
+<li class="text-primary">Exponentiell gewichteter Durchschnitt: Einfluss alter Messungen faellt exponentiell</li>
+<li class="text-primary">typisher alpha wert: 0.125</li>
+</ul>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="acks">
+<h2 class="text-secondary">ACKS</h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="47%" />
+<col width="53%" />
+</colgroup>
+<thead class="text-success text-center bg-dark" valign="bottom">
+<tr><th class="head">Ereigniss Empfaenger</th>
+<th class="head">Aktion Empfaenger</th>
+</tr>
+</thead>
+<tbody class="text-dark bg-light" valign="top">
+<tr><td>erhalte Seq.Nr. vorherigen Daten bestaetigt</td>
+<td>warte 500ms auf neues Segment, sonst sende ACK</td>
+</tr>
+<tr><td>erhalte Seq.Nr. vorherigen Daten nicht bestaetigt</td>
+<td>bestaetige unbestaetigte Segmente</td>
+</tr>
+<tr><td>erhalte zu grosse Seq.Nr. (Luecke entdeckt)</td>
+<td>sende &quot;duplicate ACK&quot; mit der naechsten erwarteten Seq.Nr.</td>
+</tr>
+<tr><td>erhalte Seq.Nr. die eine Luecke fuellt</td>
+<td>wenn Segment zu beginn der Luecke startet sende ACK</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="tcp-fast-retransmit">
+<h1>TCP fast retransmit</h1>
+<p class="text-info">fast retransmit ist eine weitere Regel fuer den Sender:</p>
+<p class="text-info">Wenn der Sender 3 ACKs fuer das selbe Segment erhaelt, sendet er das danach nachfolgende Segment noch einmal, sogar schon
+vor dem Ablaufen des Timers.</p>
+<p class="text-info">Dadurch wird die Zeit bis zum neuem Senden des Segments verringert.
+Inspiriert durch das senden von &quot;duplicate ACK&quot;</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="tcp-flusskontrolle">
+<h1>TCP FLusskontrolle</h1>
+<p class="text-info">Zur optimierung des Prozesses sollten Sende- und Leserate moeglichst nahe beieinander liegen.</p>
+<p class="text-info">Bei der Flusskontrolle sendet der Empfaenger beim jedem Segment den Wert des Fensters mit</p>
+<p class="text-info">Fuer den Sender gilt das Gleichgewicht:</p>
+<div class="formula text-success">
+<i>LastByteSent</i> − <i>LastByteAcked</i> ≤ <i>WindowSize</i>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="tcp-verbindungsverwaltung">
+<h1>TCP Verbindungsverwaltung</h1>
+<!-- todo
+Kap3 63-68 -->
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="tcp-client">
+<h1>TCP Client</h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="tcp-server">
+<h1>TCP Server</h1>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="tcp-ueberlastungskontrolle">
+<h1>TCP Ueberlastungskontrolle</h1>
+<p class="text-info">fuer eine Einleitung zur Ueberlastungskontrolle, siehe das <a class="text-white bg-info" class="reference external" href="../html/ueberlastungskontrolle.html">Dokument zu Ueberlastungskontrolle</a>.</p>
+<!-- todo
+Kap3 76-80 -->
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="fairness">
+<h1>Fairness</h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead class="text-success text-center bg-dark" valign="bottom">
+<tr><th class="head">TCP</th>
+<th class="head">UDP</th>
+</tr>
+</thead>
+<tbody class="text-dark bg-light" valign="top">
+<tr><td>lll</td>
+<td>lll</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div></div>

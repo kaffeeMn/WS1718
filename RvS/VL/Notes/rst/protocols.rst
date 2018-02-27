@@ -1,6 +1,11 @@
 Zusammenfassung Der Protokolle
 ##############################
 
+.. todo
+    Kapitel 3:
+    pruefsummen ausarbeiten Folien (12-15)
+
+
 TCP
 ===
 
@@ -22,6 +27,8 @@ Charakterisitker
 
 Funktionsweise
 --------------
+
+* tcp_transport_
 
 Anwendungsbeispiele
 -------------------
@@ -59,6 +66,8 @@ Funktionsweise
 --------------
 
 1:1 Weitergabe der IP-Pakete mit wenig Overhead (einfaches Protokoll)
+
+* udp_transport_
 
 Header:
 ^^^^^^^
@@ -180,6 +189,37 @@ erlaubt verwalten von Ordnern auf Serverseite, auslesen von Mail-Headern, suchen
 
 |
 
+.. _udp_transport:
+
+UDP PDU-Format
+==============
+
+Header
+------
+
+* Quellportnummer
+* Zielprtnummer
+* Laenge
+* Pruefsumme
+
+Pruefsummen
+-----------
+
+Pruefsummen werden fuer udp_transport_ und tcp_transport_ gleich berechnet.
+
+Siehe das `Pruefsummen Dokument <../html/pruefsummen.html>`_
+
+|
+
+Sicherer Transfer Durch Transferdienste
+=======================================
+
+Bei Datentransfer koennen Fehler Auftreten.
+Um sicherzustellen, dass trotzdem Daten richtig versendet werden wurden Dienste wie `rdt <../html/dienste.html>`_ 
+eingefuehrt.
+
+|
+
 Pipeline Protokolle
 ===================
 
@@ -257,7 +297,138 @@ Fenster, Pipelining                 Effizienzsteigerung und Flusskontrolle
 ================================    =========================================================
 
 
+|
+
+.. _tcp_transport:
 
 TCP PDU-Format
 ==============
+
+Header
+------
+
+Komponenten
+^^^^^^^^^^^
+
+* Source Port
+* Destination Port
+* Sequence Number
+* ACK-Number
+* Header Length
+* Optionale zusaetzliche Kontrollinformationen
+* Receive Window (Zeitfenster???)
+
+* Flags indizieren wann die obigigen Komponenten gueltig sind
+    + U: Urg data pointer gestzt
+    + A: ACK gesetzt
+    + P: Dateb sofort an die Anwendungsschicht weiterreichen
+    + S: Sequenznummer???
+    + F: ???
+
+|
+
+TCP Timeout
+===========
+
+Problem:
+
+Ist das Timeout zu klein entstehen unnoetige Wiederholungen, ist es zu gross wird zu lange gewartet.
+
+Man muss also ein Timeout waehlen, dass maginal groesser als die RTT ist.
+
+RTT schaetzen
+-------------
+
+SampleRTT:
+^^^^^^^^^^
+
+* Zeitspanne eines Semgments bis zum Empfang des ACKS (Wiederholungen nicht beruecksichtigt)
+* Problem: aendert sich bei jedem Paket
+
+EstimatedRTT:
+^^^^^^^^^^^^^
+
+.. math::
+    
+    EstimatedRTT \coloneqq ( 1 - \alpha ) \cdot EstimatedRTT + \alpha \cdot SampleRTT
+
+* Exponentiell gewichteter Durchschnitt: Einfluss alter Messungen faellt exponentiell
+* typisher alpha wert: 0.125
+
+ACKS
+----
+
+===================================================         ==========================================================
+Ereigniss Empfaenger                                        Aktion Empfaenger
+===================================================         ==========================================================
+erhalte Seq.Nr. vorherigen Daten bestaetigt                 warte 500ms auf neues Segment, sonst sende ACK
+erhalte Seq.Nr. vorherigen Daten nicht bestaetigt           bestaetige unbestaetigte Segmente
+erhalte zu grosse Seq.Nr. (Luecke entdeckt)                 sende "duplicate ACK" mit der naechsten erwarteten Seq.Nr.
+erhalte Seq.Nr. die eine Luecke fuellt                      wenn Segment zu beginn der Luecke startet sende ACK
+===================================================         ==========================================================
+
+|
+
+TCP fast retransmit
+===================
+
+fast retransmit ist eine weitere Regel fuer den Sender:
+
+Wenn der Sender 3 ACKs fuer das selbe Segment erhaelt, sendet er das danach nachfolgende Segment noch einmal, sogar schon
+vor dem Ablaufen des Timers.
+
+Dadurch wird die Zeit bis zum neuem Senden des Segments verringert.
+Inspiriert durch das senden von "duplicate ACK"
+
+|
+
+TCP FLusskontrolle
+==================
+
+Zur optimierung des Prozesses sollten Sende- und Leserate moeglichst nahe beieinander liegen.
+
+Bei der Flusskontrolle sendet der Empfaenger beim jedem Segment den Wert des Fensters mit
+
+Fuer den Sender gilt das Gleichgewicht:
+
+.. math::
+
+    LastByteSent - LastByteAcked \leq WindowSize
+
+|
+
+TCP Verbindungsverwaltung
+=========================
+
+.. todo 
+    Kap3 63-68
+
+|
+
+TCP Client
+==========
+
+|
+
+TCP Server
+==========
+
+TCP Ueberlastungskontrolle
+==========================
+
+fuer eine Einleitung zur Ueberlastungskontrolle, siehe das `Dokument zu Ueberlastungskontrolle <../html/ueberlastungskontrolle.html>`_.
+
+.. todo
+    Kap3 76-80
+
+|
+
+Fairness
+========
+
+============================================    ============================================
+TCP                                             UDP
+============================================    ============================================
+lll                                             lll
+============================================    ============================================
 
