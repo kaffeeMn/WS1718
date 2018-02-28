@@ -490,14 +490,40 @@ Die aktuelle Sendefenstergroesse wird als Minimum aus 2 Werten bestimmt
 Algorithmus
 -----------
 
+Ziel ist es Ueberlast zu vermeiden und im Fall einer Ueberlast, diese moeglichst gering zu halten.
+
+1. Grenzwert setzen. Anfangs auf ein MSS, danach bei jeder Bestaetigung um ein MSS erhoehen. Die Fenstergroesse (CongWin)
+   muss aber unterhalb eines Thresholds liegen.
+2. (bei Threshold ueberschreitung) wenn bei der Inkrementierung um ein MSS der Threshold ueberschritten wird, 
+   wird nur noch um MSS/CongWin erhoeht.
+3. (bei Timeout) wenn ein Timeout erfolgt wird der Threshold auf die haelfte von CongWin gesetzt und CongWin auf 1 gesetzt
+   fortfahren bei 1.
+
+Der Schritt 1 leitet eine exponentielle Wachstumsphase ein, Ab dem Threshold folgt eine fast liniare Wachstumsphase mit 2.
+
 |
 
 Fairness
 ========
 
-============================================    ============================================
-TCP                                             UDP
-============================================    ============================================
-lll                                             lll
-============================================    ============================================
+Ziel
+----
+
+Wenn K TCP-Verbindungen eine Leitung mit der Kapazitaet R teilen, die zum Flaschenhalt wird, sollte jede Verbindung eine
+Kapazitaet von ugefaehr R/K erhalten.
+
+
+TCP vs UDP
+----------
+
++-------------------------------------------------------+------------------------------------------------------------+
+| TCP                                                   | UDP                                                        |
++=======================================================+============================================================+
+| Anwendung kann mehrere TCP-Verbindungen gleichzeitig  |   Anwendungen nutzen oft UDP                               |
++-------------------------------------------------------+------------------------------------------------------------+
+| Kapazitaet R, 9 Verbind. neue Anwendung erhaelt mehr, |   UDP erlaubt es beliebig viele Pakete ins Netz zu pumpen  |
+| je mehr Verbindungen sie paralel eroeffnet            |                                                            |
++-------------------------------------------------------+------------------------------------------------------------+
+| Parallele Verbindungen sind nicht fair                |   UDP ist generell nicht fair gegenueber TCP               |
++-------------------------------------------------------+------------------------------------------------------------+
 

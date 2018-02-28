@@ -916,6 +916,16 @@ Die aktuelle Sendefenstergroesse wird als Minimum aus 2 Werten bestimmt</p>
 </div>
 </div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="algorithmus">
 <h2 class="text-secondary">Algorithmus</h2>
+<p class="text-info">Ziel ist es Ueberlast zu vermeiden und im Fall einer Ueberlast, diese moeglichst gering zu halten.</p>
+<ol class="arabic simple">
+<li class="text-primary">Grenzwert setzen. Anfangs auf ein MSS, danach bei jeder Bestaetigung um ein MSS erhoehen. Die Fenstergroesse (CongWin)
+muss aber unterhalb eines Thresholds liegen.</li>
+<li class="text-primary">(bei Threshold ueberschreitung) wenn bei der Inkrementierung um ein MSS der Threshold ueberschritten wird,
+wird nur noch um MSS/CongWin erhoeht.</li>
+<li class="text-primary">(bei Timeout) wenn ein Timeout erfolgt wird der Threshold auf die haelfte von CongWin gesetzt und CongWin auf 1 gesetzt
+fortfahren bei 1.</li>
+</ol>
+<p class="text-info">Der Schritt 1 leitet eine exponentielle Wachstumsphase ein, Ab dem Threshold folgt eine fast liniare Wachstumsphase mit 2.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -923,10 +933,17 @@ Die aktuelle Sendefenstergroesse wird als Minimum aus 2 Werten bestimmt</p>
 </div>
 </div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="fairness">
 <h1>Fairness</h1>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id17">
+<h2 class="text-secondary">Ziel</h2>
+<p class="text-info">Wenn K TCP-Verbindungen eine Leitung mit der Kapazitaet R teilen, die zum Flaschenhalt wird, sollte jede Verbindung eine
+Kapazitaet von ugefaehr R/K erhalten.</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="tcp-vs-udp">
+<h2 class="text-secondary">TCP vs UDP</h2>
 <table border="1" class="docutils">
 <colgroup>
-<col width="50%" />
-<col width="50%" />
+<col width="48%" />
+<col width="52%" />
 </colgroup>
 <thead class="text-success text-center bg-dark" valign="bottom">
 <tr><th class="head">TCP</th>
@@ -934,11 +951,19 @@ Die aktuelle Sendefenstergroesse wird als Minimum aus 2 Werten bestimmt</p>
 </tr>
 </thead>
 <tbody class="text-dark bg-light" valign="top">
-<tr><td>lll</td>
-<td>lll</td>
+<tr><td>Anwendung kann mehrere TCP-Verbindungen gleichzeitig</td>
+<td>Anwendungen nutzen oft UDP</td>
+</tr>
+<tr><td>Kapazitaet R, 9 Verbind. neue Anwendung erhaelt mehr,
+je mehr Verbindungen sie paralel eroeffnet</td>
+<td>UDP erlaubt es beliebig viele Pakete ins Netz zu pumpen</td>
+</tr>
+<tr><td>Parallele Verbindungen sind nicht fair</td>
+<td>UDP ist generell nicht fair gegenueber TCP</td>
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </div></div>
