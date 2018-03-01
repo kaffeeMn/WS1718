@@ -1,0 +1,251 @@
+<link rel="stylesheet" type="text/css" href="/home/max/Documents/BootStrap/bootstrap-4.0.0-dist/css/bootstrap.css"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.14: http://docutils.sourceforge.net/" />
+<title>Die Vermittlungsschicht</title>
+
+
+    <div class="card mx-2 my-2 bg-dark" id="segment-0">
+        <div class="ml-2 my-2 text-light">
+            <h1>Welcome</h1>
+            <h3>This HTML-page was created using the version 1.2 of the rstToHtml.py script with BootStrap</h3>
+        </div>
+    </div>
+    <div class="mx-2" id="segment-1"><div class="ml-2"><div class="document" id="die-vermittlungsschicht">
+<h1 class="title">Die Vermittlungsschicht</h1>
+
+<div class="mx-5 my-3"><div class="ml-1"><div class="section" id="router">
+<h1>Router</h1>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="weiterleitung">
+<h2 class="text-secondary">Weiterleitung</h2>
+<p class="text-info">Weitergabe eines Paketes vom Eingang eines Routers zum richtigen Aussgang.</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="routing">
+<h2 class="text-secondary">Routing</h2>
+<p class="text-info">Bestimmung der Route vom Sender zum Empfaenger durch einen routing Algorithmus.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="virtueller-kanal-atm">
+<h1>Virtueller Kanal ATM</h1>
+<p class="text-info">Virtueller Kanal kann genutzt werden, um vorab fuer eine Menge von Pakettransfers gemeinsame Recourcen zu reservieren.
+Dabei soll eien Konfuguration folgende Probleme erleichtern</p>
+<ul class="simple">
+<li class="text-primary">Echtzeitgarantien</li>
+<li class="text-primary">Mindestdurchsatz</li>
+<li class="text-primary">verzoegerungszeit-Grenzen</li>
+<li class="text-primary">begrenzte Varitionen der Verzoegerungszeit</li>
+</ul>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="ip-vs-dienstklassen">
+<h2 class="text-secondary">IP vs. Dienstklassen</h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="17%" />
+<col width="17%" />
+<col width="10%" />
+<col width="13%" />
+<col width="17%" />
+<col width="14%" />
+</colgroup>
+<thead class="text-success text-center bg-dark" valign="bottom">
+<tr><th class="head">Architektur</th>
+<th class="head">Dienstmodell</th>
+<th class="head">Bandbreite</th>
+<th class="head">Verlust</th>
+<th class="head">Reihenfolge</th>
+<th class="head">Zeit</th>
+<th class="head">Ueberlasthinweis</th>
+</tr>
+</thead>
+<tbody class="text-dark bg-light" valign="top">
+<tr><td>Internet</td>
+<td>best effort</td>
+<td>keine Zusicherung</td>
+<td>ja</td>
+<td>bel.</td>
+<td>nicht eingehalten</td>
+<td>nein</td>
+</tr>
+<tr><td>ATM</td>
+<td>CBR</td>
+<td>konstant</td>
+<td>nein</td>
+<td>eingehalten</td>
+<td>eingehalten</td>
+<td>keine Ueberlast</td>
+</tr>
+<tr><td>ATM</td>
+<td>VBR</td>
+<td>garantiert</td>
+<td>nein</td>
+<td>eingehalten</td>
+<td>eingehalten</td>
+<td>keine Ueberlast</td>
+</tr>
+<tr><td>ATM</td>
+<td>ABR</td>
+<td>garantiertes Min.</td>
+<td>ja</td>
+<td>eingehalten</td>
+<td>nicht eingehalten</td>
+<td>ja</td>
+</tr>
+<tr><td>ATM</td>
+<td>UBR</td>
+<td>keine Zusicherung</td>
+<td>ja</td>
+<td>eingehalten</td>
+<td>nicht eingehalten</td>
+<td>nein</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="virtual-circuit">
+<h2 class="text-secondary">Virtual Circuit</h2>
+<p class="text-info">VC-Nummern werden anstelle von Zieladressen verwendet. Router verwalten eine Tabelle mir Interface- und VC- Nummern.</p>
+<p class="text-info">e.g.:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="23%" />
+<col width="30%" />
+<col width="17%" />
+</colgroup>
+<thead class="text-success text-center bg-dark" valign="bottom">
+<tr><th class="head">Eingangsinterface</th>
+<th class="head">Eingangs-VC</th>
+<th class="head">Ausgangsinterface</th>
+<th class="head">Ausgangs-VC</th>
+</tr>
+</thead>
+<tbody class="text-dark bg-light" valign="top">
+<tr><td>1</td>
+<td>12</td>
+<td>3</td>
+<td>22</td>
+</tr>
+<tr><td>2</td>
+<td>63</td>
+<td>1</td>
+<td>18</td>
+</tr>
+<tr><td>(...)</td>
+<td>(...)</td>
+<td>(...)</td>
+<td>(...)</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="datagramm">
+<h1>Datagramm</h1>
+<p class="text-info">Wenn wir das Internet als ein Datagramm-Netz betrachten moechten, muessen folgende Begebenheiten existieren.</p>
+<ul class="simple">
+<li class="text-primary"><dl class="first docutils">
+<dt>Jeges Paket muss seienn Weg durch das Netz finden koennen</dt>
+<dd><ul class="first last">
+<li class="text-primary">Zieladresse</li>
+<li class="text-primary">Pakete mit identischer Quell- und Zieladresse koennen unterschiedliche Wege waehlen</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li class="text-primary"><dl class="first docutils">
+<dt>Jeder Router auf dem Weg zum Ziel entscheidet, wohin das Paket weitergeleitet wird</dt>
+<dd><ul class="first last">
+<li class="text-primary">Informationen ueber Netzstruktur und Netzzustand muessen erteilt werden</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p class="text-info">Die Loesung dieser Probleme sollen durch Routing Algorithmen geloest werden.</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="netze">
+<h2 class="text-secondary">Netze</h2>
+<p class="text-info">Weiterleiten von Datagrammen</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="86%" />
+<col width="14%" />
+</colgroup>
+<thead class="text-success text-center bg-dark" valign="bottom">
+<tr><th class="head">Zieladressbereich</th>
+<th class="head">Ausgang</th>
+</tr>
+</thead>
+<tbody class="text-dark bg-light" valign="top">
+<tr><td>11001000 00010111 00010*** <strong>*****</strong></td>
+<td>0</td>
+</tr>
+<tr><td>11001000 00010111 00011000 <strong>*****</strong></td>
+<td>1</td>
+</tr>
+<tr><td>11001000 00010111 00011*** <strong>*****</strong></td>
+<td>2</td>
+</tr>
+<tr><td>sonst</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id1">
+<h1>Router</h1>
+<p class="text-info">Ein Router hat zwei Hauptfunktionen</p>
+<ol class="arabic simple">
+<li class="text-primary">Vermittlung von IP-Paketen und deren Weiterleitung</li>
+<li class="text-primary">Pflege von Routingtabellen per PIP/OSPF/BGP</li>
+</ol>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="aufbau">
+<h2 class="text-secondary">Aufbau</h2>
+<p class="text-info">Router-Input-Ports leiten forwarding tables zum Routing-Processor (high-seed switching fabric) forwarding tables werden
+dann durch die Router-Output-Ports weitergeleitet.</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="eingang-port">
+<h3 class="text-secondary">Eingang-Port</h3>
+<p class="text-info">3 Schichten:</p>
+<ol class="arabic simple">
+<li class="text-primary"><dl class="first docutils">
+<dt>line termination</dt>
+<dd><ul class="first last">
+<li class="text-primary">Bituebertragung</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li class="text-primary"><dl class="first docutils">
+<dt>link layer protocol</dt>
+<dd><ul class="first last">
+<li class="text-primary">Protokoll der Sicherungsschicht</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li class="text-primary"><dl class="first docutils">
+<dt>loppkup, forwarding (denzentralisiertes switching)</dt>
+<dd><ul class="first last">
+<li class="text-primary">durch die Zieladrese wird der zugehoerige Ausgang aus der Routing-Tabelle gelesen</li>
+<li class="text-primary">Ziel: Bearbeitung der</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</div></div>
