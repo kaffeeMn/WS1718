@@ -1,61 +1,18 @@
 Die Vermittlungsschicht
 #######################
 
-Router
-======
+Table Of Contents
+#################
 
-Weiterleitung
--------------
+* Datagramm_
+* Router_
+* Routing_Algorithmen_
+* Internet_
 
-Weitergabe eines Paketes vom Eingang eines Routers zum richtigen Aussgang.
+Skript
+######
 
-Routing
--------
-
-Bestimmung der Route vom Sender zum Empfaenger durch einen routing Algorithmus.
-
-|
-
-Virtueller Kanal ATM
-====================
-
-Virtueller Kanal kann genutzt werden, um vorab fuer eine Menge von Pakettransfers gemeinsame Recourcen zu reservieren.
-Dabei soll eien Konfuguration folgende Probleme erleichtern
-
-* Echtzeitgarantien
-* Mindestdurchsatz
-* verzoegerungszeit-Grenzen
-* begrenzte Varitionen der Verzoegerungszeit
-
-IP vs. Dienstklassen
---------------------
-
-==============  =================== =================== =========== ==============  =================== ================
-Architektur     Dienstmodell        Bandbreite          Verlust     Reihenfolge     Zeit                Ueberlasthinweis
-==============  =================== =================== =========== ==============  =================== ================
-Internet        best effort         keine Zusicherung   ja          bel.            nicht eingehalten   nein
-ATM             CBR                 konstant            nein        eingehalten     eingehalten         keine Ueberlast
-ATM             VBR                 garantiert          nein        eingehalten     eingehalten         keine Ueberlast
-ATM             ABR                 garantiertes Min.   ja          eingehalten     nicht eingehalten   ja
-ATM             UBR                 keine Zusicherung   ja          eingehalten     nicht eingehalten   nein
-==============  =================== =================== =========== ==============  =================== ================
-
-Virtual Circuit
----------------
-
-VC-Nummern werden anstelle von Zieladressen verwendet. Router verwalten eine Tabelle mir Interface- und VC- Nummern.
-
-e.g.:
-
-=================== =============== =================== ===========
-Eingangsinterface   Eingangs-VC     Ausgangsinterface   Ausgangs-VC
-=================== =============== =================== ===========
-1                   12              3                   22
-2                   63              1                   18
-(...)               (...)           (...)               (...)
-=================== =============== =================== ===========
-
-|
+.. _Datagramm:
 
 Datagramm
 =========
@@ -88,6 +45,8 @@ sonst                                       3
 
 |
 
+.. _Router:
+
 Router
 ======
 
@@ -95,6 +54,16 @@ Ein Router hat zwei Hauptfunktionen
 
 1. Vermittlung von IP-Paketen und deren Weiterleitung
 2. Pflege von Routingtabellen per PIP/OSPF/BGP
+
+Weiterleitung
+-------------
+
+Weitergabe eines Paketes vom Eingang eines Routers zum richtigen Aussgang.
+
+Routing
+-------
+
+Bestimmung der Route vom Sender zum Empfaenger durch einen routing Algorithmus.
 
 Aufbau
 ------
@@ -145,6 +114,50 @@ Blockierungen entstehen dann, wenn zu viele Pakete fuer einen Ausgang generiert 
 Dies kann zu Wartezeiten, Buffer-Ueberlaufe und Paketverluste fuehren
 
 |
+
+Virtueller Kanal ATM
+====================
+
+Virtueller Kanal kann genutzt werden, um vorab fuer eine Menge von Pakettransfers gemeinsame Recourcen zu reservieren.
+Dabei soll eien Konfuguration folgende Probleme erleichtern
+
+* Echtzeitgarantien
+* Mindestdurchsatz
+* verzoegerungszeit-Grenzen
+* begrenzte Varitionen der Verzoegerungszeit
+
+IP vs. Dienstklassen
+--------------------
+
+==============  =================== =================== =========== ==============  =================== ================
+Architektur     Dienstmodell        Bandbreite          Verlust     Reihenfolge     Zeit                Ueberlasthinweis
+==============  =================== =================== =========== ==============  =================== ================
+Internet        best effort         keine Zusicherung   ja          bel.            nicht eingehalten   nein
+ATM             CBR                 konstant            nein        eingehalten     eingehalten         keine Ueberlast
+ATM             VBR                 garantiert          nein        eingehalten     eingehalten         keine Ueberlast
+ATM             ABR                 garantiertes Min.   ja          eingehalten     nicht eingehalten   ja
+ATM             UBR                 keine Zusicherung   ja          eingehalten     nicht eingehalten   nein
+==============  =================== =================== =========== ==============  =================== ================
+
+Virtual Circuit
+---------------
+
+VC-Nummern werden anstelle von Zieladressen verwendet. Router verwalten eine Tabelle mir Interface- und VC- Nummern.
+
+e.g.:
+
+=================== =============== =================== ===========
+Eingangsinterface   Eingangs-VC     Ausgangsinterface   Ausgangs-VC
+=================== =============== =================== ===========
+1                   12              3                   22
+2                   63              1                   18
+(...)               (...)           (...)               (...)
+=================== =============== =================== ===========
+
+|
+
+
+.. _Routing_Algorithmen:
 
 Routing-Algorithmen
 ===================
@@ -253,3 +266,65 @@ eine Distanztabelle Erstellen.
 
 Leitungsvermittlungsalgorithmen
 ===============================
+
+Dijkstra
+    * minimale Anzahl an Hops
+Least Loaded Path (LLP)
+    * am wenigsten benutzte Kanaele
+Maximum Free Circuit (MFC)
+    * groesste Anzahl freier Kanaele
+
+|
+
+
+.. _Internet:
+
+Routing im Internet
+===================
+
+In der Realitaet weicht Routing von der Graphentheorie, durch Fehlerbehaftung ab.
+
+Probleme sind
+
+* Dimension
+    + Ziele koennen nicht alle in Routingtabellen gespeichert werden
+    + schon der Nachrichtenaustausch zum Routing kann das Netz ueberlsten
+* Autonomie
+    + Das Internet ist ein Netz von Netzen und jeder Admin moechte das Routing in seinem Netz kontrollieren
+
+Das Routing im Internet wird durch das IP-Protokoll ermoeglicht (siehe `Protokolle <../html/protocols.html>`_)
+
+Interclass Domain Routing (IP)
+------------------------------
+
+* Adresszuweisung fuer Originastionen durch ISP
+* a.b.c.d/NumNetworkBits
+
+Uebergang v4, v6(IP)
+--------------------
+
+Der Uebergang von v4 auf v6 laeuft seit Jahren
+
+um beide moeglichkeiten zeitgleich zu betreiben gibt es zwei Moeglichkeiten
+
+1. Dual Stack
+2. Tunneling
+
+Dual Stack
+^^^^^^^^^^
+
+Router verstehen v4 und v6. Informationen werden uebersetzt. Zusaetzliche Informationen von v6 gehen dabei verloren.
+
+Tunneling
+^^^^^^^^^
+
+Beispiel fuer Tunneling ist Austausch bei dem Router B, E sowohl v4, als auch v6 verstehen. Router A,F verstehen nur v6, 
+Router C,D verstehen nur v4.
+Tunneling beschreibt den Vorgang, indem v6 Daten in einem v4 Paket von B ueber C und D nach E verschickt werden, wo sie
+dann entpackt und als v6 Daten weiterversendet werden, oder umgekehrt.
+Dabei werden keine Zusaetzlichen Informationen aus v6 verloren.
+
+ICMP
+----
+
+Internet Control Message Protocol

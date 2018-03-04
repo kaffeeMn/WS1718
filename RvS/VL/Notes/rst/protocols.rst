@@ -1,10 +1,19 @@
 Zusammenfassung Der Protokolle
 ##############################
 
-.. todo
-    Kapitel 3:
-    pruefsummen ausarbeiten Folien (12-15)
+Table of Contents
+#################
 
+* TCP_
+* UDP_
+* Mail_Protokolle_
+* Pipeline_Protokolle_
+* IP_
+
+Skript
+######
+
+.. _TCP:
 
 TCP
 ===
@@ -40,6 +49,8 @@ Anwendungsbeispiele
 * streaming
 
 |
+
+.. _UDP:
 
 UDP
 ===
@@ -120,6 +131,8 @@ Client und Server komunizieren wie folgt:
 8. FTP sendet Kontrollinformationen seperat
 
 |
+
+.. _Mail_Protokolle:
 
 SMTP (E-Mail)
 =============
@@ -219,6 +232,8 @@ Um sicherzustellen, dass trotzdem Daten richtig versendet werden wurden Dienste 
 eingefuehrt.
 
 |
+
+.. _Pipeline_Protokolle:
 
 Pipeline Protokolle
 ===================
@@ -527,3 +542,81 @@ TCP vs UDP
 | Parallele Verbindungen sind nicht fair                |   UDP ist generell nicht fair gegenueber TCP               |
 +-------------------------------------------------------+------------------------------------------------------------+
 
+
+.. _IP:
+
+IP v4
+=====
+
+Im Folgendem wird die Version 4 des IP behandelt.
+
+Charakterisitker
+----------------
+
+* Verbindungsloser Datagramm - Dienst
+* Nachrichten werden im "store and forward" - Prinzip von der Quelle zum Ziel weiter geleitet (e.g. Brief)
+* IP-Pakete sind die PDUs des IP Protokoll
+* Nachrichten koennen segmentiert und in einer Serie von IP-Paketen hinterlegt werden
+* Jedes IP-Paket wird seperat weiter geleitet
+
+|
+
+* **Keine Reihenfolgentreue**
+* **Keine Garantie maximaler Latenz**
+* **Keine Verlustfreiheit**
+
+Adressen
+--------
+
+IP Adressen sind 32-Bit Adressen, aufgeteilt in 4 Byte-Gruppen.
+Es existiert jeweils eine Adresse fuer jedes Netz-Interface des Knotens (Router)
+
+Interclass Domain 
+
+Header
+-----------
+
+* Version
+* Header Laenge
+* Type of Service
+* Datagramm Laenge
+* 16-Bit Identifizierer
+* Flags
+* 13_Bit Fragmentierungs Offset
+* Time To Live
+* Hoeherschichtiges Protokoll
+* Header-Pruefsumme
+* 32-Bit-Quelladresse
+* 32-Bit-Zieladresse
+* Optionen
+* Daten
+
+Fragmentierung / Reassemblierung
+--------------------------------
+
+Im Zielrechner werden die IP-Pakete vor der Weitergabe an die Transportschicht zusammengesetzt.
+Ist ein Paket verloren gibt es keine Weitergabe)
+
+Der Offset kennzeichnet wo das Datagramm geteilt wurde.
+
+IP v6
+=====
+
+Im Folgendem wird die Version 6 des IP behandelt.
+
+Die Motivation von IP v6 ist die Anzahl an Adressen. Eine IP v6 Adresse umfasst 128 Bit.
+
+Header
+------
+
+Obwohl die Adressen groesser sind ist der Header "schmaler"
+
+* Version
+* Prioritaet
+* Flusslabel
+* payload length
+* next header
+* hop limit
+* Quelladresse
+* Zieladresse
+* Daten
