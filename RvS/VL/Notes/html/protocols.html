@@ -296,6 +296,9 @@ span.boxed, span.framebox {
 
 <div class="mx-5 my-3"><div class="ml-1"><div class="section" id="zusammenfassung-der-protokolle">
 <h1>Zusammenfassung Der Protokolle</h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 </div>
 </div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="table-of-contents">
 <h1>Table of Contents</h1>
@@ -1004,8 +1007,8 @@ je mehr Verbindungen sie paralel eroeffnet</td>
 Es existiert jeweils eine Adresse fuer jedes Netz-Interface des Knotens (Router)</p>
 <p class="text-info">Interclass Domain</p>
 </div>
-</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="paketformat">
-<h3 class="text-secondary">Paketformat</h3>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id22">
+<h3 class="text-secondary">Header</h3>
 <ul class="simple">
 <li class="text-primary">Version</li>
 <li class="text-primary">Header Laenge</li>
@@ -1016,7 +1019,7 @@ Es existiert jeweils eine Adresse fuer jedes Netz-Interface des Knotens (Router)
 <li class="text-primary">13_Bit Fragmentierungs Offset</li>
 <li class="text-primary">Time To Live</li>
 <li class="text-primary">Hoeherschichtiges Protokoll</li>
-<li class="text-primary">Hwader-Pruefsumme</li>
+<li class="text-primary">Header-Pruefsumme</li>
 <li class="text-primary">32-Bit-Quelladresse</li>
 <li class="text-primary">32-Bit-Zieladresse</li>
 <li class="text-primary">Optionen</li>
@@ -1033,6 +1036,112 @@ Ist ein Paket verloren gibt es keine Weitergabe)</p>
 </div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="ip-v6">
 <h2 class="text-secondary">IP v6</h2>
 <p class="text-info">Im Folgendem wird die Version 6 des IP behandelt.</p>
+<p class="text-info">Die Motivation von IP v6 ist die Anzahl an Adressen. Eine IP v6 Adresse umfasst 128 Bit.</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id23">
+<h3 class="text-secondary">Header</h3>
+<p class="text-info">Obwohl die Adressen groesser sind ist der Header &quot;schmaler&quot;</p>
+<ul class="simple">
+<li class="text-primary">Version</li>
+<li class="text-primary">Prioritaet</li>
+<li class="text-primary">Flusslabel</li>
+<li class="text-primary">payload length</li>
+<li class="text-primary">next header</li>
+<li class="text-primary">hop limit</li>
+<li class="text-primary">Quelladresse</li>
+<li class="text-primary">Zieladresse</li>
+<li class="text-primary">Daten</li>
+</ul>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="icmp">
+<h3 class="text-secondary">ICMP</h3>
+<p class="text-info">Internet Control Messaging Protocol</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id24">
+<h4 class="text-secondary">Funktionsweise</h4>
+<ul class="simple">
+<li class="text-primary">sendet Informationen ueber Fehlerberichte und Echo-Nachrichten</li>
+<li class="text-primary">ICMP Nachrichten werden in IP-Paketen uebertragen</li>
+<li class="text-primary"><dl class="first docutils">
+<dt>Bestehend aus</dt>
+<dd><ul class="first last">
+<li class="text-primary">Type</li>
+<li class="text-primary">Code</li>
+<li class="text-primary">erste 8 Byte des IP-Paketes, dass den Fehler verursacht hat</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="dhcp">
+<h3 class="text-secondary">DHCP</h3>
+<p class="text-info">Dynamic Host Configuration Protocol</p>
+<p class="text-info">Das DHCP wird in einem lokalem Netz eingesetzt. Host kommen dazu und werden entfernt, daher findet eine dynamische
+zuweisung von Adrassen statt.
+DHCP kuemmert sich also um den Administationsaufwand eines Lokalen Servers.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id25">
+<span id="as"></span><h2 class="text-secondary">AS</h2>
+<p class="text-info">Autonome Subnetze</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="rip">
+<h3 class="text-secondary">RIP</h3>
+<p class="text-info">Routing Information Protocoll</p>
+<p class="text-info">RIP is ein Distanzvektor-Protokoll
+* Hopanzahl wird als Weglaenge gewaehlt. (max 15 Hops)
+* Routing Tabellen werden alle 30 Sekunfen ausgetauscht
+* Maximal 25 Eintraege
+* Austausch zwischen Nachbarn (Hopzahl 1) werden als Advertisments bezeichnet</p>
+<p class="text-info">RIP-Nachrichten werden in UDP-Datgrammen uebertragen. Wenn ein Router in 180 Sekunden nicht von seinem Nachbarn hoert
+wird angenommen, dass dieser nicht erreichbar ist. Router koennen bei nachbarn nach Kosten von Zielen fragen.</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="ospf">
+<h3 class="text-secondary">OSPF</h3>
+<p class="text-info">Open Shortest Path First</p>
+<p class="text-info">OSPF ist ein Link-State Protokoll
+* Aufbau einer Darstellung der Gesamt-Topologie durch Kommunikation mit allen Routern
+* Dijkstra Algorithmus wird zentral ausgefuehrt</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="routin-zwischen-as-iner-domain-routing">
+<h2 class="text-secondary">Routin zwischen AS / Iner-Domain Routing</h2>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="bgp">
+<h3 class="text-secondary">BGP</h3>
+<p class="text-info">Border Gateway Protocol</p>
+<p class="text-info">BGP is ein Pfadvektor - Protokoll
+* aehnlich zu RIP (Distanzvektor)
+* Jedes Gatewaz sendet per Broadcast bekannte Pfade zu seinen Nachbarn</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="multicast-routing">
+<h3 class="text-secondary">Multicast Routing</h3>
+<p class="text-info">Multicast Routing ist eine Form der Gruppenkomunication, bei der an alle Mitglieder einer Empfaenger Gruppe Informationen
+vermittelt werden.</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="grundidee">
+<h4 class="text-secondary">Grundidee</h4>
+<p class="text-info">Es wird ein Spannbaum von Sender zum Empfaenger bestimmt. Router werden als Baumknoten betrachtet. Router duplizieren die
+Pakete.</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="ip-gruppen">
+<h4 class="text-secondary">IP Gruppen</h4>
+<p class="text-info">Ziel Adresse ist eine Gruppenadresse.
+Das Problem ist das Adresse und Empfaengermenge vorher vereinbart werden muessen.
+Das Internet Group Management Protocol (IGMP) wird dabei angewandt</p>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="igmp">
+<h3 class="text-secondary">IGMP</h3>
+<p class="text-info">Internet Group Management Protocol</p>
+<ol class="arabic simple">
+<li class="text-primary">Der Router fragt seine Hosts, ob sie beteiligt sind</li>
+<li class="text-primary">Die Hosts sagen dem Router, dass sie an einer Gruppe beteiligt sein moechten</li>
+</ol>
+</div>
 </div>
 </div>
 </div>

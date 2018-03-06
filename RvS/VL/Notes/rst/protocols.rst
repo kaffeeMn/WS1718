@@ -1,6 +1,8 @@
 Zusammenfassung Der Protokolle
 ##############################
 
+|
+
 Table of Contents
 #################
 
@@ -620,3 +622,101 @@ Obwohl die Adressen groesser sind ist der Header "schmaler"
 * Quelladresse
 * Zieladresse
 * Daten
+
+ICMP
+----
+
+Internet Control Messaging Protocol
+
+Funktionsweise
+^^^^^^^^^^^^^^
+
+* sendet Informationen ueber Fehlerberichte und Echo-Nachrichten
+* ICMP Nachrichten werden in IP-Paketen uebertragen
+* Bestehend aus
+    + Type
+    + Code
+    + erste 8 Byte des IP-Paketes, dass den Fehler verursacht hat
+
+DHCP
+----
+
+Dynamic Host Configuration Protocol
+
+Das DHCP wird in einem lokalem Netz eingesetzt. Host kommen dazu und werden entfernt, daher findet eine dynamische 
+zuweisung von Adrassen statt.
+DHCP kuemmert sich also um den Administationsaufwand eines Lokalen Servers.
+
+|
+
+.. _AS:
+
+AS
+==
+
+Autonome Subnetze
+
+RIP
+---
+
+Routing Information Protocoll
+
+RIP is ein Distanzvektor-Protokoll 
+* Hopanzahl wird als Weglaenge gewaehlt. (max 15 Hops)
+* Routing Tabellen werden alle 30 Sekunfen ausgetauscht
+* Maximal 25 Eintraege
+* Austausch zwischen Nachbarn (Hopzahl 1) werden als Advertisments bezeichnet
+
+RIP-Nachrichten werden in UDP-Datgrammen uebertragen. Wenn ein Router in 180 Sekunden nicht von seinem Nachbarn hoert
+wird angenommen, dass dieser nicht erreichbar ist. Router koennen bei nachbarn nach Kosten von Zielen fragen.
+
+OSPF
+----
+
+Open Shortest Path First
+
+OSPF ist ein Link-State Protokoll
+* Aufbau einer Darstellung der Gesamt-Topologie durch Kommunikation mit allen Routern
+* Dijkstra Algorithmus wird zentral ausgefuehrt 
+
+|
+
+Routin zwischen AS / Iner-Domain Routing
+========================================
+
+BGP
+---
+
+Border Gateway Protocol
+
+BGP is ein Pfadvektor - Protokoll
+* aehnlich zu RIP (Distanzvektor)
+* Jedes Gatewaz sendet per Broadcast bekannte Pfade zu seinen Nachbarn 
+
+Multicast Routing
+-----------------
+
+Multicast Routing ist eine Form der Gruppenkomunication, bei der an alle Mitglieder einer Empfaenger Gruppe Informationen
+vermittelt werden.
+
+Grundidee
+^^^^^^^^^
+
+Es wird ein Spannbaum von Sender zum Empfaenger bestimmt. Router werden als Baumknoten betrachtet. Router duplizieren die
+Pakete.
+
+IP Gruppen
+^^^^^^^^^^
+
+Ziel Adresse ist eine Gruppenadresse.
+Das Problem ist das Adresse und Empfaengermenge vorher vereinbart werden muessen.
+Das Internet Group Management Protocol (IGMP) wird dabei angewandt
+
+IGMP
+----
+
+Internet Group Management Protocol
+
+
+1. Der Router fragt seine Hosts, ob sie beteiligt sind
+2. Die Hosts sagen dem Router, dass sie an einer Gruppe beteiligt sein moechten

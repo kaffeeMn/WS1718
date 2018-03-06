@@ -296,6 +296,9 @@ span.boxed, span.framebox {
 
 <div class="mx-5 my-3"><div class="ml-1"><div class="section" id="die-vermittlungsschicht">
 <h1>Die Vermittlungsschicht</h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 </div>
 </div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="table-of-contents">
 <h1>Table Of Contents</h1>
@@ -1127,9 +1130,35 @@ dann entpackt und als v6 Daten weiterversendet werden, oder umgekehrt.
 Dabei werden keine Zusaetzlichen Informationen aus v6 verloren.</p>
 </div>
 </div>
-</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="icmp">
-<h3 class="text-secondary">ICMP</h3>
-<p class="text-info">Internet Control Message Protocol</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="nat">
+<h3 class="text-secondary">NAT</h3>
+<p class="text-info">Network Address Translation</p>
+<p class="text-info">Interne Quell- und Zieladressen sind Verschieden zu ihren interen Adressen.</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="adressumsetzung">
+<h4 class="text-secondary">Adressumsetzung</h4>
+<p class="text-info">Szenario</p>
+<ul class="simple">
+<li class="text-primary">Host 10.0.0.1 Sendet ein Datagramm zi 128.119.40.186, 80</li>
+<li class="text-primary">NAT-Router aendert die Quelladresse des Datagramms zon 10.0.0.1, x zu 138.76.29.7, n und vermerkt diese in der Tabelle</li>
+<li class="text-primary">Router erhaelt eine Antwort an 138.76.29.7, n</li>
+<li class="text-primary">Router aendert die Zieladresse von 138.76.29.7, n zu 10.0.0.1, x</li>
+</ul>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="nachteile">
+<h4 class="text-secondary">Nachteile</h4>
+<p class="text-info">NAT ist eine Notloesung und verursacht Probleme</p>
+<ul class="simple">
+<li class="text-primary">Portnummern sollen Anwendungsprozesse adressieren und  nicht Hosts</li>
+<li class="text-primary">Es gibt Protokolle, bei denen mehrere Portnummern im Zusammenhang benutzt werden und von APDU ausgetauscht werden.
+Hierbei muss NAT in APDUs einsicht erhalten und dort die Portnummern umsetzen.</li>
+<li class="text-primary">Nicht sichtbare Hosts sind nicht zwingend geschuetzt</li>
+</ul>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="routingtabellen-pflege">
+<h3 class="text-secondary">Routingtabellen Pflege</h3>
+<p class="text-info">Das Internet kann auch als ein Netz autonomer Subnetze(AS) bezeichnet werden.
+Fuer das Routing im AS und zwischen AS benoetigt es weitere Protokolle. (siehe <a class="text-white bg-info" class="reference external" href="../html/protocols.html">Protokolle</a>)</p>
 </div>
 </div>
 </div>

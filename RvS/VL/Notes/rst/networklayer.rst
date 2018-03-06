@@ -1,6 +1,8 @@
 Die Vermittlungsschicht
 #######################
 
+|
+
 Table Of Contents
 #################
 
@@ -324,7 +326,35 @@ Tunneling beschreibt den Vorgang, indem v6 Daten in einem v4 Paket von B ueber C
 dann entpackt und als v6 Daten weiterversendet werden, oder umgekehrt.
 Dabei werden keine Zusaetzlichen Informationen aus v6 verloren.
 
-ICMP
-----
+NAT
+---
 
-Internet Control Message Protocol
+Network Address Translation
+
+Interne Quell- und Zieladressen sind Verschieden zu ihren interen Adressen.
+
+Adressumsetzung
+^^^^^^^^^^^^^^^
+
+Szenario
+
+* Host 10.0.0.1 Sendet ein Datagramm zi 128.119.40.186, 80
+* NAT-Router aendert die Quelladresse des Datagramms zon 10.0.0.1, x zu 138.76.29.7, n und vermerkt diese in der Tabelle
+* Router erhaelt eine Antwort an 138.76.29.7, n
+* Router aendert die Zieladresse von 138.76.29.7, n zu 10.0.0.1, x
+
+Nachteile
+^^^^^^^^^
+
+NAT ist eine Notloesung und verursacht Probleme
+
+* Portnummern sollen Anwendungsprozesse adressieren und  nicht Hosts
+* Es gibt Protokolle, bei denen mehrere Portnummern im Zusammenhang benutzt werden und von APDU ausgetauscht werden.
+  Hierbei muss NAT in APDUs einsicht erhalten und dort die Portnummern umsetzen.
+* Nicht sichtbare Hosts sind nicht zwingend geschuetzt
+
+Routingtabellen Pflege
+----------------------
+
+Das Internet kann auch als ein Netz autonomer Subnetze(AS) bezeichnet werden.
+Fuer das Routing im AS und zwischen AS benoetigt es weitere Protokolle. (siehe `Protokolle <../html/protocols.html>`_)
