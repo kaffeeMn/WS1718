@@ -1,0 +1,545 @@
+<link rel="stylesheet" type="text/css" href="/home/max/Documents/BootStrap/bootstrap-4.0.0-dist/css/bootstrap.css"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.14: http://docutils.sourceforge.net/" />
+<title>&lt;string&gt;</title>
+<style type="text/css">
+
+/*
+*   math2html: convert LaTeX equations to HTML output.
+*
+*   Copyright (C) 2009,2010 Alex Fernández
+*
+*   Released under the terms of the `2-Clause BSD license'_, in short:
+*   Copying and distribution of this file, with or without modification,
+*   are permitted in any medium without royalty provided the copyright
+*   notice and this notice are preserved.
+*   This file is offered as-is, without any warranty.
+*
+* .. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause
+*
+*   Based on eLyXer: convert LyX source files to HTML output.
+*   http://elyxer.nongnu.org/
+*/
+/* --end--
+* CSS file for LaTeX formulas.
+*/
+
+/* Formulas */
+.formula {
+	text-align: center;
+	font-family: "Droid Serif", "DejaVu Serif", "STIX", serif;
+	margin: 1.2em 0;
+}
+span.formula {
+	white-space: nowrap;
+}
+div.formula {
+	padding: 0.5ex;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Basic features */
+a.eqnumber {
+	display: inline-block;
+	float: right;
+	clear: right;
+	font-weight: bold;
+}
+span.unknown {
+	color: #800000;
+}
+span.ignored, span.arraydef {
+	display: none;
+}
+.formula i {
+	letter-spacing: 0.1ex;
+}
+
+/* Alignment */
+.align-left, .align-l {
+	text-align: left;
+}
+.align-right, .align-r {
+	text-align: right;
+}
+.align-center, .align-c {
+	text-align: center;
+}
+
+/* Structures */
+span.overline, span.bar {
+	text-decoration: overline;
+}
+.fraction, .fullfraction {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+}
+.fraction .fraction {
+	font-size: 80%;
+	line-height: 100%;
+}
+span.numerator {
+	display: block;
+}
+span.denominator {
+	display: block;
+	padding: 0ex;
+	border-top: thin solid;
+}
+sup.numerator, sup.unit {
+	font-size: 70%;
+	vertical-align: 80%;
+}
+sub.denominator, sub.unit {
+	font-size: 70%;
+	vertical-align: -20%;
+}
+span.sqrt {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0.1ex;
+}
+sup.root {
+	font-size: 70%;
+	position: relative;
+	left: 1.4ex;
+}
+span.radical {
+	display: inline-block;
+	padding: 0ex;
+	font-size: 150%;
+	vertical-align: top;
+}
+span.root {
+	display: inline-block;
+	border-top: thin solid;
+	padding: 0ex;
+	vertical-align: middle;
+}
+span.symbol {
+	line-height: 125%;
+	font-size: 125%;
+}
+span.bigsymbol {
+	line-height: 150%;
+	font-size: 150%;
+}
+span.largesymbol {
+	font-size: 175%;
+}
+span.hugesymbol {
+	font-size: 200%;
+}
+span.scripts {
+	display: inline-table;
+	vertical-align: middle;
+}
+.script {
+	display: table-row;
+	text-align: left;
+	line-height: 150%;
+}
+span.limits {
+	display: inline-table;
+	vertical-align: middle;
+}
+.limit {
+	display: table-row;
+	line-height: 99%;
+}
+sup.limit, sub.limit {
+	line-height: 100%;
+}
+span.symbolover {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	float: right;
+	right: 100%;
+	bottom: 0.5em;
+	width: 0px;
+}
+span.withsymbol {
+	display: inline-block;
+}
+span.symbolunder {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	float: right;
+	right: 80%;
+	top: 0.3em;
+	width: 0px;
+}
+
+/* Environments */
+span.array, span.bracketcases, span.binomial, span.environment {
+	display: inline-table;
+	text-align: center;
+	border-collapse: collapse;
+	margin: 0em;
+	vertical-align: middle;
+}
+span.arrayrow, span.binomrow {
+	display: table-row;
+	padding: 0ex;
+	border: 0ex;
+}
+span.arraycell, span.bracket, span.case, span.binomcell, span.environmentcell {
+	display: table-cell;
+	padding: 0ex 0.2ex;
+	line-height: 99%;
+	border: 0ex;
+}
+/*
+* CSS file for LaTeX formulas, extra stuff:
+* binomials, vertical braces, stackrel, fonts and colors.
+*/
+
+/* Inline binomials */
+span.binom {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 80%;
+}
+span.binomstack {
+	display: block;
+	padding: 0em;
+}
+
+/* Over- and underbraces */
+span.overbrace {
+	border-top: 2pt solid;
+}
+span.underbrace {
+	border-bottom: 2pt solid;
+}
+
+/* Stackrel */
+span.stackrel {
+	display: inline-block;
+	text-align: center;
+}
+span.upstackrel {
+	display: block;
+	padding: 0em;
+	font-size: 80%;
+	line-height: 64%;
+	position: relative;
+	top: 0.15em;
+
+}
+span.downstackrel {
+	display: block;
+	vertical-align: bottom;
+	padding: 0em;
+}
+
+/* Fonts */
+span.mathsf, span.textsf {
+	font-style: normal;
+	font-family: sans-serif;
+}
+span.mathrm, span.textrm {
+	font-style: normal;
+	font-family: serif;
+}
+span.text, span.textnormal {
+	font-style: normal;
+}
+span.textipa {
+	color: #008080;
+}
+span.fraktur {
+	font-family: "Lucida Blackletter", eufm10, blackletter;
+}
+span.blackboard {
+	font-family: Blackboard, msbm10, serif;
+}
+span.scriptfont {
+	font-family: "Monotype Corsiva", "Apple Chancery", "URW Chancery L", cursive;
+	font-style: italic;
+}
+
+/* Colors */
+span.colorbox {
+	display: inline-block;
+	padding: 5px;
+}
+span.fbox {
+	display: inline-block;
+	border: thin solid black;
+	padding: 2px;
+}
+span.boxed, span.framebox {
+	display: inline-block;
+	border: thin solid black;
+	padding: 5px;
+}
+
+
+</style>
+
+    <div class="card mx-2 my-2 bg-dark" id="segment-0">
+        <div class="ml-2 my-2 text-light">
+            <h1>Welcome</h1>
+            <h3>This HTML-page was created using the version 1.2 of the rstToHtml.py script with BootStrap</h3>
+        </div>
+    </div>
+    <div class="mx-2" id="segment-1"><div class="ml-2"><div class="document">
+
+
+<div class="mx-5 my-3"><div class="ml-1"><div class="section" id="die-sicherungsschicht">
+<h1>Die Sicherungsschicht</h1>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="table-of-contents">
+<h1>Table of Contents</h1>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="skript">
+<h1>Skript</h1>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="verfaelschungserkennung">
+<h2 class="text-secondary">Verfaelschungserkennung</h2>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="prinzip">
+<h3 class="text-secondary">Prinzip</h3>
+<p class="text-info">Abbildung von Daten auf erweiterte Daten. Die dabei entstehende Redundanz wird benutzt um Verfaelschungen zu erkennen.</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="verfahen">
+<h3 class="text-secondary">Verfahen</h3>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="parity">
+<h4 class="text-secondary">Parity</h4>
+<p class="text-info">Erkennung eines 1-Bit-Fehlers:</p>
+<p class="text-info">0001 0000 haette das Parity bit 1, da die anzahl an einsen ungerade ist.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="text-info">In zwei dimensionalen Arrays liefe dies wie folgt ab</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="38%" />
+<col width="29%" />
+</colgroup>
+<thead class="text-light text-center bg-dark" valign="bottom">
+<tr><th class="head">&nbsp;</th>
+<th class="head">array</th>
+<th class="head">parity bit row</th>
+</tr>
+</thead>
+<tbody class="text-dark bg-light" valign="top">
+<tr><td>&nbsp;</td>
+<td>10101</td>
+<td>1</td>
+</tr>
+<tr><td>&nbsp;</td>
+<td>11110</td>
+<td>0</td>
+</tr>
+<tr><td>&nbsp;</td>
+<td>01110</td>
+<td>1</td>
+</tr>
+<tr><td>parity bit column</td>
+<td>00101</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p class="text-info">Ein Fehler kann ueber die Tabelle im 2. array erkannt werden.</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="internet-pruefsumme">
+<h4 class="text-secondary">Internet Pruefsumme</h4>
+<p class="text-info">Sender</p>
+<ul class="simple">
+<li class="text-primary">Interpretiert jedes Segment als Sequenz von 16-Bit Zahlen</li>
+<li class="text-primary">Pruefsumme ist die 1er-Komplementsumme des Segmentinhalts</li>
+<li class="text-primary">Sender schreibt die Pruefsumme in das entsprechende Feld</li>
+</ul>
+<p class="text-info">Empfaenger</p>
+<ul class="simple">
+<li class="text-primary">Berechnet die Pruefsumme des empfangenen Segments</li>
+<li class="text-primary">Vergleicht die berechnete Pruefsumme mit dem Wert im Pruefsummenfeld</li>
+</ul>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="crc">
+<h4 class="text-secondary">CRC</h4>
+<p class="text-info">Cycle Redundancy Check</p>
+<p class="text-info">Ein DatenPaket D wird als Binaerzahl gesehen, eine Binaerzahl liegt als Generatorzahl G fest.</p>
+<p class="text-info">Ziel:</p>
+<div class="formula text-success">
+<span class="environment"><span class="arrayrow">
+<span class="arraycell align-r text-left">
+<i>R</i> = <i>rest</i>((2<sup><i>r</i></sup>*<i>D</i>) ⁄ <i>G</i>)
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+<i>E</i> =  &lt; <i>D</i>, <i>R</i> &gt; %<i>G</i> = 0
+</span>
+
+</span>
+</span>
+</div>
+<p class="text-info">e.g.:</p>
+<div class="formula text-success">
+<span class="environment"><span class="arrayrow">
+<span class="arraycell align-r text-left">
+<i>D</i> = 1101011011, <i>G</i> = 10011
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+2<sup><i>r</i> + 1</sup>*<i>D</i> = 2<sup>4</sup>*<i>D</i> = 11010110110000
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+<i>R</i> = 1110
+</span>
+
+</span>
+</span>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="fec">
+<h4 class="text-secondary">FEC</h4>
+<p class="text-info">Forward Error Correction</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="text-info">FEC wendet Hamming-Code an.
+Grundidee bei Hamming-Code ist:</p>
+<p class="text-info">Bitstring D der Laenge m, hat r Redundanzbits, die mitgeschickt werden muessen</p>
+<p class="text-info">Hamming- Distanz d eines Codes:</p>
+<p class="text-info">kleinste anzahl von Bits in welchen sich zwei Elemente des Codes unterscheiden.</p>
+<p class="text-info">Hamming Verfahren:</p>
+<ol class="arabic simple">
+<li class="text-primary">Betrachte das Quellzeichenformat D und berechne r</li>
+<li class="text-primary">Ordne die Check-Bits in D so ein, dass die Positionsnummer die Check-Bits genau eine 1 in der Binaerdarstellung haben.
+(0..1, ... , 1..0)</li>
+<li class="text-primary">Berechne die Check-Bits sukzessiv:
+Fuer das Check-Bit an der Position 2^i werden alle Positionen des Code Strings betrachtet, in denen die i-te Komponente
+der Positionsnummer 1 ist.</li>
+<li class="text-primary">Zaehle die unter diesen Positionen im Code-String auftetenden Einsen</li>
+<li class="text-primary">Ergaenze zur geraden Paritaet</li>
+<li class="text-primary"><dl class="first docutils">
+<dt>Der Code-String wird gesendet. Auf der Empfaengerseite werden die Check-Bits daufhin geprueft, ob die Paritaet stimmt.</dt>
+<dd><ul class="first last">
+<li class="text-primary">Wenn Ja: Akzeptiere das Code-Wort</li>
+<li class="text-primary"><dl class="first docutils">
+<dt>Wenn Nein:</dt>
+<dd><ul class="first last">
+<li class="text-primary">ein falsches Check-Bit: Das Checkbit selbst ist falsch</li>
+<li class="text-primary">mehr als ein Check-Bit ist falsch: Das Datenbit ist falsch</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="mac">
+<h2 class="text-secondary">MAC</h2>
+<p class="text-info">Media Access Control</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="ideale-loesung">
+<h3 class="text-secondary">Ideale Loesung</h3>
+<!-- todo ab Kap 4 Folie 24 -->
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="aloha">
+<h2 class="text-secondary">Aloha</h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="lan">
+<h2 class="text-secondary">LAN</h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="arp">
+<h2 class="text-secondary">ARP</h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="ethernet">
+<h2 class="text-secondary">Ethernet</h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="hubs">
+<h2 class="text-secondary">Hubs</h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="bruecken">
+<h2 class="text-secondary">Bruecken</h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="switches">
+<h2 class="text-secondary">Switches</h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="vlan">
+<h2 class="text-secondary">VLAN</h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="wlan">
+<h2 class="text-secondary">WLAN</h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="ppp">
+<h2 class="text-secondary">PPP</h2>
+</div>
+</div>
+</div>
+</div></div>
+</div></div>

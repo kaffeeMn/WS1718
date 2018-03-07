@@ -1,0 +1,1167 @@
+<link rel="stylesheet" type="text/css" href="/home/max/Documents/BootStrap/bootstrap-4.0.0-dist/css/bootstrap.css"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.14: http://docutils.sourceforge.net/" />
+<title>&lt;string&gt;</title>
+<style type="text/css">
+
+/*
+*   math2html: convert LaTeX equations to HTML output.
+*
+*   Copyright (C) 2009,2010 Alex Fernández
+*
+*   Released under the terms of the `2-Clause BSD license'_, in short:
+*   Copying and distribution of this file, with or without modification,
+*   are permitted in any medium without royalty provided the copyright
+*   notice and this notice are preserved.
+*   This file is offered as-is, without any warranty.
+*
+* .. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause
+*
+*   Based on eLyXer: convert LyX source files to HTML output.
+*   http://elyxer.nongnu.org/
+*/
+/* --end--
+* CSS file for LaTeX formulas.
+*/
+
+/* Formulas */
+.formula {
+	text-align: center;
+	font-family: "Droid Serif", "DejaVu Serif", "STIX", serif;
+	margin: 1.2em 0;
+}
+span.formula {
+	white-space: nowrap;
+}
+div.formula {
+	padding: 0.5ex;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Basic features */
+a.eqnumber {
+	display: inline-block;
+	float: right;
+	clear: right;
+	font-weight: bold;
+}
+span.unknown {
+	color: #800000;
+}
+span.ignored, span.arraydef {
+	display: none;
+}
+.formula i {
+	letter-spacing: 0.1ex;
+}
+
+/* Alignment */
+.align-left, .align-l {
+	text-align: left;
+}
+.align-right, .align-r {
+	text-align: right;
+}
+.align-center, .align-c {
+	text-align: center;
+}
+
+/* Structures */
+span.overline, span.bar {
+	text-decoration: overline;
+}
+.fraction, .fullfraction {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+}
+.fraction .fraction {
+	font-size: 80%;
+	line-height: 100%;
+}
+span.numerator {
+	display: block;
+}
+span.denominator {
+	display: block;
+	padding: 0ex;
+	border-top: thin solid;
+}
+sup.numerator, sup.unit {
+	font-size: 70%;
+	vertical-align: 80%;
+}
+sub.denominator, sub.unit {
+	font-size: 70%;
+	vertical-align: -20%;
+}
+span.sqrt {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0.1ex;
+}
+sup.root {
+	font-size: 70%;
+	position: relative;
+	left: 1.4ex;
+}
+span.radical {
+	display: inline-block;
+	padding: 0ex;
+	font-size: 150%;
+	vertical-align: top;
+}
+span.root {
+	display: inline-block;
+	border-top: thin solid;
+	padding: 0ex;
+	vertical-align: middle;
+}
+span.symbol {
+	line-height: 125%;
+	font-size: 125%;
+}
+span.bigsymbol {
+	line-height: 150%;
+	font-size: 150%;
+}
+span.largesymbol {
+	font-size: 175%;
+}
+span.hugesymbol {
+	font-size: 200%;
+}
+span.scripts {
+	display: inline-table;
+	vertical-align: middle;
+}
+.script {
+	display: table-row;
+	text-align: left;
+	line-height: 150%;
+}
+span.limits {
+	display: inline-table;
+	vertical-align: middle;
+}
+.limit {
+	display: table-row;
+	line-height: 99%;
+}
+sup.limit, sub.limit {
+	line-height: 100%;
+}
+span.symbolover {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	float: right;
+	right: 100%;
+	bottom: 0.5em;
+	width: 0px;
+}
+span.withsymbol {
+	display: inline-block;
+}
+span.symbolunder {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	float: right;
+	right: 80%;
+	top: 0.3em;
+	width: 0px;
+}
+
+/* Environments */
+span.array, span.bracketcases, span.binomial, span.environment {
+	display: inline-table;
+	text-align: center;
+	border-collapse: collapse;
+	margin: 0em;
+	vertical-align: middle;
+}
+span.arrayrow, span.binomrow {
+	display: table-row;
+	padding: 0ex;
+	border: 0ex;
+}
+span.arraycell, span.bracket, span.case, span.binomcell, span.environmentcell {
+	display: table-cell;
+	padding: 0ex 0.2ex;
+	line-height: 99%;
+	border: 0ex;
+}
+/*
+* CSS file for LaTeX formulas, extra stuff:
+* binomials, vertical braces, stackrel, fonts and colors.
+*/
+
+/* Inline binomials */
+span.binom {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 80%;
+}
+span.binomstack {
+	display: block;
+	padding: 0em;
+}
+
+/* Over- and underbraces */
+span.overbrace {
+	border-top: 2pt solid;
+}
+span.underbrace {
+	border-bottom: 2pt solid;
+}
+
+/* Stackrel */
+span.stackrel {
+	display: inline-block;
+	text-align: center;
+}
+span.upstackrel {
+	display: block;
+	padding: 0em;
+	font-size: 80%;
+	line-height: 64%;
+	position: relative;
+	top: 0.15em;
+
+}
+span.downstackrel {
+	display: block;
+	vertical-align: bottom;
+	padding: 0em;
+}
+
+/* Fonts */
+span.mathsf, span.textsf {
+	font-style: normal;
+	font-family: sans-serif;
+}
+span.mathrm, span.textrm {
+	font-style: normal;
+	font-family: serif;
+}
+span.text, span.textnormal {
+	font-style: normal;
+}
+span.textipa {
+	color: #008080;
+}
+span.fraktur {
+	font-family: "Lucida Blackletter", eufm10, blackletter;
+}
+span.blackboard {
+	font-family: Blackboard, msbm10, serif;
+}
+span.scriptfont {
+	font-family: "Monotype Corsiva", "Apple Chancery", "URW Chancery L", cursive;
+	font-style: italic;
+}
+
+/* Colors */
+span.colorbox {
+	display: inline-block;
+	padding: 5px;
+}
+span.fbox {
+	display: inline-block;
+	border: thin solid black;
+	padding: 2px;
+}
+span.boxed, span.framebox {
+	display: inline-block;
+	border: thin solid black;
+	padding: 5px;
+}
+
+
+</style>
+
+    <div class="card mx-2 my-2 bg-dark" id="segment-0">
+        <div class="ml-2 my-2 text-light">
+            <h1>Welcome</h1>
+            <h3>This HTML-page was created using the version 1.2 of the rstToHtml.py script with BootStrap</h3>
+        </div>
+    </div>
+    <div class="mx-2" id="segment-1"><div class="ml-2"><div class="document">
+
+
+<div class="mx-5 my-3"><div class="ml-1"><div class="section" id="die-vermittlungsschicht">
+<h1>Die Vermittlungsschicht</h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="table-of-contents">
+<h1>Table Of Contents</h1>
+<ul class="simple">
+<li class="text-primary"><a class="text-white bg-info" class="reference internal" href="#datagramm">Datagramm</a></li>
+<li class="text-primary"><a class="text-white bg-info" class="reference internal" href="#router">Router</a></li>
+<li class="text-primary"><a class="text-white bg-info" class="reference internal" href="#routing-algorithmen">Routing_Algorithmen</a></li>
+<li class="text-primary"><a class="text-white bg-info" class="reference internal" href="#internet">Internet</a></li>
+</ul>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="skript">
+<h1>Skript</h1>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id1">
+<span id="datagramm"></span><h2 class="text-secondary">Datagramm</h2>
+<p class="text-info">Wenn wir das Internet als ein Datagramm-Netz betrachten moechten, muessen folgende Begebenheiten existieren.</p>
+<ul class="simple">
+<li class="text-primary"><dl class="first docutils">
+<dt>Jeges Paket muss seienn Weg durch das Netz finden koennen</dt>
+<dd><ul class="first last">
+<li class="text-primary">Zieladresse</li>
+<li class="text-primary">Pakete mit identischer Quell- und Zieladresse koennen unterschiedliche Wege waehlen</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li class="text-primary"><dl class="first docutils">
+<dt>Jeder Router auf dem Weg zum Ziel entscheidet, wohin das Paket weitergeleitet wird</dt>
+<dd><ul class="first last">
+<li class="text-primary">Informationen ueber Netzstruktur und Netzzustand muessen erteilt werden</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p class="text-info">Die Loesung dieser Probleme sollen durch Routing Algorithmen geloest werden.</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="netze">
+<h3 class="text-secondary">Netze</h3>
+<p class="text-info">Weiterleiten von Datagrammen</p>
+<p class="text-info">e.g.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="86%" />
+<col width="14%" />
+</colgroup>
+<thead class="text-light text-center bg-dark" valign="bottom">
+<tr><th class="head">Zieladressbereich</th>
+<th class="head">Ausgang</th>
+</tr>
+</thead>
+<tbody class="text-dark bg-light" valign="top">
+<tr><td>11001000 00010111 00010*** <strong>*****</strong></td>
+<td>0</td>
+</tr>
+<tr><td>11001000 00010111 00011000 <strong>*****</strong></td>
+<td>1</td>
+</tr>
+<tr><td>11001000 00010111 00011*** <strong>*****</strong></td>
+<td>2</td>
+</tr>
+<tr><td>sonst</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id2">
+<span id="router"></span><h2 class="text-secondary">Router</h2>
+<p class="text-info">Ein Router hat zwei Hauptfunktionen</p>
+<ol class="arabic simple">
+<li class="text-primary">Vermittlung von IP-Paketen und deren Weiterleitung</li>
+<li class="text-primary">Pflege von Routingtabellen per PIP/OSPF/BGP</li>
+</ol>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="weiterleitung">
+<h3 class="text-secondary">Weiterleitung</h3>
+<p class="text-info">Weitergabe eines Paketes vom Eingang eines Routers zum richtigen Aussgang.</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="routing">
+<h3 class="text-secondary">Routing</h3>
+<p class="text-info">Bestimmung der Route vom Sender zum Empfaenger durch einen routing Algorithmus.</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="aufbau">
+<h3 class="text-secondary">Aufbau</h3>
+<p class="text-info">Router-Input-Ports leiten forwarding tables zum Routing-Processor (high-seed switching fabric) forwarding tables werden
+dann durch die Router-Output-Ports weitergeleitet.</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="eingang-port">
+<h4 class="text-secondary">Eingang-Port</h4>
+<p class="text-info">3 Schichten:</p>
+<ol class="arabic simple">
+<li class="text-primary"><dl class="first docutils">
+<dt>line termination</dt>
+<dd><ul class="first last">
+<li class="text-primary">Bituebertragung</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li class="text-primary"><dl class="first docutils">
+<dt>link layer protocol</dt>
+<dd><ul class="first last">
+<li class="text-primary">Protokoll der Sicherungsschicht</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li class="text-primary"><dl class="first docutils">
+<dt>loppkup, forwarding (denzentralisiertes switching)</dt>
+<dd><ul class="first last">
+<li class="text-primary">durch die Zieladrese wird der zugehoerige Ausgang aus der Routing-Tabelle gelesen</li>
+<li class="text-primary">Ziel: eingehende Pakete entsprechend der Eingangsleitung bearbeiten</li>
+<li class="text-primary">Zwischenspeicherung(queuing): wird angewandt wenn Pakete schneller ankommen, als der Router sie verarbeiten kann</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="switching-fabric-vermittlung">
+<h4 class="text-secondary">Switching Fabric (Vermittlung)</h4>
+<p class="text-info">Es gibt 3 Typen von Switching Fabrics:</p>
+<ol class="arabic simple">
+<li class="text-primary">memory</li>
+<li class="text-primary">bus</li>
+<li class="text-primary">crossbar</li>
+</ol>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="ausgang-port">
+<h4 class="text-secondary">Ausgang-Port</h4>
+<p class="text-info">3 Schichten:</p>
+<ol class="arabic simple">
+<li class="text-primary"><dl class="first docutils">
+<dt>datagramm buffer (queueing)</dt>
+<dd><ul class="first last">
+<li class="text-primary">Buffern von Datgrammen, wenn diese schneller ankommen, als sie uebertragen werden koennen</li>
+<li class="text-primary">(scheduling notwendig)</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li class="text-primary"><dl class="first docutils">
+<dt>link layer protocol</dt>
+<dd><ul class="first last">
+<li class="text-primary">Protokoll der Sicherungsschicht</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li class="text-primary"><dl class="first docutils">
+<dt>line termination</dt>
+<dd><ul class="first last">
+<li class="text-primary">Bituebertragung</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="blockierung">
+<h3 class="text-secondary">Blockierung</h3>
+<p class="text-info">Blockierungen entstehen dann, wenn zu viele Pakete fuer einen Ausgang generiert werden.
+Dies kann zu Wartezeiten, Buffer-Ueberlaufe und Paketverluste fuehren</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="virtueller-kanal-atm">
+<h2 class="text-secondary">Virtueller Kanal ATM</h2>
+<p class="text-info">Virtueller Kanal kann genutzt werden, um vorab fuer eine Menge von Pakettransfers gemeinsame Recourcen zu reservieren.
+Dabei soll eien Konfuguration folgende Probleme erleichtern</p>
+<ul class="simple">
+<li class="text-primary">Echtzeitgarantien</li>
+<li class="text-primary">Mindestdurchsatz</li>
+<li class="text-primary">verzoegerungszeit-Grenzen</li>
+<li class="text-primary">begrenzte Varitionen der Verzoegerungszeit</li>
+</ul>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="ip-vs-dienstklassen">
+<h3 class="text-secondary">IP vs. Dienstklassen</h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="17%" />
+<col width="17%" />
+<col width="10%" />
+<col width="13%" />
+<col width="17%" />
+<col width="14%" />
+</colgroup>
+<thead class="text-light text-center bg-dark" valign="bottom">
+<tr><th class="head">Architektur</th>
+<th class="head">Dienstmodell</th>
+<th class="head">Bandbreite</th>
+<th class="head">Verlust</th>
+<th class="head">Reihenfolge</th>
+<th class="head">Zeit</th>
+<th class="head">Ueberlasthinweis</th>
+</tr>
+</thead>
+<tbody class="text-dark bg-light" valign="top">
+<tr><td>Internet</td>
+<td>best effort</td>
+<td>keine Zusicherung</td>
+<td>ja</td>
+<td>bel.</td>
+<td>nicht eingehalten</td>
+<td>nein</td>
+</tr>
+<tr><td>ATM</td>
+<td>CBR</td>
+<td>konstant</td>
+<td>nein</td>
+<td>eingehalten</td>
+<td>eingehalten</td>
+<td>keine Ueberlast</td>
+</tr>
+<tr><td>ATM</td>
+<td>VBR</td>
+<td>garantiert</td>
+<td>nein</td>
+<td>eingehalten</td>
+<td>eingehalten</td>
+<td>keine Ueberlast</td>
+</tr>
+<tr><td>ATM</td>
+<td>ABR</td>
+<td>garantiertes Min.</td>
+<td>ja</td>
+<td>eingehalten</td>
+<td>nicht eingehalten</td>
+<td>ja</td>
+</tr>
+<tr><td>ATM</td>
+<td>UBR</td>
+<td>keine Zusicherung</td>
+<td>ja</td>
+<td>eingehalten</td>
+<td>nicht eingehalten</td>
+<td>nein</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="virtual-circuit">
+<h3 class="text-secondary">Virtual Circuit</h3>
+<p class="text-info">VC-Nummern werden anstelle von Zieladressen verwendet. Router verwalten eine Tabelle mir Interface- und VC- Nummern.</p>
+<p class="text-info">e.g.:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="23%" />
+<col width="30%" />
+<col width="17%" />
+</colgroup>
+<thead class="text-light text-center bg-dark" valign="bottom">
+<tr><th class="head">Eingangsinterface</th>
+<th class="head">Eingangs-VC</th>
+<th class="head">Ausgangsinterface</th>
+<th class="head">Ausgangs-VC</th>
+</tr>
+</thead>
+<tbody class="text-dark bg-light" valign="top">
+<tr><td>1</td>
+<td>12</td>
+<td>3</td>
+<td>22</td>
+</tr>
+<tr><td>2</td>
+<td>63</td>
+<td>1</td>
+<td>18</td>
+</tr>
+<tr><td>(...)</td>
+<td>(...)</td>
+<td>(...)</td>
+<td>(...)</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id3">
+<span id="routing-algorithmen"></span><h2 class="text-secondary">Routing-Algorithmen</h2>
+<p class="text-info">Ein Netzwerk von Routern kann auch als Graph betrachtet werden. Eine Uebertragung in einem Netz ist dann Effizient, wenn
+der Kuerzeste Weg von einem Knoten(Router) zum anderen innehalb des Graphen gewaehlt wurde.
+In der Graphentheorie existieren solche Algorithmen</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="klassifizierung-von-algorithmen">
+<h3 class="text-secondary">Klassifizierung von Algorithmen</h3>
+<dl class="docutils">
+<dt>Global</dt>
+<dd><ul class="first last simple">
+<li class="text-primary">jede Kante, Kantenverlauf und Kosten werden global erkannt.</li>
+<li class="text-primary">Problem: Skalierbarkeit, Aenderungsaufwand</li>
+</ul>
+</dd>
+<dt>Denzentral</dt>
+<dd><ul class="first last simple">
+<li class="text-primary">Jeder Router kennt nur die Kanten zu senen Nachbarn</li>
+</ul>
+</dd>
+<dt>Statisch</dt>
+<dd><ul class="first last simple">
+<li class="text-primary">Kantenverlauf und Kosten aendern sichr nicht</li>
+</ul>
+</dd>
+<dt>Dynamisch</dt>
+<dd><ul class="first last simple">
+<li class="text-primary">Kanten verschwinden, kommen dazu</li>
+<li class="text-primary">Kosten aendern sich</li>
+<li class="text-primary">Problem: Schleigenbildung durch dynamische Suche</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="im-internet">
+<h3 class="text-secondary">Im Internet</h3>
+<p class="text-info">Im Internet werden fuer gewoehnlich die Algorithmen &quot;Link State&quot; (dynamisch, global) und &quot;Distance Vector&quot; (dynamisch, dezentral)</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="graph">
+<h4 class="text-secondary">Graph</h4>
+<p class="text-info">Ein Graph, mit Knoten von Routern sei wie folgt definiert:</p>
+<div class="formula text-success">
+<span class="environment"><span class="arrayrow">
+<span class="arraycell align-r text-left">
+<i>K</i> = <sup><i>def</i></sup><span class="text"> Knotenmenge des Graphen</span>
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+<i>c</i>(<i>i</i>, <i>j</i>) = <sup><i>def</i></sup><span class="text"> Verbindungs-Kosten von Kante i nach j</span>
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+<i>c</i>(<i>i</i>, <i>j</i>) = <span class="array"><span class="arrayrow"><span class="bracket align-l">⎧</span></span><span class="arrayrow"><span class="bracket align-l">⎨</span></span><span class="arrayrow"><span class="bracket align-l">⎩</span></span></span><span class="bracketcases">
+<span class="arrayrow">
+<span class="case align-l">
+<span class="text">Kosten der Kante, falls eine solche existert</span> 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="case align-l">
+  
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="case align-l">
+∞<span class="text">, sonst</span> 
+</span>
+
+</span>
+
+</span>
+
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+<i>D</i>(<i>v</i>) = <sup><i>def</i></sup><span class="text"> Kosten des bisher besten Pfades vom Sender zum derzeitigen Ziel v</span>
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+<i>N</i> = <sup><i>def</i></sup><span class="text"> Menge der Knoten, bei denen ein Pfad mit geringsten Kosten vom Sender bekannt ist</span>
+</span>
+
+</span>
+</span>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="link-state-dikkstra">
+<h4 class="text-secondary">Link-State (Dikkstra)</h4>
+<p class="text-info">Der Algorithmus berechnet einen Weg mit minimalen Kosten von einem Senderknoten zu jegem potentiellen Empfaenger in</p>
+<div class="formula text-success">
+<i>O</i>(<i>n</i><sup>2</sup>), <i>n</i> = |<i>K</i>|
+</div>
+<p class="text-info">Der Algorithmus bekommt einen Graphen wie zuvor definiert und einen Startknoten uebergeben</p>
+<div class="formula text-success">
+<span class="environment"><span class="arrayrow">
+<span class="arraycell align-r text-left">
+<i>link</i>_<i>state</i>(<i>G</i>(<i>K</i>, <i>c</i>), <i>v</i><sub>0</sub>) : 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+    <i>N</i> = {<i>v</i><sub>0</sub>}
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+    
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+    ∀<i>v</i> ∈ <i>K</i> : 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+        <span class="text">if v adjacent to </span><i>v</i><sub>0</sub> : 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+            <span class="text"> then </span><i>D</i>(<i>v</i>) = <i>c</i>(<i>v</i><sub>0</sub>, <i>v</i>)
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+            <span class="text">else </span><i>D</i>(<i>v</i>) = ∞
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+    
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+    <span class="text">while </span><i>N</i>≢<i>K</i> : 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+        <span class="text">find </span><i>w</i> ∈ <i>K</i>.<i>w</i>∉<i>N</i><span class="text"> so that </span><i>D</i>(<i>w</i>)<span class="text"> is a minimum</span>
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+        <i>N</i> = <i>N</i>∪{<i>w</i>}
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+        <span class="text">for all v adjacent to w and not in N</span> : 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+            <i>D</i>(<i>v</i>) = <i>min</i>(<i>D</i>(<i>v</i>), <i>D</i>(<i>w</i>) + <i>c</i>(<i>w</i>, <i>v</i>))
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+    <i>return</i> <i>D</i>
+</span>
+
+</span>
+</span>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="distance-vector">
+<h4 class="text-secondary">Distance Vector</h4>
+<p class="text-info">Die Vorueberlegung des Distance Vector Algorithmus sind Bellman-Ford-Gleichungen</p>
+<p class="text-info">Es sei</p>
+<div class="formula text-success">
+<i>d</i><sub><i>x</i></sub>(<i>y</i>) = <sup><i>def</i></sup><span class="text">Kosten guenstigster Pfad von x nach y</span><i>d</i><sub><i>x</i></sub>(<i>y</i>) = <sup><i>def</i></sup><i>min</i>{<i>c</i>(<i>x</i>, <i>v</i>) + <i>d</i><sub><i>v</i></sub>(<i>y</i>)}
+</div>
+<p class="text-info">Auf Basis dessen laesst sich ein dynamischer Ansatz fuer die Loesung des Problems waehlen</p>
+<p class="text-info">Jeder Knoten schickt ein Palet ueber den direkten Nachbarn. ueber den die geringsten Kosten entstehen. Darueber laesst sich
+eine Distanztabelle Erstellen.</p>
+<div class="formula text-success">
+<span class="environment"><span class="arrayrow">
+<span class="arraycell align-r text-left">
+<i>distance</i>_<i>vector</i>(<i>G</i>(<i>K</i>, <i>c</i>)) : 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+    <i>D</i> = ∞<sup><i>n</i> × <i>n</i> × <i>n</i></sup>
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+    ∀<i>v</i>.<i>c</i>(<i>x</i>, <i>v</i>) ≠ ∞ : 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+        <i>D</i><sub><i>x</i></sub>(<i>v</i>, <i>v</i>) = <i>c</i>(<i>x</i>, <i>v</i>)
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+    <span class="text">Sende </span><i>min</i><sub><i>w</i></sub><i>D</i><sub><i>x</i></sub>(<i>y</i>, <i>w</i>)<span class="text"> an alle Nachbarn</span>
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+    <i>Iteriere</i> : 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+        <span class="text">warte bis sich Leitungskosten c(x,v) aendern oder neue Informationen von einem Nachbarn eintreffen</span>
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+        <span class="text">if </span><i>c</i>(<i>x</i>, <i>v</i>)<span class="text"> aendert sich um</span><i>d</i> : 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+            <i>D</i><sub><i>x</i></sub>(<i>y</i>, <i>v</i>) = <i>D</i><sub><i>x</i></sub>(<i>y</i>, <i>v</i>) + <i>d</i>
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+        <span class="text">if Nachbar v schickt neien Wert val seines Weges zu y</span>
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+            <i>D</i><sub><i>x</i></sub>(<i>y</i>, <i>v</i>) = <i>val</i> + <i>c</i>(<i>x</i>, <i>v</i>)
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+        <span class="text">sende neue Werte min<sub>w</sub>D<sub>x</sub>(y,w) an alle Nachbarn</span>
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+
+</span>
+
+</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="leitungsvermittlungsalgorithmen">
+<h2 class="text-secondary">Leitungsvermittlungsalgorithmen</h2>
+<dl class="docutils">
+<dt>Dijkstra</dt>
+<dd><ul class="first last simple">
+<li class="text-primary">minimale Anzahl an Hops</li>
+</ul>
+</dd>
+<dt>Least Loaded Path (LLP)</dt>
+<dd><ul class="first last simple">
+<li class="text-primary">am wenigsten benutzte Kanaele</li>
+</ul>
+</dd>
+<dt>Maximum Free Circuit (MFC)</dt>
+<dd><ul class="first last simple">
+<li class="text-primary">groesste Anzahl freier Kanaele</li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="routing-im-internet">
+<span id="internet"></span><h2 class="text-secondary">Routing im Internet</h2>
+<p class="text-info">In der Realitaet weicht Routing von der Graphentheorie, durch Fehlerbehaftung ab.</p>
+<p class="text-info">Probleme sind</p>
+<ul class="simple">
+<li class="text-primary"><dl class="first docutils">
+<dt>Dimension</dt>
+<dd><ul class="first last">
+<li class="text-primary">Ziele koennen nicht alle in Routingtabellen gespeichert werden</li>
+<li class="text-primary">schon der Nachrichtenaustausch zum Routing kann das Netz ueberlsten</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li class="text-primary"><dl class="first docutils">
+<dt>Autonomie</dt>
+<dd><ul class="first last">
+<li class="text-primary">Das Internet ist ein Netz von Netzen und jeder Admin moechte das Routing in seinem Netz kontrollieren</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p class="text-info">Das Routing im Internet wird durch das IP-Protokoll ermoeglicht (siehe <a class="text-white bg-info" class="reference external" href="../html/protocols.html">Protokolle</a>)</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="interclass-domain-routing-ip">
+<h3 class="text-secondary">Interclass Domain Routing (IP)</h3>
+<ul class="simple">
+<li class="text-primary">Adresszuweisung fuer Originastionen durch ISP</li>
+<li class="text-primary">a.b.c.d/NumNetworkBits</li>
+</ul>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="uebergang-v4-v6-ip">
+<h3 class="text-secondary">Uebergang v4, v6(IP)</h3>
+<p class="text-info">Der Uebergang von v4 auf v6 laeuft seit Jahren</p>
+<p class="text-info">um beide moeglichkeiten zeitgleich zu betreiben gibt es zwei Moeglichkeiten</p>
+<ol class="arabic simple">
+<li class="text-primary">Dual Stack</li>
+<li class="text-primary">Tunneling</li>
+</ol>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="dual-stack">
+<h4 class="text-secondary">Dual Stack</h4>
+<p class="text-info">Router verstehen v4 und v6. Informationen werden uebersetzt. Zusaetzliche Informationen von v6 gehen dabei verloren.</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="tunneling">
+<h4 class="text-secondary">Tunneling</h4>
+<p class="text-info">Beispiel fuer Tunneling ist Austausch bei dem Router B, E sowohl v4, als auch v6 verstehen. Router A,F verstehen nur v6,
+Router C,D verstehen nur v4.
+Tunneling beschreibt den Vorgang, indem v6 Daten in einem v4 Paket von B ueber C und D nach E verschickt werden, wo sie
+dann entpackt und als v6 Daten weiterversendet werden, oder umgekehrt.
+Dabei werden keine Zusaetzlichen Informationen aus v6 verloren.</p>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="nat">
+<h3 class="text-secondary">NAT</h3>
+<p class="text-info">Network Address Translation</p>
+<p class="text-info">Interne Quell- und Zieladressen sind Verschieden zu ihren interen Adressen.</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="adressumsetzung">
+<h4 class="text-secondary">Adressumsetzung</h4>
+<p class="text-info">Szenario</p>
+<ul class="simple">
+<li class="text-primary">Host 10.0.0.1 Sendet ein Datagramm zi 128.119.40.186, 80</li>
+<li class="text-primary">NAT-Router aendert die Quelladresse des Datagramms zon 10.0.0.1, x zu 138.76.29.7, n und vermerkt diese in der Tabelle</li>
+<li class="text-primary">Router erhaelt eine Antwort an 138.76.29.7, n</li>
+<li class="text-primary">Router aendert die Zieladresse von 138.76.29.7, n zu 10.0.0.1, x</li>
+</ul>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="nachteile">
+<h4 class="text-secondary">Nachteile</h4>
+<p class="text-info">NAT ist eine Notloesung und verursacht Probleme</p>
+<ul class="simple">
+<li class="text-primary">Portnummern sollen Anwendungsprozesse adressieren und  nicht Hosts</li>
+<li class="text-primary">Es gibt Protokolle, bei denen mehrere Portnummern im Zusammenhang benutzt werden und von APDU ausgetauscht werden.
+Hierbei muss NAT in APDUs einsicht erhalten und dort die Portnummern umsetzen.</li>
+<li class="text-primary">Nicht sichtbare Hosts sind nicht zwingend geschuetzt</li>
+</ul>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="routingtabellen-pflege">
+<h3 class="text-secondary">Routingtabellen Pflege</h3>
+<p class="text-info">Das Internet kann auch als ein Netz autonomer Subnetze(AS) bezeichnet werden.
+Fuer das Routing im AS und zwischen AS benoetigt es weitere Protokolle. (siehe <a class="text-white bg-info" class="reference external" href="../html/protocols.html">Protokolle</a>)</p>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</div></div>

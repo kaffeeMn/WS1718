@@ -1,0 +1,1149 @@
+<link rel="stylesheet" type="text/css" href="/home/max/Documents/BootStrap/bootstrap-4.0.0-dist/css/bootstrap.css"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.14: http://docutils.sourceforge.net/" />
+<title>&lt;string&gt;</title>
+<style type="text/css">
+
+/*
+*   math2html: convert LaTeX equations to HTML output.
+*
+*   Copyright (C) 2009,2010 Alex Fernández
+*
+*   Released under the terms of the `2-Clause BSD license'_, in short:
+*   Copying and distribution of this file, with or without modification,
+*   are permitted in any medium without royalty provided the copyright
+*   notice and this notice are preserved.
+*   This file is offered as-is, without any warranty.
+*
+* .. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause
+*
+*   Based on eLyXer: convert LyX source files to HTML output.
+*   http://elyxer.nongnu.org/
+*/
+/* --end--
+* CSS file for LaTeX formulas.
+*/
+
+/* Formulas */
+.formula {
+	text-align: center;
+	font-family: "Droid Serif", "DejaVu Serif", "STIX", serif;
+	margin: 1.2em 0;
+}
+span.formula {
+	white-space: nowrap;
+}
+div.formula {
+	padding: 0.5ex;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Basic features */
+a.eqnumber {
+	display: inline-block;
+	float: right;
+	clear: right;
+	font-weight: bold;
+}
+span.unknown {
+	color: #800000;
+}
+span.ignored, span.arraydef {
+	display: none;
+}
+.formula i {
+	letter-spacing: 0.1ex;
+}
+
+/* Alignment */
+.align-left, .align-l {
+	text-align: left;
+}
+.align-right, .align-r {
+	text-align: right;
+}
+.align-center, .align-c {
+	text-align: center;
+}
+
+/* Structures */
+span.overline, span.bar {
+	text-decoration: overline;
+}
+.fraction, .fullfraction {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+}
+.fraction .fraction {
+	font-size: 80%;
+	line-height: 100%;
+}
+span.numerator {
+	display: block;
+}
+span.denominator {
+	display: block;
+	padding: 0ex;
+	border-top: thin solid;
+}
+sup.numerator, sup.unit {
+	font-size: 70%;
+	vertical-align: 80%;
+}
+sub.denominator, sub.unit {
+	font-size: 70%;
+	vertical-align: -20%;
+}
+span.sqrt {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0.1ex;
+}
+sup.root {
+	font-size: 70%;
+	position: relative;
+	left: 1.4ex;
+}
+span.radical {
+	display: inline-block;
+	padding: 0ex;
+	font-size: 150%;
+	vertical-align: top;
+}
+span.root {
+	display: inline-block;
+	border-top: thin solid;
+	padding: 0ex;
+	vertical-align: middle;
+}
+span.symbol {
+	line-height: 125%;
+	font-size: 125%;
+}
+span.bigsymbol {
+	line-height: 150%;
+	font-size: 150%;
+}
+span.largesymbol {
+	font-size: 175%;
+}
+span.hugesymbol {
+	font-size: 200%;
+}
+span.scripts {
+	display: inline-table;
+	vertical-align: middle;
+}
+.script {
+	display: table-row;
+	text-align: left;
+	line-height: 150%;
+}
+span.limits {
+	display: inline-table;
+	vertical-align: middle;
+}
+.limit {
+	display: table-row;
+	line-height: 99%;
+}
+sup.limit, sub.limit {
+	line-height: 100%;
+}
+span.symbolover {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	float: right;
+	right: 100%;
+	bottom: 0.5em;
+	width: 0px;
+}
+span.withsymbol {
+	display: inline-block;
+}
+span.symbolunder {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	float: right;
+	right: 80%;
+	top: 0.3em;
+	width: 0px;
+}
+
+/* Environments */
+span.array, span.bracketcases, span.binomial, span.environment {
+	display: inline-table;
+	text-align: center;
+	border-collapse: collapse;
+	margin: 0em;
+	vertical-align: middle;
+}
+span.arrayrow, span.binomrow {
+	display: table-row;
+	padding: 0ex;
+	border: 0ex;
+}
+span.arraycell, span.bracket, span.case, span.binomcell, span.environmentcell {
+	display: table-cell;
+	padding: 0ex 0.2ex;
+	line-height: 99%;
+	border: 0ex;
+}
+/*
+* CSS file for LaTeX formulas, extra stuff:
+* binomials, vertical braces, stackrel, fonts and colors.
+*/
+
+/* Inline binomials */
+span.binom {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 80%;
+}
+span.binomstack {
+	display: block;
+	padding: 0em;
+}
+
+/* Over- and underbraces */
+span.overbrace {
+	border-top: 2pt solid;
+}
+span.underbrace {
+	border-bottom: 2pt solid;
+}
+
+/* Stackrel */
+span.stackrel {
+	display: inline-block;
+	text-align: center;
+}
+span.upstackrel {
+	display: block;
+	padding: 0em;
+	font-size: 80%;
+	line-height: 64%;
+	position: relative;
+	top: 0.15em;
+
+}
+span.downstackrel {
+	display: block;
+	vertical-align: bottom;
+	padding: 0em;
+}
+
+/* Fonts */
+span.mathsf, span.textsf {
+	font-style: normal;
+	font-family: sans-serif;
+}
+span.mathrm, span.textrm {
+	font-style: normal;
+	font-family: serif;
+}
+span.text, span.textnormal {
+	font-style: normal;
+}
+span.textipa {
+	color: #008080;
+}
+span.fraktur {
+	font-family: "Lucida Blackletter", eufm10, blackletter;
+}
+span.blackboard {
+	font-family: Blackboard, msbm10, serif;
+}
+span.scriptfont {
+	font-family: "Monotype Corsiva", "Apple Chancery", "URW Chancery L", cursive;
+	font-style: italic;
+}
+
+/* Colors */
+span.colorbox {
+	display: inline-block;
+	padding: 5px;
+}
+span.fbox {
+	display: inline-block;
+	border: thin solid black;
+	padding: 2px;
+}
+span.boxed, span.framebox {
+	display: inline-block;
+	border: thin solid black;
+	padding: 5px;
+}
+
+
+</style>
+
+    <div class="card mx-2 my-2 bg-dark" id="segment-0">
+        <div class="ml-2 my-2 text-light">
+            <h1>Welcome</h1>
+            <h3>This HTML-page was created using the version 1.2 of the rstToHtml.py script with BootStrap</h3>
+        </div>
+    </div>
+    <div class="mx-2" id="segment-1"><div class="ml-2"><div class="document">
+
+
+<div class="mx-5 my-3"><div class="ml-1"><div class="section" id="zusammenfassung-der-protokolle">
+<h1>Zusammenfassung Der Protokolle</h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="table-of-contents">
+<h1>Table of Contents</h1>
+<ul class="simple">
+<li class="text-primary"><a class="text-white bg-info" class="reference internal" href="#tcp">TCP</a></li>
+<li class="text-primary"><a class="text-white bg-info" class="reference internal" href="#udp">UDP</a></li>
+<li class="text-primary"><a class="text-white bg-info" class="reference internal" href="#mail-protokolle">Mail_Protokolle</a></li>
+<li class="text-primary"><a class="text-white bg-info" class="reference internal" href="#pipeline-protokolle">Pipeline_Protokolle</a></li>
+<li class="text-primary"><a class="text-white bg-info" class="reference internal" href="#ip">IP</a></li>
+</ul>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="skript">
+<h1>Skript</h1>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id1">
+<span id="tcp"></span><h2 class="text-secondary">TCP</h2>
+<p class="text-info">Transmission Control Protocol</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="ziel">
+<h3 class="text-secondary">Ziel</h3>
+<p class="text-info">&quot;Verbindungsorientierter&quot; Datentransfer zwischen Endsystemen</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="charakterisitker">
+<h3 class="text-secondary">Charakterisitker</h3>
+<ul class="simple">
+<li class="text-primary">Zuverlaessiger Datentransfer</li>
+<li class="text-primary">Flusskontrolle</li>
+<li class="text-primary">Ueberlastungskontrolle</li>
+<li class="text-primary">kein Timing</li>
+<li class="text-primary">keine garantierte Bandbreite</li>
+</ul>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="funktionsweise">
+<h3 class="text-secondary">Funktionsweise</h3>
+<ul class="simple">
+<li class="text-primary"><a class="text-white bg-info" class="reference internal" href="#tcp-transport">tcp_transport</a></li>
+</ul>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="anwendungsbeispiele">
+<h3 class="text-secondary">Anwendungsbeispiele</h3>
+<ul class="simple">
+<li class="text-primary">E-Mail</li>
+<li class="text-primary">remote terminal access</li>
+<li class="text-primary">WWW</li>
+<li class="text-primary">Dateitransfer</li>
+<li class="text-primary">streaming</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id2">
+<span id="udp"></span><h2 class="text-secondary">UDP</h2>
+<p class="text-info">User Datagram Protocol</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id3">
+<h3 class="text-secondary">Charakterisitker</h3>
+<ul class="simple">
+<li class="text-primary">Unzuverlaessiger Datentransfer</li>
+<li class="text-primary">keine Flusskontrolle</li>
+<li class="text-primary">keine Ueberlastkontrolle</li>
+<li class="text-primary">Pakete koennen verloren gehen</li>
+<li class="text-primary">kein Timing</li>
+<li class="text-primary">keine garantierte Bandbreite</li>
+</ul>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id4">
+<h3 class="text-secondary">Ziel</h3>
+<p class="text-info">&quot;Verbindungsloser&quot; Datentransfer zwischen Endsystemen</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id5">
+<h3 class="text-secondary">Funktionsweise</h3>
+<p class="text-info">1:1 Weitergabe der IP-Pakete mit wenig Overhead (einfaches Protokoll)</p>
+<ul class="simple">
+<li class="text-primary"><a class="text-white bg-info" class="reference internal" href="#udp-transport">udp_transport</a></li>
+</ul>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="header">
+<h4 class="text-secondary">Header:</h4>
+<ul class="simple">
+<li class="text-primary">Quellportnummer</li>
+<li class="text-primary">Zielportnummer</li>
+<li class="text-primary">Laenge</li>
+<li class="text-primary">Pruefsumme</li>
+</ul>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id6">
+<h3 class="text-secondary">Anwendungsbeispiele</h3>
+<ul class="simple">
+<li class="text-primary">streaming</li>
+<li class="text-primary">telefonie</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="ftp">
+<h2 class="text-secondary">FTP</h2>
+<p class="text-info">File Transfer Protokol</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id7">
+<h3 class="text-secondary">Ziel</h3>
+<p class="text-info">Uebertragung einer Datei von/ zu einem entfernten Rechner.</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id8">
+<h3 class="text-secondary">Charakterisitker</h3>
+<ul class="simple">
+<li class="text-primary">Sicherheitsprobleme</li>
+<li class="text-primary">Bei Anmeldung werden Nutzername und Passwort als Klartext uebertragen</li>
+<li class="text-primary">Dateien auch unverschluesselt</li>
+</ul>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id9">
+<h3 class="text-secondary">Funktionsweise</h3>
+<ul class="simple">
+<li class="text-primary">benutzt das Client/ Server - Modell</li>
+<li class="text-primary">wegen Sicherheitsproblemen eher fuers Intranet geeignet</li>
+<li class="text-primary">besser waere SFTP</li>
+</ul>
+<p class="text-info">Client und Server komunizieren wie folgt:</p>
+<ol class="arabic simple">
+<li class="text-primary">Client ruft Server Ueber Port 21 auf und spezifiziert TCP als TransferProtokoll</li>
+<li class="text-primary">Client autorisiert sich ueber die Kontrollverbindung</li>
+<li class="text-primary">Der Client kann sich die Verzeichnisse ders Serves mittels der Kontrollkommandos ansehen</li>
+<li class="text-primary">Dateitransfer fuehrt zur Oeffnung einer TCP-Verbindung</li>
+<li class="text-primary">Nach dem Transfer wird diese Verbingung geschlossen</li>
+<li class="text-primary">Server oefnet eine neue Verbindung zur Uebertragung der naechsten Datei</li>
+<li class="text-primary">Server speichert den Zustand des Client</li>
+<li class="text-primary">FTP sendet Kontrollinformationen seperat</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="smtp-e-mail">
+<span id="mail-protokolle"></span><h2 class="text-secondary">SMTP (E-Mail)</h2>
+<p class="text-info">Simple Mail Transfer Protocol</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id10">
+<h3 class="text-secondary">Ziel</h3>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id11">
+<h3 class="text-secondary">Charakterisitker</h3>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id12">
+<h3 class="text-secondary">Funktionsweise</h3>
+<p class="text-info">SMTP nutzt TCP um E-Mails vom Sender zum Empfaenger Server zu senden.</p>
+<p class="text-info">Eine Nachricht besteht aus einem Umschlag(Envelope) und einem Inhalt(Body)</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="phasen">
+<h4 class="text-secondary">3 Phasen</h4>
+<ol class="arabic simple">
+<li class="text-primary">Handshake</li>
+<li class="text-primary">Transfer</li>
+<li class="text-primary">Beenden der Verbindung</li>
+</ol>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="mime">
+<h4 class="text-secondary">MIME</h4>
+<p class="text-info">Multipurpose Internet Mail Extension</p>
+<p class="text-info">kodierte Dateien koennen nicht direkt per Mail verschickt werden, da sie nicht ASCII kodiert sind</p>
+<p class="text-info">MIME fuegt einen MIME-Header beim Sender hinzu, der Empfaenger interpretiert diesen Header und dekodiert den ASCII-Text
+in das im header angegebene Format.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="pop-3">
+<h2 class="text-secondary">POP(3)</h2>
+<p class="text-info">Post Office Protocol</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id13">
+<h3 class="text-secondary">Funktionsweise</h3>
+<p class="text-info">Simpel</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id14">
+<h4 class="text-secondary">3 Phasen</h4>
+<ol class="arabic simple">
+<li class="text-primary">Authentifizierung</li>
+<li class="text-primary">Transaktion</li>
+<li class="text-primary">Update</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="imap">
+<h2 class="text-secondary">IMAP</h2>
+<p class="text-info">Internet Mail Access Protocol</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id15">
+<h3 class="text-secondary">Funktionsweise</h3>
+<p class="text-info">komplexer als POP</p>
+<p class="text-info">erlaubt verwalten von Ordnern auf Serverseite, auslesen von Mail-Headern, suchen von Nachrichten</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="udp-pdu-format">
+<span id="udp-transport"></span><h2 class="text-secondary">UDP PDU-Format</h2>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id16">
+<h3 class="text-secondary">Header</h3>
+<ul class="simple">
+<li class="text-primary">Quellportnummer</li>
+<li class="text-primary">Zielprtnummer</li>
+<li class="text-primary">Laenge</li>
+<li class="text-primary">Pruefsumme</li>
+</ul>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="pruefsummen">
+<h3 class="text-secondary">Pruefsummen</h3>
+<p class="text-info">Pruefsummen werden fuer <a class="text-white bg-info" class="reference internal" href="#udp-transport">udp_transport</a> und <a class="text-white bg-info" class="reference internal" href="#tcp-transport">tcp_transport</a> gleich berechnet.</p>
+<p class="text-info">Siehe das <a class="text-white bg-info" class="reference external" href="../html/pruefsummen.html">Pruefsummen Dokument</a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="sicherer-transfer-durch-transferdienste">
+<h2 class="text-secondary">Sicherer Transfer Durch Transferdienste</h2>
+<p class="text-info">Bei Datentransfer koennen Fehler Auftreten.
+Um sicherzustellen, dass trotzdem Daten richtig versendet werden wurden Dienste wie <a class="text-white bg-info" class="reference external" href="../html/dienste.html">rdt</a>
+eingefuehrt.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id17">
+<span id="pipeline-protokolle"></span><h2 class="text-secondary">Pipeline Protokolle</h2>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="motivation">
+<h3 class="text-secondary">Motivation</h3>
+<p class="text-info">rdt ist zu langsam/ ineffizient. Eine Moeglichkeit, den Datentransfer zu beschleunigen ist es Pakete schon zu uebertragen
+bevor ACK eintrifft.</p>
+<p class="text-info">Dabei werden Pakete gespeichert, deshalb nur Pakete in einem Kreditrahmen von Sequenznummern.</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="ablauf">
+<h3 class="text-secondary">Ablauf</h3>
+<ul class="simple">
+<li class="text-primary">Laufnummmern(Sequenznummern) im Fenster sind wiederkeherend/ wiedervernwendet</li>
+</ul>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="go-back-n">
+<h4 class="text-secondary">Go back n</h4>
+<p class="text-info">Sender:</p>
+<ul class="simple">
+<li class="text-primary">K-bit Sequenznummer im Paket-Header</li>
+<li class="text-primary">es gibt ein &quot;Sende-Fenster&quot; von bis zu N nicht bestaetigten Nachrichten die versendet werden duerfen</li>
+<li class="text-primary">ein ACK zum Paket n bestaetigt das Paket n und alle Pakete, die zuvor gesendet wurden</li>
+<li class="text-primary">ein Timer/ Wecker laeuft jeweils fuer das aelteste Paket, dass noch nicht bestaetigt wurde</li>
+<li class="text-primary">Beim Ablauf des Timers/ Weckers werden alle noch nicht bestaetigten Pakete erneut gesendet</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="text-info">Empfaenger:</p>
+<ul class="simple">
+<li class="text-primary">ACK fuer das korrekt empfangene Paket mit der groessten Sequenznummer senden</li>
+<li class="text-primary">Empfangen von Paketen in falscher Reihenfolge fuehrt zum wegwerfen dieser Pakete und dem Senden von ACK
+fuer das letzte Paket das korrekt in richtiger Reihenfolge empfangen wurde</li>
+</ul>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="selective-repeat">
+<h4 class="text-secondary">Selective Repeat</h4>
+<p class="text-info">Sender:</p>
+<ul class="simple">
+<li class="text-primary">sendet nur unbestaetigte Pakete erneut</li>
+<li class="text-primary">setzt einen Timer fuer jedes Paket</li>
+<li class="text-primary">sendet Paket wenn naechste Sequenznummer im Fenster liegt</li>
+<li class="text-primary">sendet bei Timeout Paket erneut</li>
+<li class="text-primary">markiert bestaetigte Pakete</li>
+<li class="text-primary">verschiebt das Fenster, wenn das Paket mit der kleinsten Paketnummer bestaetigt wurde</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="text-info">Empfaenger:</p>
+<ul class="simple">
+<li class="text-primary">bestaetigt jedes korrekt empfangene Paket</li>
+<li class="text-primary">puffert Pakete, die in falscher Reihenfolge empfangen wurden</li>
+<li class="text-primary">liefert Pakete aus, die in richtiger Reihenfolge empfangen wurden.</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="text-info">Ein Problem kommt auf, wenn alle N ACKS verloren gehen. Da dann ein packet doppelt akzeptiert wird, an falscher Stelle.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="mechanismen-zusammenfassung">
+<h2 class="text-secondary">Mechanismen - Zusammenfassung</h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="64%" />
+</colgroup>
+<thead class="text-light text-center bg-dark" valign="bottom">
+<tr><th class="head">Mechanismus</th>
+<th class="head">Funktion</th>
+</tr>
+</thead>
+<tbody class="text-dark bg-light" valign="top">
+<tr><td>Pruefsumme</td>
+<td>Fehlererkennung</td>
+</tr>
+<tr><td>Timer</td>
+<td>Verluste erkennen (doppelte uebertragung moeglich)</td>
+</tr>
+<tr><td>Sequenznummern</td>
+<td>Lucken im Paketstrom und doppelte uebertragungen erkennen</td>
+</tr>
+<tr><td>ACKs</td>
+<td>Bestaetigung kottekter Empfang</td>
+</tr>
+<tr><td>NAKs</td>
+<td>Bestaetigung nicht korrrekter Empfang</td>
+</tr>
+<tr><td>Fenster, Pipelining</td>
+<td>Effizienzsteigerung und Flusskontrolle</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="tcp-pdu-format">
+<span id="tcp-transport"></span><h2 class="text-secondary">TCP PDU-Format</h2>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id18">
+<h3 class="text-secondary">Header</h3>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="komponenten">
+<h4 class="text-secondary">Komponenten</h4>
+<ul class="simple">
+<li class="text-primary">Source Port</li>
+<li class="text-primary">Destination Port</li>
+<li class="text-primary">Sequence Number</li>
+<li class="text-primary">ACK-Number</li>
+<li class="text-primary">Header Length</li>
+<li class="text-primary">Optionale zusaetzliche Kontrollinformationen</li>
+<li class="text-primary">Receive Window (Zeitfenster???)</li>
+<li class="text-primary"><dl class="first docutils">
+<dt>Flags indizieren wann die obigigen Komponenten gueltig sind</dt>
+<dd><ul class="first last">
+<li class="text-primary">U: Urg data pointer gestzt</li>
+<li class="text-primary">A: ACK gesetzt</li>
+<li class="text-primary">P: Dateb sofort an die Anwendungsschicht weiterreichen</li>
+<li class="text-primary">S: Sequenznummer???</li>
+<li class="text-primary">F: ???</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="tcp-timeout">
+<h2 class="text-secondary">TCP Timeout</h2>
+<p class="text-info">Problem:</p>
+<p class="text-info">Ist das Timeout zu klein entstehen unnoetige Wiederholungen, ist es zu gross wird zu lange gewartet.</p>
+<p class="text-info">Man muss also ein Timeout waehlen, dass maginal groesser als die RTT ist.</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="rtt-schaetzen">
+<h3 class="text-secondary">RTT schaetzen</h3>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="samplertt">
+<h4 class="text-secondary">SampleRTT:</h4>
+<ul class="simple">
+<li class="text-primary">Zeitspanne eines Semgments bis zum Empfang des ACKS (Wiederholungen nicht beruecksichtigt)</li>
+<li class="text-primary">Problem: aendert sich bei jedem Paket</li>
+</ul>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="estimatedrtt">
+<h4 class="text-secondary">EstimatedRTT:</h4>
+<div class="formula text-success">
+<i>EstimatedRTT</i>≔(1 − <i>α</i>)⋅<i>EstimatedRTT</i> + <i>α</i>⋅<i>SampleRTT</i>
+</div>
+<ul class="simple">
+<li class="text-primary">Exponentiell gewichteter Durchschnitt: Einfluss alter Messungen faellt exponentiell</li>
+<li class="text-primary">typisher alpha wert: 0.125</li>
+</ul>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="acks">
+<h3 class="text-secondary">ACKS</h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="47%" />
+<col width="53%" />
+</colgroup>
+<thead class="text-light text-center bg-dark" valign="bottom">
+<tr><th class="head">Ereigniss Empfaenger</th>
+<th class="head">Aktion Empfaenger</th>
+</tr>
+</thead>
+<tbody class="text-dark bg-light" valign="top">
+<tr><td>erhalte Seq.Nr. vorherigen Daten bestaetigt</td>
+<td>warte 500ms auf neues Segment, sonst sende ACK</td>
+</tr>
+<tr><td>erhalte Seq.Nr. vorherigen Daten nicht bestaetigt</td>
+<td>bestaetige unbestaetigte Segmente</td>
+</tr>
+<tr><td>erhalte zu grosse Seq.Nr. (Luecke entdeckt)</td>
+<td>sende &quot;duplicate ACK&quot; mit der naechsten erwarteten Seq.Nr.</td>
+</tr>
+<tr><td>erhalte Seq.Nr. die eine Luecke fuellt</td>
+<td>wenn Segment zu beginn der Luecke startet sende ACK</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="tcp-fast-retransmit">
+<h2 class="text-secondary">TCP fast retransmit</h2>
+<p class="text-info">fast retransmit ist eine weitere Regel fuer den Sender:</p>
+<p class="text-info">Wenn der Sender 3 ACKs fuer das selbe Segment erhaelt, sendet er das danach nachfolgende Segment noch einmal, sogar schon
+vor dem Ablaufen des Timers.</p>
+<p class="text-info">Dadurch wird die Zeit bis zum neuem Senden des Segments verringert.
+Inspiriert durch das senden von &quot;duplicate ACK&quot;</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="tcp-flusskontrolle">
+<h2 class="text-secondary">TCP FLusskontrolle</h2>
+<p class="text-info">Zur optimierung des Prozesses sollten Sende- und Leserate moeglichst nahe beieinander liegen.</p>
+<p class="text-info">Bei der Flusskontrolle sendet der Empfaenger beim jedem Segment den Wert des Fensters mit</p>
+<p class="text-info">Fuer den Sender gilt das Gleichgewicht:</p>
+<div class="formula text-success">
+<i>LastByteSent</i> − <i>LastByteAcked</i> ≤ <i>WindowSize</i>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="tcp-verbindungsverwaltung">
+<h2 class="text-secondary">TCP Verbindungsverwaltung</h2>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="verbindungsaufbau">
+<h3 class="text-secondary">Verbindungsaufbau</h3>
+<p class="text-info">TCP Sender und Empfaenger muessen erst eine Verbingung etablieren, bevor sie Daten Austauschen.
+Typischer Weise passiert soetwas ueber einen <a class="text-white bg-info" class="reference external" href="../html/handshake.html">3 Wege Handshake</a></p>
+<ol class="arabic simple">
+<li class="text-primary"><dl class="first docutils">
+<dt>Initialisiere die TCP Variablen:</dt>
+<dd><ul class="first last">
+<li class="text-primary">Sequenznummern</li>
+<li class="text-primary">buffers</li>
+<li class="text-primary">flow control info (e.g. RcvWindow)</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li class="text-primary"><dl class="first docutils">
+<dt>Client initiert die Verbindung</dt>
+<dd><ul class="first last">
+<li class="text-primary">Socket clientSkt = new Socket(&quot;hostname&quot;, portNumber);</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li class="text-primary"><dl class="first docutils">
+<dt>Server wird vom Client kontaktiert</dt>
+<dd><ul class="first last">
+<li class="text-primary">Socket connectionSocket = welcomeSocket.accept();</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="schliessen-einer-verbindung">
+<h3 class="text-secondary">Schliessen einer Verbindung</h3>
+<p class="text-info">Socket.close();</p>
+<ol class="arabic simple">
+<li class="text-primary">Client sender TCP FIN - Kontrollsegment an Server</li>
+<li class="text-primary">Server empfaengt FIN, sendet ACK, beendet die Verbindung und sendet FIN simultan.</li>
+<li class="text-primary">Client empfaengt FIN sendet ACK geht in warte zustand</li>
+<li class="text-primary">Server empfaengt ACK, Verbindung beendet.</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="tcp-client">
+<h2 class="text-secondary">TCP Client</h2>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id19">
+<h3 class="text-secondary">Ablauf</h3>
+<ol class="arabic simple">
+<li class="text-primary">CLOSED       -&gt; sendSYN (initiert Verbindung)</li>
+<li class="text-primary">SYN_SEND     -&gt; receiveSYN &amp;&amp; ACK then sendACK</li>
+<li class="text-primary">ESTABLISHED  -&gt; Datentransfer, bis Transfer abgeschlossen ist</li>
+<li class="text-primary">ESTABLISHED  -&gt; sendFIN</li>
+<li class="text-primary">FIN_WAIT_1   -&gt; receiveACK then sendNothing</li>
+<li class="text-primary">FIN_WAIT_2   -&gt; receiveFIN then sendACK</li>
+<li class="text-primary">TIME_WAIT    -&gt; wait30sec</li>
+<li class="text-primary">start at 1</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="tcp-server">
+<h2 class="text-secondary">TCP Server</h2>
+<ol class="arabic simple">
+<li class="text-primary">CLOSED       -&gt; initiere Empfangssocket</li>
+<li class="text-primary">LISTEN       -&gt; receiveSYN then sendSYN; sendACK</li>
+<li class="text-primary">SYN_RCVD     -&gt; receiveACK then sendNothing</li>
+<li class="text-primary">ESTABLISHED  -&gt; Datentransfer, bis Transfer abgeschlossen ist</li>
+<li class="text-primary">ESTABLISHED  -&gt; receiveFIN then sendACK</li>
+<li class="text-primary">CLOSE_WAIT   -&gt; sendFIN</li>
+<li class="text-primary">LAST_ACK     -&gt; receiveACK then sendNothing</li>
+<li class="text-primary">start at 1</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="tcp-ueberlastungskontrolle">
+<h2 class="text-secondary">TCP Ueberlastungskontrolle</h2>
+<p class="text-info">Die Ueberlastungskontrolle wurd im <a class="text-white bg-info" class="reference external" href="../html/ueberlastungskontrolle.html">Dokument zu Ueberlastungskontrolle</a> abgehandelt.</p>
+<p class="text-info">Im folgenden wird die Ueberlastungskontrolle in TCP erlaeutert.
+TCP verwendet eine Ende zu Ende Ueberlastungskontrolle.</p>
+<p class="text-info">Es gilt:</p>
+<div class="formula text-success">
+<span class="environment"><span class="arrayrow">
+<span class="arraycell align-r text-left">
+<i>w</i> = <i>LastByteSent</i> − <i>LastByteAcked</i>
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+<i>w</i> ≤ <sup>!</sup> <i>Sendefenstergroesse</i><sub><i>aktuell</i></sub>
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+
+</span>
+
+</span>
+</span>
+</div>
+<p class="text-info">ein Sender darf nur dann ein neues Paket senden, wenn die Fenstergroesse noch nicht erschoeft ist.
+Die aktuelle Sendefenstergroesse wird als Minimum aus 2 Werten bestimmt</p>
+<div class="formula text-success">
+<span class="environment"><span class="arrayrow">
+<span class="arraycell align-r text-left">
+<i>RcvWin</i> = <sup><i>def</i></sup> <span class="text">der den Empfaenger zugeteilte Kredit</span>
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+<i>ConWin</i> = <sup><i>def</i></sup> <span class="text">vom Sender emsprechend des Stau-mechanismus bestimmt</span>
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+<i>Sendefenstergroesse</i> = <i>min</i>(<i>RcvWin</i>, <i>ConWin</i>)
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+
+</span>
+
+</span>
+</span>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="algorithmus">
+<h3 class="text-secondary">Algorithmus</h3>
+<p class="text-info">Ziel ist es Ueberlast zu vermeiden und im Fall einer Ueberlast, diese moeglichst gering zu halten.</p>
+<ol class="arabic simple">
+<li class="text-primary">Grenzwert setzen. Anfangs auf ein MSS, danach bei jeder Bestaetigung um ein MSS erhoehen. Die Fenstergroesse (CongWin)
+muss aber unterhalb eines Thresholds liegen.</li>
+<li class="text-primary">(bei Threshold ueberschreitung) wenn bei der Inkrementierung um ein MSS der Threshold ueberschritten wird,
+wird nur noch um MSS/CongWin erhoeht.</li>
+<li class="text-primary">(bei Timeout) wenn ein Timeout erfolgt wird der Threshold auf die haelfte von CongWin gesetzt und CongWin auf 1 gesetzt
+fortfahren bei 1.</li>
+</ol>
+<p class="text-info">Der Schritt 1 leitet eine exponentielle Wachstumsphase ein, Ab dem Threshold folgt eine fast liniare Wachstumsphase mit 2.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="fairness">
+<h2 class="text-secondary">Fairness</h2>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id20">
+<h3 class="text-secondary">Ziel</h3>
+<p class="text-info">Wenn K TCP-Verbindungen eine Leitung mit der Kapazitaet R teilen, die zum Flaschenhalt wird, sollte jede Verbindung eine
+Kapazitaet von ugefaehr R/K erhalten.</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="tcp-vs-udp">
+<h3 class="text-secondary">TCP vs UDP</h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%" />
+<col width="52%" />
+</colgroup>
+<thead class="text-light text-center bg-dark" valign="bottom">
+<tr><th class="head">TCP</th>
+<th class="head">UDP</th>
+</tr>
+</thead>
+<tbody class="text-dark bg-light" valign="top">
+<tr><td>Anwendung kann mehrere TCP-Verbindungen gleichzeitig</td>
+<td>Anwendungen nutzen oft UDP</td>
+</tr>
+<tr><td>Kapazitaet R, 9 Verbind. neue Anwendung erhaelt mehr,
+je mehr Verbindungen sie paralel eroeffnet</td>
+<td>UDP erlaubt es beliebig viele Pakete ins Netz zu pumpen</td>
+</tr>
+<tr><td>Parallele Verbindungen sind nicht fair</td>
+<td>UDP ist generell nicht fair gegenueber TCP</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="ip-v4">
+<span id="ip"></span><h2 class="text-secondary">IP v4</h2>
+<p class="text-info">Im Folgendem wird die Version 4 des IP behandelt.</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id21">
+<h3 class="text-secondary">Charakterisitker</h3>
+<ul class="simple">
+<li class="text-primary">Verbindungsloser Datagramm - Dienst</li>
+<li class="text-primary">Nachrichten werden im &quot;store and forward&quot; - Prinzip von der Quelle zum Ziel weiter geleitet (e.g. Brief)</li>
+<li class="text-primary">IP-Pakete sind die PDUs des IP Protokoll</li>
+<li class="text-primary">Nachrichten koennen segmentiert und in einer Serie von IP-Paketen hinterlegt werden</li>
+<li class="text-primary">Jedes IP-Paket wird seperat weiter geleitet</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li class="text-primary"><strong>Keine Reihenfolgentreue</strong></li>
+<li class="text-primary"><strong>Keine Garantie maximaler Latenz</strong></li>
+<li class="text-primary"><strong>Keine Verlustfreiheit</strong></li>
+</ul>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="adressen">
+<h3 class="text-secondary">Adressen</h3>
+<p class="text-info">IP Adressen sind 32-Bit Adressen, aufgeteilt in 4 Byte-Gruppen.
+Es existiert jeweils eine Adresse fuer jedes Netz-Interface des Knotens (Router)</p>
+<p class="text-info">Interclass Domain</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id22">
+<h3 class="text-secondary">Header</h3>
+<ul class="simple">
+<li class="text-primary">Version</li>
+<li class="text-primary">Header Laenge</li>
+<li class="text-primary">Type of Service</li>
+<li class="text-primary">Datagramm Laenge</li>
+<li class="text-primary">16-Bit Identifizierer</li>
+<li class="text-primary">Flags</li>
+<li class="text-primary">13_Bit Fragmentierungs Offset</li>
+<li class="text-primary">Time To Live</li>
+<li class="text-primary">Hoeherschichtiges Protokoll</li>
+<li class="text-primary">Header-Pruefsumme</li>
+<li class="text-primary">32-Bit-Quelladresse</li>
+<li class="text-primary">32-Bit-Zieladresse</li>
+<li class="text-primary">Optionen</li>
+<li class="text-primary">Daten</li>
+</ul>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="fragmentierung-reassemblierung">
+<h3 class="text-secondary">Fragmentierung / Reassemblierung</h3>
+<p class="text-info">Im Zielrechner werden die IP-Pakete vor der Weitergabe an die Transportschicht zusammengesetzt.
+Ist ein Paket verloren gibt es keine Weitergabe)</p>
+<p class="text-info">Der Offset kennzeichnet wo das Datagramm geteilt wurde.</p>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="ip-v6">
+<h2 class="text-secondary">IP v6</h2>
+<p class="text-info">Im Folgendem wird die Version 6 des IP behandelt.</p>
+<p class="text-info">Die Motivation von IP v6 ist die Anzahl an Adressen. Eine IP v6 Adresse umfasst 128 Bit.</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id23">
+<h3 class="text-secondary">Header</h3>
+<p class="text-info">Obwohl die Adressen groesser sind ist der Header &quot;schmaler&quot;</p>
+<ul class="simple">
+<li class="text-primary">Version</li>
+<li class="text-primary">Prioritaet</li>
+<li class="text-primary">Flusslabel</li>
+<li class="text-primary">payload length</li>
+<li class="text-primary">next header</li>
+<li class="text-primary">hop limit</li>
+<li class="text-primary">Quelladresse</li>
+<li class="text-primary">Zieladresse</li>
+<li class="text-primary">Daten</li>
+</ul>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="icmp">
+<h3 class="text-secondary">ICMP</h3>
+<p class="text-info">Internet Control Messaging Protocol</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id24">
+<h4 class="text-secondary">Funktionsweise</h4>
+<ul class="simple">
+<li class="text-primary">sendet Informationen ueber Fehlerberichte und Echo-Nachrichten</li>
+<li class="text-primary">ICMP Nachrichten werden in IP-Paketen uebertragen</li>
+<li class="text-primary"><dl class="first docutils">
+<dt>Bestehend aus</dt>
+<dd><ul class="first last">
+<li class="text-primary">Type</li>
+<li class="text-primary">Code</li>
+<li class="text-primary">erste 8 Byte des IP-Paketes, dass den Fehler verursacht hat</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="dhcp">
+<h3 class="text-secondary">DHCP</h3>
+<p class="text-info">Dynamic Host Configuration Protocol</p>
+<p class="text-info">Das DHCP wird in einem lokalem Netz eingesetzt. Host kommen dazu und werden entfernt, daher findet eine dynamische
+zuweisung von Adrassen statt.
+DHCP kuemmert sich also um den Administationsaufwand eines Lokalen Servers.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id25">
+<span id="as"></span><h2 class="text-secondary">AS</h2>
+<p class="text-info">Autonome Subnetze</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="rip">
+<h3 class="text-secondary">RIP</h3>
+<p class="text-info">Routing Information Protocoll</p>
+<p class="text-info">RIP is ein Distanzvektor-Protokoll
+* Hopanzahl wird als Weglaenge gewaehlt. (max 15 Hops)
+* Routing Tabellen werden alle 30 Sekunfen ausgetauscht
+* Maximal 25 Eintraege
+* Austausch zwischen Nachbarn (Hopzahl 1) werden als Advertisments bezeichnet</p>
+<p class="text-info">RIP-Nachrichten werden in UDP-Datgrammen uebertragen. Wenn ein Router in 180 Sekunden nicht von seinem Nachbarn hoert
+wird angenommen, dass dieser nicht erreichbar ist. Router koennen bei nachbarn nach Kosten von Zielen fragen.</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="ospf">
+<h3 class="text-secondary">OSPF</h3>
+<p class="text-info">Open Shortest Path First</p>
+<p class="text-info">OSPF ist ein Link-State Protokoll
+* Aufbau einer Darstellung der Gesamt-Topologie durch Kommunikation mit allen Routern
+* Dijkstra Algorithmus wird zentral ausgefuehrt</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="routin-zwischen-as-iner-domain-routing">
+<h2 class="text-secondary">Routin zwischen AS / Iner-Domain Routing</h2>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="bgp">
+<h3 class="text-secondary">BGP</h3>
+<p class="text-info">Border Gateway Protocol</p>
+<p class="text-info">BGP is ein Pfadvektor - Protokoll
+* aehnlich zu RIP (Distanzvektor)
+* Jedes Gatewaz sendet per Broadcast bekannte Pfade zu seinen Nachbarn</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="multicast-routing">
+<h3 class="text-secondary">Multicast Routing</h3>
+<p class="text-info">Multicast Routing ist eine Form der Gruppenkomunication, bei der an alle Mitglieder einer Empfaenger Gruppe Informationen
+vermittelt werden.</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="grundidee">
+<h4 class="text-secondary">Grundidee</h4>
+<p class="text-info">Es wird ein Spannbaum von Sender zum Empfaenger bestimmt. Router werden als Baumknoten betrachtet. Router duplizieren die
+Pakete.</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="ip-gruppen">
+<h4 class="text-secondary">IP Gruppen</h4>
+<p class="text-info">Ziel Adresse ist eine Gruppenadresse.
+Das Problem ist das Adresse und Empfaengermenge vorher vereinbart werden muessen.
+Das Internet Group Management Protocol (IGMP) wird dabei angewandt</p>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="igmp">
+<h3 class="text-secondary">IGMP</h3>
+<p class="text-info">Internet Group Management Protocol</p>
+<ol class="arabic simple">
+<li class="text-primary">Der Router fragt seine Hosts, ob sie beteiligt sind</li>
+<li class="text-primary">Die Hosts sagen dem Router, dass sie an einer Gruppe beteiligt sein moechten</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</div></div>

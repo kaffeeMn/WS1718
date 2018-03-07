@@ -1,0 +1,226 @@
+<link rel="stylesheet" type="text/css" href="/home/max/Documents/BootStrap/bootstrap-4.0.0-dist/css/bootstrap.css"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.14: http://docutils.sourceforge.net/" />
+<title>rdt</title>
+
+
+    <div class="card mx-2 my-2 bg-dark" id="segment-0">
+        <div class="ml-2 my-2 text-light">
+            <h1>Welcome</h1>
+            <h3>This HTML-page was created using the version 1.2 of the rstToHtml.py script with BootStrap</h3>
+        </div>
+    </div>
+    <div class="mx-2" id="segment-1"><div class="ml-2"><div class="document" id="rdt">
+<h1 class="title">rdt</h1>
+
+<div class="mx-5 my-3"><div class="ml-1"><div class="section" id="methoden">
+<h1>Methoden</h1>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="rdt-send">
+<h2 class="text-secondary">rdt_send()</h2>
+<p class="text-info">Weitergabe der zu sendenden Daten.</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="udt-send">
+<h2 class="text-secondary">udt_send()</h2>
+<p class="text-info">Uebertragung eines Pakets ueber den unzuverlaessigen Kanal
+zum Empfaenger</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="rdt-rcv">
+<h2 class="text-secondary">rdt_rcv()</h2>
+<p class="text-info">Aufruf nach empfangen des Paketes. weiter an hoehere Schicht.</p>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id1">
+<h1>1.0</h1>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="annahme">
+<h2 class="text-secondary">Annahme</h2>
+<p class="text-info">Basisdienst Fehlerfrei</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="verfahren">
+<h2 class="text-secondary">Verfahren</h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="53%" />
+<col width="47%" />
+</colgroup>
+<thead class="text-light text-center bg-dark" valign="bottom">
+<tr><th class="head">Sender</th>
+<th class="head">Empfaenger</th>
+</tr>
+</thead>
+<tbody class="text-dark bg-light" valign="top">
+<tr><td rowspan="2"><p class="text-info" class="first">rdt_send()</p>
+<ul class="last simple">
+<li class="text-primary">packet = make_pkt(data)</li>
+<li class="text-primary">udt_send(packet)</li>
+</ul>
+</td>
+<td>auf Sender warten</td>
+</tr>
+<tr><td rowspan="2"><p class="text-info" class="first">rdt_rcv()</p>
+<ul class="last simple">
+<li class="text-primary">extract(paket, data)</li>
+<li class="text-primary">deliver_data(data)</li>
+</ul>
+</td>
+</tr>
+<tr><td>auf empfaenger warten</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id2">
+<h1>2.0</h1>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id3">
+<h2 class="text-secondary">Annahme</h2>
+<p class="text-info">Basisdienst nicht Fehlerfrei</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="verfaelschungsbehandlung">
+<h2 class="text-secondary">Verfaelschungsbehandlung</h2>
+<ol class="arabic">
+<li class="text-primary"><p class="text-info" class="first">ARQ
+&quot;Automatic Repeat Request&quot;</p>
+<blockquote>
+<ul class="simple">
+<li class="text-primary">Fehlererkennung: Fehlererkennender Code</li>
+<li class="text-primary">Fehlerbehebung: Wiederholung, eingeleitet durch Rueckmeldung</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="2">
+<li class="text-primary">FEC
+&quot;Forward Error Correction&quot;<ul>
+<li class="text-primary">Fehlerkorrigierender Code</li>
+</ul>
+</li>
+</ol>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="arq">
+<h2 class="text-secondary">ARQ</h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<thead class="text-light text-center bg-dark" valign="bottom">
+<tr><th class="head">Sender</th>
+</tr>
+</thead>
+<tbody class="text-dark bg-light" valign="top">
+<tr><td><p class="text-info" class="first">Sende Nachricht
+rdt_send(data)</p>
+<ul class="last simple">
+<li class="text-primary">snkpkt = make_pkt(data, checksum)</li>
+<li class="text-primary">udt_send(snkpkt)</li>
+</ul>
+</td>
+</tr>
+<tr><td>warte auf Quitung und checke
+rdt_rcv(rcvpkt) &amp;&amp; isNAK(rcvpkt)
+rdt_rcv(rcvpkt) &amp;&amp; isACK(rcvpkt)</td>
+</tr>
+</tbody>
+</table>
+<p class="text-info">Der Empfaenger empfaengt das Paket und sendet ACK oder NACK
+an den Sender</p>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id4">
+<h1>2.1</h1>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="motivation">
+<h2 class="text-secondary">Motivation</h2>
+<p class="text-info">rdt2.0 hatte das problem, dass der Sender nicht weiss was empfangen wurde. Neusenden ist wegen einer moeglichen
+Doppeluebertragung nicht ratsam.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="text-info">deshalb wird das Paket mit einer Sequenznummer erneut gesendet wenn ACK/NAK beschaedigt sind.</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="ablauf">
+<h2 class="text-secondary">Ablauf</h2>
+<p class="text-info">Wie 2.0, nur dass ein zweites Paket gesendet wird, wenn NAK/ ACK beschaedigto</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="text-info">Sender</p>
+<ul class="simple">
+<li class="text-primary">Fuegt Sequenznummer zu jedem Paket hinzu</li>
+<li class="text-primary">Muss jedes empfange ACK/ NAK auf Korrektheit ueberpruefen</li>
+</ul>
+<p class="text-info">Empfaenger</p>
+<ul class="simple">
+<li class="text-primary">Muss Pakete auf doppelte Uebertragunf untersuchen</li>
+<li class="text-primary">weiss nicht,ob der Sender das ACK/ NAK empfangen hat</li>
+</ul>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id5">
+<h1>2.2</h1>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id6">
+<h2 class="text-secondary">Motivation</h2>
+<p class="text-info">Es reichen positive Quittungen aus</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id7">
+<h2 class="text-secondary">Ablauf</h2>
+<p class="text-info">Wie 2.1</p>
+<ul class="simple">
+<li class="text-primary">statt NAKs sendet der Empfaenger ein ACK fuer das letzte fehlerfreie Paket.</li>
+<li class="text-primary">auf doppelte ACKs reagiert der Sender wie auf NAK (erneutes senden)</li>
+</ul>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id8">
+<h1>3.0</h1>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id9">
+<h2 class="text-secondary">Annahme</h2>
+<p class="text-info">Pakete (Daten oder ACKs) koennen verloren gehen</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id10">
+<h2 class="text-secondary">Ablauf</h2>
+<ul class="simple">
+<li class="text-primary">Sender wartet eine festgelegte Zeit, bis er sich sicher sein kann, dass das Paket verloren ging.</li>
+<li class="text-primary"><dl class="first docutils">
+<dt>Wenn kein ACK bis dahin angekommen ist wird das Paket erneut gesendet. bei Verzoegerung wird doppelt gesendet</dt>
+<dd>(Erkennung durch Sequenznummer)</dd>
+</dl>
+</li>
+<li class="text-primary">Sequenznummer muss auch im ACK angegeben werden</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple">
+<li class="text-primary">Bei senden &quot;Wecker&quot; starten</li>
+<li class="text-primary">Warten auf Quittung oder &quot;Weckeralarm&quot;</li>
+<li class="text-primary">Wecker stoppen</li>
+<li class="text-primary">Weckalarm wie negative Quittung behandeln und erneut senden</li>
+</ol>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="pro-und-cons">
+<h2 class="text-secondary">PRO und CONS</h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead class="text-light text-center bg-dark" valign="bottom">
+<tr><th class="head">PRO</th>
+<th class="head">CONS</th>
+</tr>
+</thead>
+<tbody class="text-dark bg-light" valign="top">
+<tr><td>bietet eine sichere Uebertragung</td>
+<td>schlechte Leistung (Stop And Go)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div></div>
+</div></div>
