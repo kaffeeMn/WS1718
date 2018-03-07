@@ -1,0 +1,53 @@
+
+solution	T1	T2	T3	T4	T5
+i1	        C	A	B	D	E
+i2	        D	A	E	C	B
+i3	        A	D	B   E	C
+
+
+Ihappyness-values for the tasks
+
+i1      1   1   1   1   5
+i2      2   1   1   2   4
+i3      3   3   1   2   3
+
+values for objective1 (minimum of total values)
+i1      9
+i2      10
+i3      12
+
+
+values for objective2 (minimal maximum value)
+i1      5
+i2      4
+i3      3
+
+
+For the graphical representation of the objektives(see also plots), the solutions have the following coordinates:
+i1      (5,9)
+i2      (4,10)
+i3      (3,12)
+with the refrencepoint at:
+r       (5,25)
+
+
+there is no dominant solution, as seen in the plots.
+
+Mathematical proof for that, would be,
+that it dows not exist a solution with greater values in both objectives than another soltution.
+
+Now, that there are no dominant solutions, the SMS-EMOA selects by the hypervolume contribution.
+
+The hypervolume calculations are calculated as following:
+
+i1
+(5-5) * (10-9) = 0
+
+i2
+(5-4) * (12-10) = 2
+
+i3
+(4-3) * (25-12) = 13
+
+Obviousky i1 has the smallest contribution to the hypervolume. Hence it will be neglected, while the i2 and i3 will
+selected for survival.
