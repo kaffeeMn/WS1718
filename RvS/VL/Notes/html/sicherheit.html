@@ -1,0 +1,687 @@
+<link rel="stylesheet" type="text/css" href="/home/max/Documents/BootStrap/bootstrap-4.0.0-dist/css/bootstrap.css"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.14: http://docutils.sourceforge.net/" />
+<title>&lt;string&gt;</title>
+<style type="text/css">
+
+/*
+*   math2html: convert LaTeX equations to HTML output.
+*
+*   Copyright (C) 2009,2010 Alex Fernández
+*
+*   Released under the terms of the `2-Clause BSD license'_, in short:
+*   Copying and distribution of this file, with or without modification,
+*   are permitted in any medium without royalty provided the copyright
+*   notice and this notice are preserved.
+*   This file is offered as-is, without any warranty.
+*
+* .. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause
+*
+*   Based on eLyXer: convert LyX source files to HTML output.
+*   http://elyxer.nongnu.org/
+*/
+/* --end--
+* CSS file for LaTeX formulas.
+*/
+
+/* Formulas */
+.formula {
+	text-align: center;
+	font-family: "Droid Serif", "DejaVu Serif", "STIX", serif;
+	margin: 1.2em 0;
+}
+span.formula {
+	white-space: nowrap;
+}
+div.formula {
+	padding: 0.5ex;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Basic features */
+a.eqnumber {
+	display: inline-block;
+	float: right;
+	clear: right;
+	font-weight: bold;
+}
+span.unknown {
+	color: #800000;
+}
+span.ignored, span.arraydef {
+	display: none;
+}
+.formula i {
+	letter-spacing: 0.1ex;
+}
+
+/* Alignment */
+.align-left, .align-l {
+	text-align: left;
+}
+.align-right, .align-r {
+	text-align: right;
+}
+.align-center, .align-c {
+	text-align: center;
+}
+
+/* Structures */
+span.overline, span.bar {
+	text-decoration: overline;
+}
+.fraction, .fullfraction {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+}
+.fraction .fraction {
+	font-size: 80%;
+	line-height: 100%;
+}
+span.numerator {
+	display: block;
+}
+span.denominator {
+	display: block;
+	padding: 0ex;
+	border-top: thin solid;
+}
+sup.numerator, sup.unit {
+	font-size: 70%;
+	vertical-align: 80%;
+}
+sub.denominator, sub.unit {
+	font-size: 70%;
+	vertical-align: -20%;
+}
+span.sqrt {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0.1ex;
+}
+sup.root {
+	font-size: 70%;
+	position: relative;
+	left: 1.4ex;
+}
+span.radical {
+	display: inline-block;
+	padding: 0ex;
+	font-size: 150%;
+	vertical-align: top;
+}
+span.root {
+	display: inline-block;
+	border-top: thin solid;
+	padding: 0ex;
+	vertical-align: middle;
+}
+span.symbol {
+	line-height: 125%;
+	font-size: 125%;
+}
+span.bigsymbol {
+	line-height: 150%;
+	font-size: 150%;
+}
+span.largesymbol {
+	font-size: 175%;
+}
+span.hugesymbol {
+	font-size: 200%;
+}
+span.scripts {
+	display: inline-table;
+	vertical-align: middle;
+}
+.script {
+	display: table-row;
+	text-align: left;
+	line-height: 150%;
+}
+span.limits {
+	display: inline-table;
+	vertical-align: middle;
+}
+.limit {
+	display: table-row;
+	line-height: 99%;
+}
+sup.limit, sub.limit {
+	line-height: 100%;
+}
+span.symbolover {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	float: right;
+	right: 100%;
+	bottom: 0.5em;
+	width: 0px;
+}
+span.withsymbol {
+	display: inline-block;
+}
+span.symbolunder {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	float: right;
+	right: 80%;
+	top: 0.3em;
+	width: 0px;
+}
+
+/* Environments */
+span.array, span.bracketcases, span.binomial, span.environment {
+	display: inline-table;
+	text-align: center;
+	border-collapse: collapse;
+	margin: 0em;
+	vertical-align: middle;
+}
+span.arrayrow, span.binomrow {
+	display: table-row;
+	padding: 0ex;
+	border: 0ex;
+}
+span.arraycell, span.bracket, span.case, span.binomcell, span.environmentcell {
+	display: table-cell;
+	padding: 0ex 0.2ex;
+	line-height: 99%;
+	border: 0ex;
+}
+/*
+* CSS file for LaTeX formulas, extra stuff:
+* binomials, vertical braces, stackrel, fonts and colors.
+*/
+
+/* Inline binomials */
+span.binom {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 80%;
+}
+span.binomstack {
+	display: block;
+	padding: 0em;
+}
+
+/* Over- and underbraces */
+span.overbrace {
+	border-top: 2pt solid;
+}
+span.underbrace {
+	border-bottom: 2pt solid;
+}
+
+/* Stackrel */
+span.stackrel {
+	display: inline-block;
+	text-align: center;
+}
+span.upstackrel {
+	display: block;
+	padding: 0em;
+	font-size: 80%;
+	line-height: 64%;
+	position: relative;
+	top: 0.15em;
+
+}
+span.downstackrel {
+	display: block;
+	vertical-align: bottom;
+	padding: 0em;
+}
+
+/* Fonts */
+span.mathsf, span.textsf {
+	font-style: normal;
+	font-family: sans-serif;
+}
+span.mathrm, span.textrm {
+	font-style: normal;
+	font-family: serif;
+}
+span.text, span.textnormal {
+	font-style: normal;
+}
+span.textipa {
+	color: #008080;
+}
+span.fraktur {
+	font-family: "Lucida Blackletter", eufm10, blackletter;
+}
+span.blackboard {
+	font-family: Blackboard, msbm10, serif;
+}
+span.scriptfont {
+	font-family: "Monotype Corsiva", "Apple Chancery", "URW Chancery L", cursive;
+	font-style: italic;
+}
+
+/* Colors */
+span.colorbox {
+	display: inline-block;
+	padding: 5px;
+}
+span.fbox {
+	display: inline-block;
+	border: thin solid black;
+	padding: 2px;
+}
+span.boxed, span.framebox {
+	display: inline-block;
+	border: thin solid black;
+	padding: 5px;
+}
+
+
+</style>
+
+    <div class="card mx-2 my-2 bg-dark" id="segment-0">
+        <div class="ml-2 my-2 text-light">
+            <h1>Welcome</h1>
+            <h3>This HTML-page was created using the version 1.2 of the rstToHtml.py script with BootStrap</h3>
+        </div>
+    </div>
+    <div class="mx-2" id="segment-1"><div class="ml-2"><div class="document">
+
+
+<div class="mx-5 my-3"><div class="ml-1"><div class="section" id="sicherheit">
+<h1>Sicherheit</h1>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="table-of-content">
+<h1>Table Of Content</h1>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="skript">
+<h1>Skript</h1>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="ziele-der-sicherheit">
+<h2 class="text-secondary">Ziele der Sicherheit</h2>
+<p class="text-info">Hauptziele der Sicherheit sind</p>
+<ol class="arabic simple">
+<li class="text-primary">Vertraulichkeit</li>
+<li class="text-primary">Integritaet</li>
+<li class="text-primary">Verfuegbarkeit</li>
+</ol>
+<p class="text-info">Weitere Ziele, die aber im Konflikt miteinander stehen koennen sind</p>
+<ul class="simple">
+<li class="text-primary">Anonymitaet</li>
+<li class="text-primary">Nachvollziehbarkeit</li>
+</ul>
+<p class="text-info">Grundlegende Hilfsdienste dafuer sind Authenfizierung und Authorisierung</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="verschluesselung">
+<h2 class="text-secondary">Verschluesselung</h2>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="motivation">
+<h3 class="text-secondary">Motivation</h3>
+<p class="text-info">Fremde / &quot;Feinde&quot; koennen Nachrichten abfangen, loeschen, veraendern und einschleusen.
+Genauer genommen kann ein &quot;Feind&quot;:</p>
+<ul class="simple">
+<li class="text-primary">Abhoeren</li>
+<li class="text-primary">Aktiv neue Nachrichten einfuegen / unterschreiben</li>
+<li class="text-primary">Quelladressen eines Pakets faelschen</li>
+<li class="text-primary">Sitzungs- / Verbindungsuebernahen</li>
+<li class="text-primary">Verfuegbarkeitsattacke</li>
+</ul>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="abstrakt">
+<h3 class="text-secondary">abstrakt</h3>
+<p class="text-info">Bei der Krzptographie werden plain text Nachrichten in cipher verschluesselt. Der Sender hat einen
+Verschluesselungs-schluessel und der Sender einen Entschluesselungs-schluessel.</p>
+<p class="text-info">In der Regel sind die Algorithmen der Verschluesselung bekannt, die Schluessel aber nicht.
+Hinsichtlich der Verschluesselung selbst gibt es verschiedene Ansaetze.</p>
+<ul class="simple">
+<li class="text-primary">Monoalphabetische Verschluesselung (jedes Zeichen einzelnt)</li>
+<li class="text-primary">Blockverschluesselung (ganze Bloecke werden verschluesselt)</li>
+<li class="text-primary">Symmentrische Verschluesselung (identische Schluessel auf beiden Seiten des Nachrichtenaustauschs)</li>
+<li class="text-primary">Unsymentrische Verschluesselung (unterschiedliche Schluessel auf beiden Seiten des Nachrichtenaustauschs)</li>
+</ul>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="blockverschluesselung">
+<h3 class="text-secondary">Blockverschluesselung</h3>
+<p class="text-info">Die Bloecke haben eine feste Groesse k Bit.</p>
+<p class="text-info">Blockverschluesselungen liefern gleichen output bei identischen Bloecken. Deshalb werden in der Regel positionsabhaengige
+Schluessel verwendet.</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="angriffsmoeglichkeiten">
+<h4 class="text-secondary">Angriffsmoeglichkeiten</h4>
+<ul class="simple">
+<li class="text-primary"><dl class="first docutils">
+<dt>Angriff auf basis des verschluesselten Textes:</dt>
+<dd><ul class="first last">
+<li class="text-primary">Ausprobiereb aller Schluessel</li>
+<li class="text-primary">Statistische Analyse</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li class="text-primary"><dl class="first docutils">
+<dt>Angiff bei teils bekanntem Klartext</dt>
+<dd><ul class="first last">
+<li class="text-primary">monoalphabetisch Verschluesselung einfacher erkennbar</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li class="text-primary"><dl class="first docutils">
+<dt>Angriff bei ausgewaehltem Klartext</dt>
+<dd><ul class="first last">
+<li class="text-primary">Verschluesselung zu beliebigem Klartext</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="symmentrische-verschluesselung">
+<h3 class="text-secondary">Symmentrische Verschluesselung</h3>
+<p class="text-info">Alle Kommunikationspartner kennen den Schluessel</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="problem">
+<h4 class="text-secondary">Problem</h4>
+<p class="text-info">Schluessel muss vorher ausgetauscht worden sein.</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="vorteil">
+<h4 class="text-secondary">Vorteil</h4>
+<p class="text-info">Leistungsfaehige Algorithmen un Implementierungen Verfuegbar</p>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="public-key-verschluesselung">
+<h3 class="text-secondary">Public Key Verschluesselung</h3>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="grundlagen">
+<h4 class="text-secondary">Grundlagen</h4>
+<p class="text-info">Folgenge Axiome muessen gelten</p>
+<div class="formula text-success">
+<span class="environment"><span class="arrayrow">
+<span class="arraycell align-r text-left">
+<i>K</i><sup> + </sup>, <i>K</i><sup> − </sup><span class="text">seien Schluessel(-funktionen)</span>, <i>m</i><span class="text"> sei plaintext</span>
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+(<i>i</i>)∃<i>K</i><sup> + </sup>, <i>K</i><sup> − </sup>.<i>K</i><sup> − </sup>(<i>K</i> + (<i>m</i>)) = <i>m</i>∧<i>K</i><sup> + </sup>(<i>K</i> − (<i>m</i>)) = <i>m</i>
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+(<i>ii</i>)<span class="text">durch </span><i>K</i><sup> + </sup>∨<i>K</i> + (<i>m</i>)<span class="text"> kann nicht auf</span><i>K</i><sup> + </sup><span class="text"> geschlossen werden</span>
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r text-left">
+
+</span>
+
+</span>
+</span>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="algorithmen">
+<h4 class="text-secondary">Algorithmen</h4>
+<p class="text-info">Waehlen der Schluessel</p>
+<ol class="arabic simple">
+<li class="text-primary">Waehle zwei grosse Primzahlen</li>
+<li class="text-primary">Berechne n + pq, z = (p-1)(q-1)</li>
+<li class="text-primary">wahle ein e(e&lt;n), das keine gemeinsamen Primfaktoren mit z hat (e, z sind &quot;reltive prim&quot;)</li>
+<li class="text-primary">Waehle d, so dass ed-1 durch z teilbar ist</li>
+<li class="text-primary">Oeffentliche Schluessel (n,e) als K+. Private Schluessel (n,d) als K-.</li>
+</ol>
+<p class="text-info">Ver- und Entschluesselung</p>
+<ol class="arabic">
+<li class="text-primary"><p class="text-info" class="first">(n,d), (n,e) wie beschrieben berechnen</p>
+</li>
+<li class="text-primary"><p class="text-info" class="first">Verschluesselung der Nachricht m (&lt;n)</p>
+<blockquote>
+<ul>
+<li class="text-primary"><div class="first formula">
+<i>c</i> = <i>m</i><sup><i>e</i></sup>%<i>n</i>
+</div>
+</li>
+</ul>
+</blockquote>
+</li>
+<li class="text-primary"><p class="text-info" class="first">Entschluesselung der Nachricht</p>
+<blockquote>
+<ul>
+<li class="text-primary"><div class="first formula">
+<i>m</i> = <i>c</i><sup><i>d</i></sup>%<i>n</i>
+</div>
+</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<p class="text-info">Diese Verfahren funktionert da folgendes gilt</p>
+<div class="formula text-success">
+<i>m</i> = (<i>m</i><sup><i>e</i></sup>%<i>n</i>)<sup><i>d</i></sup>%<i>n</i>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="authentifikation">
+<h2 class="text-secondary">Authentifikation</h2>
+<p class="text-info">Sinn der Authentifikation ist sicher zu stellen, dass man mit dem/ der richtigen redet.</p>
+<p class="text-info">Problem der ap Versionen
+* ap 1.0 einfaches mitteilen &quot;Ich bin X&quot;
+* ap 2.0 senden der IP-Adresse
+* ap 3.0: 1.0 und 2.0, sowie ein Passwort</p>
+<p class="text-info">die ersten beiden koennen gefaket werden. 3.0 kann durch eine Attacke, bei der abgehoert wird und zeitversetzt
+geloest werden.</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="funktion">
+<h3 class="text-secondary">Funktion</h3>
+<div class="formula text-success">
+<i>N</i><sub><i>once</i></sub> = <sup><i>def</i></sup><span class="text">Zahl, die unverhersehbar ist und nur einmal benutzt wird</span>
+</div>
+<p class="text-info">4.0</p>
+<p class="text-info">N wird ausgetauscht und Die Authentifizierende Person muss sie mit dem bekannten Schluessel verschluesseln.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="text-info">5.0</p>
+<p class="text-info">Nach dem Verschluesseln auch noch den Public Key senden</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="digitale-signatur">
+<h2 class="text-secondary">Digitale Signatur</h2>
+<p class="text-info">Als digitale Signatur bezeichnet man eine Kryptographische Technik, die die Funktion einer Unterschrift erfuellen soll.</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id1">
+<h3 class="text-secondary">Funktion</h3>
+<p class="text-info">Signatur erfolgt ueber den privaten Schluessel.</p>
+<p class="text-info">Jeder, der den oeffentlichen Schluessel kennt, kann die Nachricht auf einen User zurueckfuehren, da private Schluessel
+Unikate sind.</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="message-digest">
+<h3 class="text-secondary">Message Digest</h3>
+<p class="text-info">Nachrichten werden gehasht</p>
+<p class="text-info">Kryptografische Hashfunktionen leisten</p>
+<ul>
+<li class="text-primary"><p class="text-info" class="first">Abbildung langer auf kuerzere Bytefolgen</p>
+</li>
+<li class="text-primary"><p class="text-info" class="first">aus H(m) is m nicht ohne weiteres herleitbar</p>
+</li>
+<li class="text-primary"><div class="first formula">
+∄<i>m</i>, <i>m</i>’.<i>H</i>(<i>m</i>) = <i>H</i>(<i>m</i>’)
+</div>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="key-distribution-center">
+<h2 class="text-secondary">Key Distribution Center</h2>
+<p class="text-info">Ein Key Distribution Center verwaltet oeffentliche Schluessel fuier Kommunikationspartner, die selbst ihren privaten
+Schluessel verwalten.</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="zertifizierungsstellen-ca">
+<h3 class="text-secondary">Zertifizierungsstellen (CA)</h3>
+<p class="text-info">Verwaltung von oeffentlichen Schluesseln</p>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="ablauf">
+<h4 class="text-secondary">Ablauf</h4>
+<ol class="arabic simple">
+<li class="text-primary">E registriert seinen oeffentlichen Schluessel bei CA und authorisiert sich</li>
+<li class="text-primary">CA erzeugt einen Datensatz, der die Bindung von E zu seinem oeffentlichem Schluessel registriert</li>
+</ol>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="inhalt">
+<h4 class="text-secondary">Inhalt</h4>
+<ul class="simple">
+<li class="text-primary">Seriennummer</li>
+<li class="text-primary">Informationen zur Partei</li>
+<li class="text-primary">Informationen zu CA</li>
+<li class="text-primary">Signatur der CA</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="firewalls">
+<h2 class="text-secondary">Firewalls</h2>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="id2">
+<h3 class="text-secondary">Motivation</h3>
+<p class="text-info">Hosts und Router sollen nur vorgesehene Dienste an vorgesehene Nutzer bringen.</p>
+<p class="text-info">Fehler von Administration und Programmierung bieten Angriffsstellen.</p>
+<p class="text-info">Firewalls sollen unabhaengig von anderen Diensten unerwuenschten Verkehr abblocken.</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="architektur">
+<h3 class="text-secondary">Architektur</h3>
+<p class="text-info">Netzologie</p>
+<p class="text-info">Filterfunktion</p>
+<blockquote>
+<ul class="simple">
+<li class="text-primary">Applikationsfilter</li>
+<li class="text-primary">Verbindungsfilter</li>
+<li class="text-primary">Paketfilter</li>
+</ul>
+</blockquote>
+<p class="text-info">Filteranordnung</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="filter">
+<h3 class="text-secondary">Filter</h3>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="paketfilter">
+<h4 class="text-secondary">PaketFilter</h4>
+<p class="text-info">Pakete von Aussen duerfen keine Internen Adressen haben</p>
+<p class="text-info">Im Router gibt es positive Regeln fuer notwendigen Verkehr</p>
+<p class="text-info">Im Netz gibt es negative Regeln fuer den Rest</p>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="verbindungsfilter">
+<h4 class="text-secondary">Verbindungsfilter</h4>
+<p class="text-info">Prozesse werden ueber einen Verbindungs-Gateway auf Firewall-Host realisiert</p>
+<ul class="simple">
+<li class="text-primary">Keine direkten Verbindungen zwischen Innen- und Aussendiensten</li>
+<li class="text-primary">Gateway packt die TCP-Nutzdaten aus und verpackt sie selbst</li>
+<li class="text-primary">Pruefungen erschweren Fehler und attacken</li>
+<li class="text-primary">Anwendungsdaten koennen nicht untersucht werden, da das Gateway das Anwendungsprotokoll nicht kennt</li>
+</ul>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="applikationsfilter">
+<h4 class="text-secondary">Applikationsfilter</h4>
+<p class="text-info">Prozesse werden Firewall-Host(Gateway) realisiert</p>
+<ul class="simple">
+<li class="text-primary">Keine direkten Anwendungsverbindungen zwischen Innen- und Aussendiensten</li>
+<li class="text-primary">Gateway packt die Anwendungsnutzdaten aus und verpackt sie selbst</li>
+<li class="text-primary">Gateway kann Anwendungsdaten interpretieren, da es speziell fuer bestimmte Anwendungsdaten erzeugt wurde</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="security">
+<h2 class="text-secondary">Security</h2>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="angriff-mapping-und-scanning">
+<h3 class="text-secondary">Angriff: Mapping und Scanning</h3>
+<ul class="simple">
+<li class="text-primary">Erkundung vom Netz</li>
+<li class="text-primary">ping kann zeigen welche Host-Adressen vergeben sind</li>
+<li class="text-primary">Port-Scanning: Versuch zu jedem TCP/UDP-Port Anzusprechen unf Reaktionen zu erlangen</li>
+<li class="text-primary">einlogg Versuche</li>
+</ul>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="schutzmassnahmen">
+<h3 class="text-secondary">Schutzmassnahmen</h3>
+<p class="text-info">Angriffsflaeche verkleinern</p>
+<ul class="simple">
+<li class="text-primary">Firewalls</li>
+<li class="text-primary">Personmal Firewall</li>
+<li class="text-primary">Gehaertete Konfiguration</li>
+</ul>
+<p class="text-info">Besonderheiten bemerken</p>
+<ul class="simple">
+<li class="text-primary">Log-Erzeugung und Pruefung</li>
+<li class="text-primary">Verkehrsstatistiken fuehren und ueberwachen</li>
+<li class="text-primary">Systemkonfiguration und Dateien ueberwachen</li>
+<li class="text-primary">IDS (Intrusion Detection System)</li>
+</ul>
+<p class="text-info">Entfernen von Schwachstellen</p>
+<ul class="simple">
+<li class="text-primary">Aktualisierung der Systeme</li>
+<li class="text-primary">Scanne selbst</li>
+</ul>
+<p class="text-info">Abwehren von boesartigem Code</p>
+<ul class="simple">
+<li class="text-primary">Virenscanner, etc.</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div></div><div class="mx-5 my-3"><div class="ml-1"><div class="section" id="mail">
+<h2 class="text-secondary">Mail</h2>
+</div>
+</div>
+</div>
+</div></div>
+</div></div>
