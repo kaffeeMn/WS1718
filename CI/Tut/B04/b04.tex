@@ -1,0 +1,57 @@
+\documentclass{article}
+\author{}
+\title{
+    Computational Intelligence WS1718\\
+    Quiz 4.2
+}
+\date{}
+\setcounter{section}{4}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage{german}
+
+\newcommand{\tab}{\null \qquad}
+\newcommand{\lA}{$\leftarrow$}
+\newcommand{\ue}{$\infty$}
+\newcommand{\gap}{\\ \ \\}
+
+\begin{document}
+\maketitle
+
+\subsection{Use the increasing generator $g(x)= \sqrt x$ to derive a fuzzy implication. Does the resulting implication fulfil the axiom of contraposition?}
+The axiom of contraposition predicates:\\
+$$
+Imp(a, b) = Imp( c(b), c(a) )
+$$
+Hence\\
+$
+\forall a \in [0,1] : c(a) = g^{-1}(g(1)-g(a))\\
+\Rightarrow c(a)
+    = g^{-1}(1-\sqrt a)
+    = \sqrt{1-\sqrt a - 1}
+    =  a^{\frac{1}{4}}
+\\
+with:\\
+g^{-1} = \sqrt{x-1}\\
+$
+\\
+the resulting implication of $g(x)= \sqrt x$ is:
+$$
+???
+$$
+
+\subsection{Check for all fuzzy implications below if they fulfil the axiom of contraposition}
+The axiom of contraposition predicates:\\
+$$
+Imp(a, b) = Imp( c(b), c(a) )
+$$
+\subsubsection{Reichenbach $Imp(a,b) = 1-a + ab$}
+\subsubsection{Lukaciewicz $Imp(a,b) = min\{1, 1-a + ab\}$}
+
+\subsubsection{
+    G"odel Imp(a,b)= $\begin{cases} 1&, a \leq b\\ b&, otherwise\\ \end{cases}$
+}
+\end{document}
