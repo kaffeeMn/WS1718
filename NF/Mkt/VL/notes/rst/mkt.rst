@@ -101,13 +101,86 @@ Rolle der Ziele
 Analyse
 -------
 
+In der Ausgangssituation wird differenziert zwischen den Globalen Umweltfaktore (Makro-Umwelt)
+und dem Markt (Mikro-Umwelt). Im Markt inbegriffen sind Wettbewerber, Nachfrager und die Situation des Unternehmens.
+
+Marktanalyse
+^^^^^^^^^^^^
+
+Im Markt selbst wirken Faktoren Kraefte auf das Unternehmen aus
+
+=============== ===========================================
+Faktor          Aktion
+=============== ===========================================
+Lieferanten     Verhandlungsstaerke
+Neue Anbieter   Konkurenz
+Abnehmer        Verhandlungsmacht
+Ersatzprodukte  Bedrohung durcg Ersatzprodukte/ -dienste
+=============== ===========================================
+
 Strategien
 ----------
+
+Bei der Strtegieentwicklung spielt wieder die Wechselwikrung der einzelnen Phasen auf
+einander eine grosse Rolle
+
+Eine Strategieumsetzung veraendert immer die strategische Ausgangssituation. Genauer:
+* Umwelt
+* Markt
+* Situation des Unternehmens
+
+Die Strategieentwicklung-Prozess selbst dutchlaeuft die Phasen:
+1. Formulierung alternativer Marketingstrategien
+2. Bewertung
+3. Auswahl
+
+Marketingstrategien nach Ansoff
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Man differenziert auf Produkt und Marktseite zwische bestehend und neu.
+Daraus erhalt man 4 Rubriken, in denen man aktiv werden kann.
 
 |
 
 Produktpolitik
 ==============
+
+Definition
+----------
+
+Die Produktpolitik umfasst die Entscheidungen eines Unternehmens, die sich auf bestehende
+und neue Produkte auswirken.
+
+Gueter
+------
+
+======================= ==============================
+Materiell               Immateriell
+======================= ==============================
+Konsumgueter            Dienstleistungen
+Industriegueter         Informationen
+                        Rechte/ Lizenzen
+======================= ==============================
+
+Orientierung
+^^^^^^^^^^^^
+
+Beim vermarkten eines Produktes kann die Nutzenorientierung / einstellugn zur eigenen
+Dienstleistung/ Produktion sich auf das Kaufverhalten auswirken.
+
+=================================== ===================================
+Klassisch                           Modern
+=================================== ===================================
+Wir produzieren Medikamente         Wir tragen zur Gesundheit bei
+Wir machen Wein                     Wir liefern Lebensgenuss
+Wir fliegen um die Welt             Wir schaffen Mobilitaet
+=================================== ===================================
+
+Produkte
+--------
+
+Elemente
+^^^^^^^^
 
 |
 
