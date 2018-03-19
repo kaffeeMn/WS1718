@@ -5,7 +5,6 @@ Marketing Zusammenfassung
 Table Of Contents
 #################
 
-
 Skript
 ######
 
@@ -207,7 +206,7 @@ Fuer gewoehnlich gibt es 3 Entscheidungsfelder in der Produktpolitik
             - (technologische Inovationen)
     * Produktentwicklungsprozess_
     * generierung_von_Produkten_
-    * Koneptualisierung_
+    * Konzeptualisierung_
     * Einfuehrung
         + Follower-Strategie
             - spaeterer Zeitpunkt
@@ -221,7 +220,14 @@ Fuer gewoehnlich gibt es 3 Entscheidungsfelder in der Produktpolitik
             - Aufbau von Wechselbarieren
             - Sicherung wichtiger Distributionskanaele
 2. Mangement etablierter Produkte
+    * Produktprogamm_
+    * Verpackung_
 3. Markenmanagement
+    * Abgrenzung des Marlenbegriffs
+        + Wikung bei den Konsumenten (Logos verbinden eine Vorstellung mit der Firma)
+.. todo
+
+   * Motive
 
 .. _Produktentwicklungsprozess:
 
@@ -237,9 +243,114 @@ die kontrollierbei sein sollen.
 7. Markteinfuehrung
 8. Kontrolle (weiter bei 1)
 
+|
+
 .. _generierung_von_Produkten:
 
+Produktideen brauchen Quellen aus denen sie generiert werden koennen, dabei wird zwischen
+unternehmensinternen und -externen Quellen unterschieden.
 
+=================================== ===============================
+Intern                              Extern
+=================================== ===============================
+betriebliches Vorschalgswese        Kunden und Wuensche
+Mitarbeiter                         Wettbewerber
+                                    Marktneuheiten
+                                    Technologische Entwicklung
+                                    Experten/ Berater
+                                    Trends
+=================================== ===============================
+
+|
+
+.. _Konzeptualisierung:
+
+Konzepte durchlaufen einen Definitions- und Selektionsprozess.
+
+In der Definitions werden folgende Bereiche festgelegt
+
+* Zielgruppe
+* Nutzenversprechen
+    + abheben von Wettbewerbern
+* Produkteigenschaften
+    + Image/ Eigenschaften des Produkts
+* Positionierung
+    + (im Markt)
+
+In der Selektion werden folgende Methoden zur Bewertung eingesetzt
+
+* Checklisten
+* Scoringmethoden
+* grobe Investitionsrechnung
+* Konzepttest
+* Testmaerkte
+* Testmarktsimulation
+* Verfeinerte Investitionsrechnung
+
+Bei der eigentlichen Selektion durchlaufen die Ideen einen Flaschenhals, der wie folgt
+aufgebaut ist
+
+Grobselektion -> Analyse der Marktfaehigkeit -> Analyse der Wirtschaftlichkeit 
+-> Realisierung
+
+|
+
+.. _Produktprogamm:
+
+Im Lebenszyklus eines Produkts durchlaeuft es Wandel/ Veraenderungen
+
+* Produktmodifikationen
+    + Modifikation eines vorhandenen Produktes ohne veraenderung der Kernfunktion
+* Differenzierung
+    + Erganzung eines Produktes um einen "Ableger"
+* Relaunch
+    + (geringfuegige) Aenderung fuer die Neubelebung des Produktes
+* Diversifikation
+    + Unternehmen nimmt auch Produkte auf, die keine Verbindung zum Produkt haben
+* Eliminierung
+    + eliminierung eines Produktes oder einer Produktlinie aus dem Markt
+
+|
+
+.. _Verpackung:
+
+Auch die Verpackung bietet Raum fuers Marketing. So kann eine Verpackung zum
+Kauferlebnis beisteuern und den Kauf ultimativ beeinflussen.
+
+Die Verpackung steuert Ausserdem auch zu eher funktionalen Zwecken bei
+
++-------------------------------------+-------------------------+
+| Distributionsphase                  | Funktion                |
++=====================================+=========================+
+| Lafer des Produzenten               | * Schutz                |
+|                                     | * Manipulation          |
++-------------------------------------+-------------------------+
+| Transport                           | * Schutz                |
+|                                     | * Manipulation          |
++-------------------------------------+-------------------------+
+| Packung am POS                      | * Schutz                |
+|                                     | * Manipulation          |
+|                                     | * Werbetraeger          |
+|                                     | * Kommunikationsnutzen  |
++-------------------------------------+-------------------------+
+| Packung bei Verwender               | * Schutz                |
+|                                     | * Manipulation          |
+|                                     | * Werbetraeger          |
+|                                     | * soziale Kommunikation |
++-------------------------------------+-------------------------+
+
+Die Funktionen koennen in Dimensionen klassifiziert werden
+
+=============== ==================================================================
+Dimension       Wirkung
+=============== ==================================================================
+Schutz          Normen erfuellen; Qualitaetssicherung
+Convenience     Dem Konsumenten dienen & ihn informieren
+Logistik        logitische Anforderungen
+Kosten          Verpackungskosten duerfen nicht den Preis in die Hoehe treiben
+Kommunikation   bestmoegliche Verkaufswirkung erzielen
+Oekologie       moeglichst geringe belastung fuer die Umwelt
+=============== ==================================================================
 
 |
 
