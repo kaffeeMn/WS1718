@@ -182,6 +182,65 @@ Produkte
 Elemente
 ^^^^^^^^
 
+Jedes Produkt hat einen Grundnuzen. Neben diesem existieren aber auch noch andere
+Eigenschaften/ Elemente, die sich vermarkten lassen.
+
+e.g.
+
+* Technische Eigenschaften
+* Zusatzleistungen
+* Aestaetische Eigenschaften
+* Symbolische Eigenschaften
+
+Entscheidungsfelder
+^^^^^^^^^^^^^^^^^^^
+
+Fuer gewoehnlich gibt es 3 Entscheidungsfelder in der Produktpolitik
+
+1. Innovvationsmanagement
+    * Einfuehrung neuer Produkte
+        + Marktinduziert
+            - Kundenwuensche sind noch nicht befriedigt
+            - Das Produkt differenziert sich durch Qualitaet
+        + Technologieinduziert 
+            - technologische Entwicklungen
+            - (technologische Inovationen)
+    * Produktentwicklungsprozess_
+    * generierung_von_Produkten_
+    * Koneptualisierung_
+    * Einfuehrung
+        + Follower-Strategie
+            - spaeterer Zeitpunkt
+            - hoher Recourceneinsatz
+            - Unsicherheit hinsichtlich der NAchfrage
+            - Fehlende Erfahrung
+        + Pionierstrategie
+            - Innovation/ ersteinfuehrung in den Markt
+            - kurzfristiges Monopol
+            - Kostenvorteile durch Erfahrungskurve
+            - Aufbau von Wechselbarieren
+            - Sicherung wichtiger Distributionskanaele
+2. Mangement etablierter Produkte
+3. Markenmanagement
+
+.. _Produktentwicklungsprozess:
+
+Das Management des Innovationsprozesses verfolgt wieder einen Aufbau von Einzelschritten,
+die kontrollierbei sein sollen.
+
+1. Produktprogrammanalyse
+2. Ideenfindung und -filterung
+3. Konzeptdefinition
+4. Konzeptselektion
+5. Produktentwicklung
+6. Produkt- und MArkttest
+7. Markteinfuehrung
+8. Kontrolle (weiter bei 1)
+
+.. _generierung_von_Produkten:
+
+
+
 |
 
 Vertriebspolitik
