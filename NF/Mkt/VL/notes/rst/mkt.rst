@@ -396,6 +396,15 @@ Instrumente der Preisgestaltung koenen
 Beispielsweise Preisstrategien, Preistaktiken und Rabatte
 sein.
 
+Man kann sich auch die "Corporate Identety" als ein Pyramide Vorstellen
+von spitze nach Boden:
+
+* Coporate Communication
+* Oeffentlichkeitsarbeit
+* Werbung
+* Verkaufsfoerderung
+* Persoehnlicher Verkauf
+
 Differenzierung
 ^^^^^^^^^^^^^^^
 
@@ -587,10 +596,146 @@ Detailaufgaben umfassen:
 Kommunikationspolitik
 =====================
 
+Die Gesamtinvestitionen in Werbung in Deutschland betrugen 2016 etwa 26 Mrd. Euro
+
+Definition
+----------
+
+Aufgabe der Kommunikationspolitik ist die planmaessige Gestaltung und Uebermittlung 
+von Informationen, die die Adressaten der Kommunikation beeinflussen sollen.
+
+Akteure
+-------
+
+Akteure in der Kommunikationspolitik sind Mafo-Institute, Marketer, Dienstleister,
+Medien und 2nd Tier-Dienstleister
+
+Prozess
+-------
+
+Der Kommunikationsprozess ist von einer Sender-, einer Empfaengerinstanz und einer
+Rueckkopplung gepraegt.
+
+Die Rueckkopplung ist stufenuebergreifend. Sie misst den oekonomischen Werbeerfolg und
+ teilt diesen dem Sender mit.
+
+1. Stufe
+^^^^^^^^
+
+Senderintern wird die Werbebotschaft durch den Werbereibenden verschluesselt und ueber
+ein Medium (Multiplikator) dem Empfaenger gesendet. 
+
+2. Stufe
+^^^^^^^^
+Auf Empfaengerinterner Seite wird die Empfange Botschaft interpretiert und eine
+Reaktion entsteht.
+
+Planung
+-------
+
+1. Bestimmung der Kommunikationsziele
+2. Durchfuehrung: Budgetierung, Mediaplanung
+3. Gestaltung der Kommunikationsmassnahmen
+4. Kontrolle: Kommunikationswirkung (fuer 3)
+5. Durchfuehrung der Kommunikation
+6. Kontrolle: Kommunikationserfolg (fuer 1,2,3,4,5)
+
+1. Bestimmung der Kommunikationsziele
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Werbeziele sind sowohl
+
+Oekologische Ziele
+* Umsatz
+* Abzatz
+* Marktanteil
+* Rendite
+
+als auch 
+
+Psychologische Werbeziele
+* Kongnitive Ziele
+    + Wahrnehmung
+* Affektive Ziele
+    + Emotionale/ Sentimentale Affektion
+* Konative Ziele
+    + Kaufabsicht
+
+2. Durchfuehrung: Budgetierung, Mediaplanung
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Die Kommunikationsbudgetierung beinhaltet die Festlegung des Kommunikationsetats
+
+Dabei wird auf heuristische und analytische Verfahren zurueck gegriffen
+
+Heuristische Verfahren sind z.b.
+
+* Was koennen wir leisten Methode
+    + Budget anhand verfuegbarer Mittel
+* X Prozent vom Umsatz (Gewinn)-Methode
+    + Prozentual zu Umsatz oder Gewinn
+* Wettbewerbs-Paritaetsmethode
+    + Geplante Werbeausgaben orientieren sich an Konkurenz
+* Werbeanteils-Marktanteil-Methode
+    + Werbebudget wird anhand der Marktanteile bestimmt
+* Ziel-Aufgabe-Methode
+    + Hoehe des Budgets wird anhand den ausstehenden Aufgaben festgelegt
+
+Kriterien zur Mediaselektion sind
+
+* Reichweite/ Nutzer
+* Zielgruppenabdeckung
+* Minimierung der Streuverluste
+* Kosten
+
+3. Gestaltung der Kommunikationsmassnahmen
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Marketer und Werbeagentur teilen sich Aufgaben der Gestaltung.
+
+Marketer erarbeiten ein Marketingkonzept und nach einem Briefing, Rebriefing und
+einem verbessertem Briefing beginnt die Werbeagentur mit der Werbegestaltung. Es 
+folgen Werbetests und eine Praesentation fuer die Marketer, die dann die Verabschiedung
+der Werbung bewerkstelligen.
+
+Eine Strategie im bereich der Gestaltung ist die Copy Strategie.
+Sie umfasst
+* Core Claim
+* Consumer Benefit
+* Reason Why
+* Tonality
+
+Andere typische Gestaltungsstrategien sind
+
+* Slice of Life
+* Problemloesung
+* Testimonial
+* Unternehmenssprecher
+* Emotionale Aufladung
+* Wissenschaftlicher Beweis
+* Fantasy/ Maerchen
+* Life Style
+
+Konsumentenschutz
+-----------------
+
+* Manipulation durch Meinungen, Einstellungen, Verhalten
+* Widersprcu Werbeauftritt <-> Produktqualitaet
+* Beilaeufige Informationsvermittlung
+
 |
 
 Konsumentenverhalten
 ====================
+
+Definition
+----------
+
+Zentrale Konstrukte
+-------------------
+
+Forschungsfelder
+----------------
 
 |
 
