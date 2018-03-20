@@ -531,8 +531,56 @@ Beispiele fuer Handelsfunktionen sind
     + Informationen potentieller Kunden ueber quali- und quantitative Merkmale 
         der Produkte
 
+Vertikales Marketing
+^^^^^^^^^^^^^^^^^^^^
+
+Die Beziehungen zwischen Hersteller, Handel und Endkunde ermoeglicht verschiedene
+Marketing-Ansaetze
+
+* Endkunden gerichtetes Marketing
+    + X -> Endkunde
+* Handelsgerichtetes Marketing
+    + X -> Handel
+* Vertikales Marketing 
+    + koordiniertes Endkunden gerichtetes Marketing von Hersteller und Handel
+
 Vertriebslogistik
 -----------------
+
+Die Vertriebslogistik umfasst alle Taetigkeiten, durch die Lager und Transportvorgaenge
+zur Auslieferung der Fertigprodukte an die Kunden gestaltet, gesteuert oder kontrolliert
+werde.
+
+Intensitaet
+^^^^^^^^^^^
+
+* Exklusivvertrieb
+    + wenige ausgewaehlten Vertriebspartner
+* Intensivvertrieb
+    + grosse Anzahl von Vertriebspartnern 
+* Selektiver Vertrieb
+    + Vertriebspartner werden nach Kritetien ausgesucht
+
+Aufgaben
+^^^^^^^^
+
+Zentrale Aufgaben umfassen
+
+* Standortwahl
+* Lagerhaltung
+* Transport
+
+Detailaufgaben umfassen:
+
+* Bestellsysteme
+* Auftagesbearbeitung
+* Lagerhaltung
+* Kommisionierung
+* Lagerbewirtschaftung
+* Transportmittelwahl
+* Transportroutenentscheidung
+* Beladungsplanung
+* Lieferrhythmus
 
 |
 
