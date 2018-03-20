@@ -225,9 +225,24 @@ Fuer gewoehnlich gibt es 3 Entscheidungsfelder in der Produktpolitik
 3. Markenmanagement
     * Abgrenzung des Marlenbegriffs
         + Wikung bei den Konsumenten (Logos verbinden eine Vorstellung mit der Firma)
-.. todo
-
-   * Motive
+   * Motive der Markenpolitik
+        + Markler/ Produzent
+            - Differenzierung vom/ im Wettbewerb
+            - Qualitaetssignal
+        + Absatzmittler
+            - minderung vom Absatzrisiko
+            - Imagetransfer
+        + Konsument
+            - Reduktion des Entscheidungsaufwands
+            - Selbstdarstellung
+    * Konsumentenschutz
+        + Oft ist der Subjektive Qualitaetseindruck ungleich dem Objektiven
+    * Alternativen
+        + Markenartikel <-> nicht Markenartikel
+        + Unternehmensmarke <-> Produktmarke
+        + Einzelmarke <-> Markenfamilie
+        + Hersteller- <-> Handelsmarke
+        + Ein- <-> Mehrmarkenpolitik
 
 .. _Produktentwicklungsprozess:
 
@@ -354,8 +369,170 @@ Oekologie       moeglichst geringe belastung fuer die Umwelt
 
 |
 
+Preis- und Konditionenpolitik
+=============================
+
+Definition
+----------
+
+Die Preipolitik umfasst die Entscheidungen ueber den Preis eines Produktes fuer den
+Kunden.
+
+Preise und Preisgestaltung
+--------------------------
+
+Im Folgendem wird der Preis als variable p und der Absatz als Variable q definiert.
+
+Ueber p und q laesst sich eine Preis- Absatzfunktion definieren.
+Generell gilt, dass fuer einen niedrigeren Preis mehr produziert werden muss.
+
+Der Kaeufer sieht mit dem Preis immer ein Opfer und dem Produkt eine Qualitaet,
+hinsichtlich derer eine Kaufsentscheidung getroffen wird.
+
+Instrumente der Preisgestaltung
+-------------------------------
+
+Instrumente der Preisgestaltung koenen 
+Beispielsweise Preisstrategien, Preistaktiken und Rabatte
+sein.
+
+Differenzierung
+^^^^^^^^^^^^^^^
+
+Preise keonnen nach
+
+* Personen
+    + Jungendliche/ Kinder zahlen weniger als Erwachsene
+* Zeitpunkten
+    + Reisen in der Haupt vs. Nebensaison
+* Regionen
+    + PKW-Preise nach Laendern
+* Leistungsunterschied
+    + Reisen mit der 1.- vs. 2. Klasse
+* Produktbuendeln
+    + Menue vs. Einzelgericht im Restaurant
+* Kaufmengen
+    + Bahncard
+
+differenziert werden.
+
+Strategien
+^^^^^^^^^^
+
+Bei den Preisstrategien bilden Skimming und Penetration komplemente.
+
+Bei der Penetration wird mit einem niedrigen Preis gelockt um moeglichst schnell den
+Markt zu durchdringen (oftmals unter verzicht von Pionierrechten) und dann nach 
+Etablierung der Preis erhoeht.
+
+Beim Skimming wird mit einem hohen Preis angefangen, welcher dann abgeschoeft wird
+nach dem Markteintritt von anderen Wettbewerbern.
+
+Instrumente der Konditionsgestaltung
+------------------------------------
+
+Instrumente der Konditionen koennen
+Lieferkonditionen, Zahlungsbedingungen und Kreditkonditionen
+sein.
+
+Preisfestsetzung
+^^^^^^^^^^^^^^^^
+
+Bei der Preisfestsetzung wird in kosten-, wettbewerbs- und nachfrageorientiert unterschieden
+
+Die ...
+
+... kostenorientierte Preisfestsetzung nutzt
+* Break-Even-Analyse
+* Plankostenrechnungsverfahren
+* DB-Rechnunge und andere Kalkulationen
+
+... wettbewerbsorientierte Preisfestsetzung nutzt
+* Beurteilung der Substitutionsmoeglichkeiten
+* "Leitpreise"
+
+... nachfrageorientierte Preisfestsetzung nutzt
+* Produkteigenschaften
+* Markenimage
+
+Konsumentenschutz
+-----------------
+
+Es gibt Gefahren in
+
+* Lockvogelangeboten
+* unfairer Preisdifferenzierung
+* fehlenden Zusammenhang zwischen Preis unf Qualitaet
+
+|
+
 Vertriebspolitik
 ================
+
+Entscheidungsfelder
+-------------------
+
+Aktivitaeten der Vertriebspolitik koennen als 
+1. Marktgerichtet (akquisitorisch)
+    * Gestaltung der 
+        + Vertriebswege
+        + Beziehungen zu Vertriebspartnern
+        + Verkaufsaktivitaeten
+2. Vertriebslogistisch 
+    * Entscheidungen ueber
+        + Standorte der Fertigwatenlage
+        + Lagerhaltung, Komissionierung und Verpackung
+        + Transport
+klassifiziert werden
+
+Vertriebswege
+-------------
+
+Gesaltung
+^^^^^^^^^
+
+Es wir beim Vertrieb in indirektem Vertrieb
+* unternehmensexterne Vertriebspartner nehmen Funktionen in der
+    Vermarkten das Produktes wahr
+und direktem Betrieb unterschieden.
+
+Stufen
+^^^^^^
+
+Vertriebswege koennen ueber mehrere Kanaele laufen.
+
+Der 0-stufige Kanal wuerde einer direkten Vermittlung zwischen Hersteller und Kunden
+beschreiben.
+
+Beispiele fuer mehrstufige Kanele sind
+
+* 1-stufig (Einzelhandel)
+* 2-stufig (Grosshandel -> Einzelhandel)
+* 3-stufig (Fach-Grosshandel -> Sortiment-Grosshandel -> Einzelhandel)
+
+Handelsfunktionen
+-----------------
+
+Auch Handelsfunktionen koennen wieder klassifiziert werden
+
+Beispiele fuer Handelsfunktionen sind
+
+* Raumueberbruekungsfunktionen
+    + Transport
+* Zeiteuberbrueckungsfunktionen
+    + Lagerhaltung
+* Quantitative Srtimentsfunktionen
+    + nachfragegerechte produktionsbedingte Mengeneinheiten
+* Qualitative Srtimentsfunktionen
+    + Buendelung der Produkte verschiedener Hersteller zu einem Sortiment
+* Kreditfunktionen
+    + Vergabe von Lieferanten- und Abnehmerkrediten
+* Werbefunktionen
+    + Informationen potentieller Kunden ueber quali- und quantitative Merkmale 
+        der Produkte
+
+Vertriebslogistik
+-----------------
 
 |
 
