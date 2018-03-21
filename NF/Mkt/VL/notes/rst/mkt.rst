@@ -731,16 +731,278 @@ Konsumentenverhalten
 Definition
 ----------
 
-Zentrale Konstrukte
--------------------
+Im engerem Sinne ist das Konsumentenverhalten einfach das Verhalten eines Menschen beim
+Kauf und Kosum von Guetern.
+
+Im weiteren Sinne ist das Konsumentenverhalten das Verhalten der "Letztverbraucher"
 
 Forschungsfelder
 ----------------
+
+Zentrale Determinanten lassen sich in Psychisch und Umwelt einteilen.
+
+Psychische Determinanten sind aktivierend und kognitiv.
+
+Umwelt Determinanten sind sozial und physisch.
+
+Psychische Determinanten
+------------------------
+
+aktivierende Prozesse sind Emotional gepraegt
+
+kognitive Prozesse sind ueber die Wahrnehmung gepraegt
+
+Aktivierung
+^^^^^^^^^^^
+
+Die Aktivierung beschreibt den Erregungszustand der den Konsumenten zur Handlung
+stimmuliert.
+
+Aktivierungen koennen aus Inneren(Koerperlich) und Aeusseren(EKognitiv, Physisch)
+ Reizen kommen
+
+Beispiele fuer Reize sind
+
+* emotionale -
+* kognitive -
+* physische -
+Aktivierung
+
+Aktivierung (+Interpretation) -> Emotion (+ Zielorientierung) 
+-> Motivation (Objektoerientierung) -> Einstellung
+
+Einstellung
+^^^^^^^^^^^
+
+"Innere Denkhaltung"
+
+Komplemente:
+
+* kognitiv <-> emotional
+* stabil <-> instabil
+* kategorial <-> spezifisch
+* erfahrungsbasiert <-> uebernommen
+
+Typologisierung von Kaufentscheidungen
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Wie bei der SWOT-Analyse. eine Tabelle. Achsen sind Kognitives und Emotionales
+Involvement. Jeweils in hoch und niedrig aufgeteilt.
+
++-------------+-------------------------------------------------------------+
+|                           | kognitiv                                      |
++-------------+-------------+-------------------------+---------------------+
+|             |             | niedrig                 | hoch                |
+|             +-------------+-------------------------+---------------------+
+| emotional   | hoch        | impulsiv                | extensiv            |
+|             +-------------+-------------------------+---------------------+
+|             | niedrig     | habitualisiert          | primaer rational    |
++-------------+-------------+-------------------------+---------------------+
+
+Informationsverarbeitung
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Beim Konstrukt der Informationsverarbeitung wird zwischen Reizen und dem Gehirn 
+differenziert. 
+
+Reize werden von dem Gehirn aufgenommen. 
+Das "Sensorische Gedaechtnis" nimmt Informationen auf und gibt diese an das 
+Kurzzeitgedaechtnis weiter. Dieses speicher Informationen im Langzeitgedaechtnis und
+sucht nach Informationen in der Welt der Reize.
+
+Zentrale Lerntheoretische Ansaetze
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Es gibt die Ansaetze des lernens an
+* klassischer-
+    + lernen nach angeborenen unwillkuerlichen Reflexen
+    + durch erlente Verhaltensweisen ist eine Anpassung an der Umwelt moeglich
+* instrumenteller Konditionierung
+    + Lernen erfolgt aus den Konsequenzen des Verhaltens
+    + Individuen werden eher das Verhalten wieder holen, das belohnt wurde
+* Modell
+    + Individuen lernen durch unmittelbare Erfahrung/ Beobachtung
+    + Verhalten ird durch Wahrnehmung und Gedaechtnis nachgeahmt
+
+Einflussfaktoren der Produktentwicklung
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Die Produktbeurteilung wird durch
+
+* Aktuellen Input
+    + Produktinfo
+    + Umweltingo
+* Gespeicherte Informationen
+    + Produktinfo
+    + Umweltinfo
+* Denkprogramme
+    + Denkschablonen
+    + Kognitive Algebra
+
+Systeme der Umweltvariablen
+---------------------------
+
+Es wird in der Physischen und Sozialen Umwelt in naehere und weiter Umwelt unterschieden
+
+Atmosphaerische Gestaltung
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Mit einer Marke/ einem Unternehmen werden immer auch die Eindruecke beim Kauferlebnis
+verinnerlicht.
+
+Wirkung von Verkaufsraeumen
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Verkaufsraeume haben eine sozialtechnische und eine strategische Wirkung
+
+Die Sozialtechnische Wirkung umfasst die Atmosphaerische Wirkung und eine 
+Oritentierungswirkung. Sie ist fuer das Image zustaendig.
+
+Orientierung im Einzelhandel
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Bei der Orientierung ist es wichtig stets beide Dimension zu nutzen:
+
+1. Rueckgriff auf bestehende Gedaechtnisstrukturen, wie
+    * Produktschemata
+    * Skripts
+    * Cognitive maps
+2. Verwendung von zusaetzlichen Informationen im Laden
+    * Kundenleitsystem aus Wegesystemen und Hinweisschildern
+    * Sichtbarieren
+    * Orientierungsprodukte
+    * Warenpraesentation
+
+Soziale Faktoren
+----------------
+
+Familie
+^^^^^^^
+
+Die soziale Umwelt durch die Familie oder Sozialisationsagenten gefiltert und einem
+aus einer weiteren Perspektive nahegebracht.
 
 |
 
 Marketingforschung
 ==================
+
+Definition
+----------
+
+Unter Marktforschung wird die Sammlung und Aufarbeitung von Daten fuer die Fundierung
+von Marketingentscheidungen verstanden.
+
+Prinzipien
+----------
+
+Die Prinzipien umfassen
+
+* Zielorientierung
+* Erhebungsformen
+* Generelle Informationen vor speziellen Sachverahlten
+* Vermeidung von Methodeneffekten, die zu einer verzerrte Darstellung
+    beitragen
+* Schwachstellenanalyse
+
+Datengewinnung
+--------------
+
+Es existiert eine Erhebung von Primaerdaten und Sekundaerdaten.
+
+Primaerdaten 
+^^^^^^^^^^^^
+
+Primaerdaten werden durch Befragung und Beobachtung erhoben.
+
+Befragungen koennen 
+* qualtativ
+    + Tiefeninterview, Gruppendiskussion
+* quantitativ
+    + standartisiert muendlich/ schriftlich/ telefonisch
+    + Online befragung
+
+Es existieren auhc Mischformen wie
+
+* Experimente 
+    + Feld-/ Laborexperimente
+* Panel
+    + Verbraucher-/ Handels/ Spezialpanel
+
+
+Methoden der Informationsgewinnung
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Messen im allgemeinen Sinne
+* Messen im engeren Sinne
+    + nach bestimmten Regeln festgelegte Zuordnung von Symbolen zu festgestellten
+        Mermalen von Untersuchungsobjekten
+
+Datenerhebung
+^^^^^^^^^^^^^
+
+Methoden
+--------
+
+qualitative Marktforschung
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+umfasst
+
+* Einzelgespraeche
+* Tiefeninterviews
+* Gruppendiskussionen
+
+quantitative Marktforschung
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+umfasst
+
+* Fragebogen
+* Face-To-Face Befragung
+* Online-Befragung
+
+Prozessstufen
+-------------
+
+1. Problemformulierung
+2. Zielformulierung
+3. Definition der Grundgesamtheit
+4. Entwicklung des Forschungsdesigns
+5. Datensammlung
+6. Interpretation
+7. Einbindung in Entscheidungsprozess
+
+Skalen
+------
+
+Niveaus
+^^^^^^^
+
+* Nominalskala (bool)
+* Ordinalskala (gewertet)
+* Intervall (Rating)
+* Verhaeltnis
+
+Beobachtung vs. Befragung
+^^^^^^^^^^^^^^^^^^^^^^^^^
++---------------------------------------+-------------------------------------------+
+| Beobachtung                           | Befragung                                 |
++=======================================+===========================================+
+| Unabhaengigkeit von der               | Abfrage von nicht beobachtbaren Groessen  |
+| Auskunftsbereitschaft                 |                                           |
++---------------------------------------+-------------------------------------------+
+| Erfassung von ubewisstem Verhalten    | Geringere Erhebungsdauer                  |
++---------------------------------------+-------------------------------------------+
+| Kein Intervieweinfluss                | Weitgehen Objektiv                        |
++---------------------------------------+-------------------------------------------+
+| Subjektive Daten                      | Zufallsauswahl moeglich                   |
++---------------------------------------+-------------------------------------------+
+
+.. todo
+
+Markttests
+----------
 
 |
 
