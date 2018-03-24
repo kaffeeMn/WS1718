@@ -82,20 +82,74 @@ Peers wirken fuer andere Peers als Server und umgekehrt.
 MAC?
 ====
 
+Media Access Control
+
+Leitungsarten:
+
+* Point-to-Point links
+* geschaltete link (switched links)
+* Sammelleitungen/ Busse/ Mehrfachzugriffsmedien
+
+CSMA
+----
+
+Carier Sense Multiple Access
+
+Prinzip ist es erst zu hoeren ob jemand schon sendet bevor man sendet
+
 CSMA CD
 -------
+
+Hoeren ob jemand anderes schon sendet bevor man selbst sendet.
+Auch waehrend dem Senden lauschen, ob jemand dazwischen funkt.
+
+Bei collision: exponential backoff algorithm
+
 
 CSMA CA
 -------
 
+* rts/ cts
+
 Aloha
 -----
+
+Senden bei Sendewunsch und ohne abstimmung.
+Was ankommt kommt an, sonst halt nicht.
+
+Paket ist waehrend der gesamten Sendezeit verletzlich.
+
+Slotted Aloha
+^^^^^^^^^^^^^
+
+Verbesserung von Aloha, bei der ein Zeitraster in slots unterteilt wird.
+Bei Sendewunsch wird zu beginn des naechsten slots gesendet.
+
+Sonst wie aloha, nur dass die Pakete weniger oft kollidiert.
 
 Polling
 -------
 
+"Busmaster" fragt hintereinander die anderen am Bus ab, ob sie senden moechten.
+
+Der Knoten antwortet mit ein poll- oder einer responsemessage
+
+Nachteile:
+* Polling Overhead
+* Wartezeit
+* Wenn die Zentrale aussfaellt, faellt das gesamte System aus
+
 Token Ring
 ----------
+
+Wer das Token hat und senden moechte sendet und gibt dann das token weiter. Wer nicht senden moechte gibt es direkt weiter.
+
+die weitergabe erfolgt zyklisch
+
+Problem:
+* Overhead durch kreisendes Token
+* wartezeit, bis der Sender wieder an der Reihe ist
+* bei einem verlorenem Token steht das System
 
 ARP/ Mac Adresse
 ----------------
