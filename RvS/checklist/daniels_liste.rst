@@ -100,8 +100,8 @@ Token Ring
 ARP/ Mac Adresse
 ----------------
 
-Bucket
-======
+Leaky Bucket
+============
 
 Int-/ Diff Serv.
 ================
@@ -133,14 +133,26 @@ Was ist ein verteiltes System?
 Uni-, Multi-, Broadcast?
 ------------------------
 
+Unicast -> nur mit einer person
+Multicast -> mit einer Gruppe
+Broadcast -> mit allen
+
 verbindungslos vs. verbindungsorientiert?
 -----------------------------------------
 
 sim-, dup-, halbduplex?
 -----------------------
 
+simplez -> nur in eine richtung.
+
+halbduplex -> in beide richtungen aber nicht zeitgleich
+
+duplex -> in beide richtungen und zeitgleich
+
 Kommunikationsfehler?
 ---------------------
+
+Phantom, Manipulaition, Verlust
 
 TCP, UDP?
 ---------
