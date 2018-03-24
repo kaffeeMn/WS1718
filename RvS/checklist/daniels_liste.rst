@@ -154,11 +154,43 @@ Problem:
 ARP/ Mac Adresse
 ----------------
 
+MAC Adressen fuer lan-interne adressierung, token etc..
+
+Im Adress Resolution Protokoll werden ip adressen zu mac adressen zugeordnet.
+Die im ARP-Cache gespeicherten Adressen werden nach 20 min. wieder geloescht.
+
+Falls MAC-Adresse gesucht wird, wird zunaechst ein Broadcast mit der IP-adresse gesendet. Derjenige
+mit der zugehoerigen IP-Adresse antwortet "IP hat diese MAC Adresse"
+
 Leaky Bucket
 ============
 
+Leaky Bucket ist eine Policing-Massnahme
+Eine mittlere Senderate, Spitzenrate und maximale Burstgroesse soll vestgehalten werden.
+
+Der leaky Bucket haelt eine feste Anzahl von Token. 
+
+Er behandelt Jitter (Verzoegerungsschwankungen)
+
 Int-/ Diff Serv.
 ================
+
+Int
+---
+
+* Markiert nur in zwei klassen (audio und video). 
+* Kann Bandbreite reservieren
+    + grundlegende Aenderung im Internet, software fuer Router und Hosts
+
+Diff
+----
+
+* wenige Aenderungen im Internet
+* Komplexe Funktionen nur am Rand
+* bevorzugung durch in und out profile
+* in profile Pakete werden vrogezogen
+* eine garantierte weiterleitung existiert
+
 
 Firewalls
 =========
@@ -184,6 +216,8 @@ Sekundaere Fragen
 Was ist ein verteiltes System?
 ------------------------------
 
+System, dessen Komponenten sich an verschiedenen Orten befinden
+
 Uni-, Multi-, Broadcast?
 ------------------------
 
@@ -193,6 +227,10 @@ Broadcast -> mit allen
 
 verbindungslos vs. verbindungsorientiert?
 -----------------------------------------
+
+Datagramme sind verbindungslos. (UDP, unzuverlaessig)
+
+TCP ist verbindungsorientiert und zuverlaessig.
 
 sim-, dup-, halbduplex?
 -----------------------
@@ -208,8 +246,14 @@ Kommunikationsfehler?
 
 Phantom, Manipulaition, Verlust
 
-TCP, UDP?
----------
+TCP, UDP
+--------
+
+TCP
+splittet daten in subpakete mit sequenznummern auf.
+
+UDP 
+sendet daten als datagramm
 
 Paket-, Leitungsvermittlung?
 -----------------------------
@@ -220,8 +264,22 @@ Multiplexing?
 ISO/OSI Schichten?
 -----------------
 
+1. application
+2. darstellung/ presentation
+3. kommunikation/ session
+4. transport
+5. network
+6. link
+7. physical
+
 TCP/IP Schichten?
 -----------------
+
+1. Anwendung/ application
+2. Transport
+3. Vermittlung/ network
+4. Sicherung/ link
+5. physical
 
 Protokolle fuer einzelne Schichten?
 -----------------------------------
