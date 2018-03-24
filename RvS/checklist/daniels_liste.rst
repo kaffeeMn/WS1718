@@ -198,8 +198,33 @@ Firewalls
 Typen
 -----
 
+Filtertypern sind
+
+Verbindungs(Transport)-, Applikations(Anwendungs)- und Paketfilter
+
+Screening Router
+^^^^^^^^^^^^^^^^
+
+Router mit Paketfilterfunktionen
+
+Bastion Host
+^^^^^^^^^^^^
+
+Host mit Anwendungs- und Verbindungsfiltern
+
+Dual Homed Bastion Host
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Host mit Anwendungs- und Verbindungsfilter und 2 Netzinterfaces
+
 Screened Subnet Firewall
 ------------------------
+
+Die Screened Subnet Firewall verbindet Screening Router mit Dual Bastion Hosts.
+
+Ein Screening Router der vorab das spoofing, danach kommen die Bastion Hosts, dann
+der zweite Screening Router, der erzwingt, dass der Verkehr nur ueber die Bastion 
+Hosts stattfindet.
 
 verteilte Algorithmen
 =====================
