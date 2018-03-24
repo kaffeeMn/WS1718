@@ -309,6 +309,20 @@ TCP/IP Schichten?
 Protokolle fuer einzelne Schichten?
 -----------------------------------
 
+1. Applikations
+    * Anwendungsprotokolle
+    * SMTP, HTTP, SNMP, DNS, FTP, RTSP
+2. transport layer
+    * Transportprotokolle
+    * TCP, UDP (RTP)
+3. network
+    * Internetprotokolle
+    * IP, Routingprotokolle
+4. data link
+    * Ethernet(CSMA), WLAN(CSS), PPP
+5. physical 
+    * RS-232, Ethernet
+
 Pruefsummen
 -----------
 
@@ -318,8 +332,44 @@ IP v4/ v6 (Dual stack und tunneling)
 Streaming Protokolle
 --------------------
 
+RTSP
+^^^^
+
+Real-time Streaming Protocol
+
+* Client-Server
+* application layer
+
+PDU werden in seperater Verbindung uebertragen
+
+RTP
+^^^
+
+Real Time Protocol wird von RTSP benutzt
+
+* kein QoS Mechanismen
+* AUdio- und Videodaten.
+
 QoS (Dienstgueterparameter/ Garantien)
 --------------------------------------
 
 Sicherheitsziele
 ----------------
+
+Drei Hauptziele
+^^^^^^^^^^^^^^^
+
+1. Vertraulichkeit
+2. Integritaet
+3. Verfuegbarkeit
+
+im Konflikt stehende Ziele
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Aninymitaet vs. Nachvollziehbarkeit/ Zurechenbarkeit
+
+Hilfdienste:
+^^^^^^^^^^^^
+
+* Authetifikation
+* Autorisierung
