@@ -232,8 +232,17 @@ verteilte Algorithmen
 Atommodell
 ----------
 
+Abstraktion von lokalen Ausfuehrungszeiten
+
+* Zeit vergeht beim Transfer von Nachrichten und beim Warten auf Nachrichten
+* Lokale Aktionsfolgen
+
+Eereignisse bestehen aus dem Empfang und der lokalen Verarbeitung einer Nachricht
+
 Lokale Abhaengigkeit
 --------------------
+
+Beziehen zwischen Ereignissen in einem Ereigniss
 
 Sekundaere Fragen
 #################
@@ -279,12 +288,6 @@ splittet daten in subpakete mit sequenznummern auf.
 
 UDP 
 sendet daten als datagramm
-
-Paket-, Leitungsvermittlung?
------------------------------
-
-Multiplexing?
--------------
 
 ISO/OSI Schichten?
 -----------------
@@ -352,6 +355,9 @@ Real Time Protocol wird von RTSP benutzt
 
 QoS (Dienstgueterparameter/ Garantien)
 --------------------------------------
+
+Netz ganarantiert eine Mindestguete im gegensatz zu Best Effort
+Ist wichtig, da manche Prozesse bestimmte Leistungspegel brauchen
 
 Sicherheitsziele
 ----------------
