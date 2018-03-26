@@ -27,6 +27,7 @@ close()
 Server                                  Client                             
 ======================================= ===================================
 serverSocket = socket()                 clientSocket = socket()
+serverSocket.listen()
 connectionSkt = serverSocket.accept()   
 requ = connectionSkt.revc()             clientSocket.send(requ)
 connectionSkt.send(reply)               reply = clientSocket.revc()
@@ -322,7 +323,7 @@ Protokolle fuer einzelne Schichten?
     * Internetprotokolle
     * IP, Routingprotokolle
 4. data link
-    * Ethernet(CSMA), WLAN(CSS), PPP
+    * Ethernet(CSMA), WLAN(CSS), PPP, HDLC
 5. physical 
     * RS-232, Ethernet
 
@@ -359,6 +360,13 @@ QoS (Dienstgueterparameter/ Garantien)
 Netz ganarantiert eine Mindestguete im gegensatz zu Best Effort
 Ist wichtig, da manche Prozesse bestimmte Leistungspegel brauchen
 
+Saeulen:
+
+1. Traffic Characterisation (Transfer Charakterisieren)
+2. Isolation, Scheduling and Policing (Klassifizierung, der Pakete)
+3. High Recource Utilisation (Hoechst moegliche Ausnutzung der Recourcen)
+4. Call Admission (Zu oder nicht zulassung von Verbindungen)
+
 Sicherheitsziele
 ----------------
 
@@ -372,7 +380,7 @@ Drei Hauptziele
 im Konflikt stehende Ziele
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Aninymitaet vs. Nachvollziehbarkeit/ Zurechenbarkeit
+Anonymitaet vs. Nachvollziehbarkeit/ Zurechenbarkeit
 
 Hilfdienste:
 ^^^^^^^^^^^^
