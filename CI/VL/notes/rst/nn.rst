@@ -1,3 +1,5 @@
+.. todo::
+   hopkins nets
 ###########
 Neural Nets
 ###########
@@ -190,3 +192,106 @@ a large amount of memory (large Array for all wrong x)
     
 Multi-Layer-Perceptron
 ======================
+
+Quantification of classification Error
+--------------------------------------
+
+TSSE vs. TMSE
+
+Essentially the sum and mean square error do the same thing.
+
+output of the net so far has been either 1 or 0. Now, that we want to minimize the error
+and get as close to the right answeer as possible, we use non-linear activation functions,
+with output in [0,1]
+
+that way the activation function can be differtiated, and a gradient_method_ can be
+applied to the net.
+
+.. _gradient_method:
+
+The Gradient Method
+^^^^^^^^^^^^^^^^^^^
+
+the gradient method f takes the weights w,u of the net and calculated the TSSE
+
+the weights of the next iteration of the net are then updated like .. math::
+
+    w_{t+1} = w_t - \gamma * \? * f(w_t, u_t)
+
+to get the gradient of the error calculated by f, we need to partially derive f, before
+subtracting the error.
+
+General Approach
+^^^^^^^^^^^^^^^^
+
+1. determine error signals of output neuron
+2. use the signals to calculate the error signals of the precending layers
+3. repeat 2 until reaching the first inner layer
+
+That way the error is propagated backwards from the output to the first inner layer.
+
+Applications
+------------
+
+Classification
+^^^^^^^^^^^^^^
+
+The training pattern is provided by (input = X~ and output = Y~)
+
+in classification outputs are labels of classes.
+
+The use of classification nets is broken down in two steps:
+
+1. train the network
+2. apply it to unknown inputs for classification
+
+Prediction of Time Series
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+X is a time series x1, ... ,xt like temperature, exchange rates, etc.
+
+
+The use of time series nets is broken down in two steps:
+
+1. train the network
+2. apply network ti historical inputs for predicting unknown outputs
+
+Function Approximation
+^^^^^^^^^^^^^^^^^^^^^^
+
+given a training et of x and y values of an arbitrary function, the net shall
+approximate that function
+
+Recurrent Nets
+--------------
+
+Jordan Nets
+^^^^^^^^^^^
+
+A recurrent MLP feeds the output back into the first inner layer
+
+Elman Nets
+^^^^^^^^^^
+
+MLP + context neuron for each hidden layer. The context neuron feeds back the output
+of a neuron to itself.
+
+Radial Basis Function Nets
+--------------------------
+
+given are N training patterns
+
+A function 
+
+.. math::
+    
+    f: \R \rightarrow \R
+
+is termed a *radial basis function*, if 
+
+.. math::
+
+    f(x) = w_1 \phi (||x-c_1||) + ... + f(x) = w_p \phi (||x-c_q||)
+
+with phi as a radial basis function
+
