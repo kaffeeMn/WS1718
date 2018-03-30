@@ -295,3 +295,47 @@ is termed a *radial basis function*, if
 
 with phi as a radial basis function
 
+Basic Idea
+^^^^^^^^^^
+
+now the basic idea of the radial basic neurons is to have each neuron represent a 
+center point. Depending on how far a given input is from that center, the radial
+basis function gives an output in [0,1]. Obviously, the closer the input is to the
+center, the stronger the out converges to 1.
+
+The distance between the point and the center is the key indicator for the membership
+of that point to a class.
+
+|
+
+That means that there is no neccessity of wheights for the neuron using the 
+radial function.
+Yet A weighted Sum is used to determine the membership, using the outputs of all 
+neurons.
+
+As for the centers there are multiple possiblities, such as precalculating the 
+centers using evolutionary algorithms.
+
+The weights can be calculated:
+
+.. math::
+
+    \text{with N training patterns and q RBF neurons}\\
+    \Sum^{p}_{k=1} w_k * \phi (||x_i - c_k||) = y_i\\
+    \text{with } \phi (||x_i - c_k||) \text{as } p_ik\\
+    \text{and P as a } N \times q \text{ matrix, we get:}\\
+    P * w = y
+
+now depending on the size of N and q there is a possibilty to calculate all the 
+wheights, if .. math::
+    
+    N \greq q\\
+
+with:
+
+.. math::
+
+    (i)  w = P^{-1} * y\\
+    (ii) w = E_N * w = (t(P)*P)^{-1} * t(P) * y = P^{+} y
+
+(i) inverse, (ii) pseudo inverse
