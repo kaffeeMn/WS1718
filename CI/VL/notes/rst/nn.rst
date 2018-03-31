@@ -1,5 +1,5 @@
 .. todo::
-   hopkins nets
+   hopfield nets
 ###########
 Neural Nets
 ###########
