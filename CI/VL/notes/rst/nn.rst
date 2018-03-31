@@ -339,3 +339,40 @@ with:
     (ii) w = E_N * w = (t(P)*P)^{-1} * t(P) * y = P^{+} y
 
 (i) inverse, (ii) pseudo inverse
+
+Tikhonov Regukarization
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Another approach to resolve over, or under fitting is that of the Tikhonov-Regularization.
+
+The Tikhonov=Regularization uses:
+
+.. math::
+
+    (t(P) * P +h* I_q) \text{ instead of } (t(P) * P)^{-1}
+
+|
+
+how to find an appropriate h?
+
+approach from lecture: grid search and cross validation
+
+grid search
+
+1. choose: n in N; h with n values in (0,H]; p* = 0
+2. for i=1 to n:
+    * p_i = PERF(h_i; T)
+    * if p_i > p* :
+        + p* = p_i; k=i
+3. return h_k
+
+crossvalidation
+
+1. choose: k in N; training set T with k patitions; error = 0
+2. for i=1 to k:
+    * matrix P and vector y from T \ T_i
+    * weights w = (t(P) * P + h * I)^{-1} * t(P) * y
+    * matrix P and vector y from T_i
+    * e = t(P * w - y) * (P * w - y)
+    * error += e
+3. return 1/error
