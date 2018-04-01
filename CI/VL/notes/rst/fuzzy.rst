@@ -105,13 +105,16 @@ Norms
 c(x)
 ^^^^
 
-c is the the function for the fuzzy complement
+c-norm is the the function for the fuzzy complement
 
 .. math::
 
-    c:[0,1] \rightarrow [0,1]\\
-    c(0) = 1, c(1) = 0\\
-    \forall a,b \in [0,1]: a \leq b \Rightarrow c(a) \geq c(b)
+    \text{(A1)} c:[0,1] \rightarrow [0,1]\\
+    \text{(A2)} c(0) = 1, c(1) = 0\\
+    \text{(A3)} \forall a,b \in [0,1]: a \leq b \Rightarrow c(a) \geq c(b)
+
+* (A1,2) monotone decreasing
+* ((A3,4) involutive)
 
 t(x)
 ^^^^
@@ -120,14 +123,121 @@ the t norm is the intersection
 
 .. math::
 
-    t(a,1) = a\\
-    b \leq d \Rightarrow t(a,b) \leq t(a,d)\\
-    t(a,b) = t(b,a)\\
-    t(a, t(b,d)) = t(t(a,b), d)
+    \text{(A1)} t(a,1) = a\\
+    \text{(A2)} b \leq d \Rightarrow t(a,b) \leq t(a,d)\\
+    \text{(A3)} t(a,b) = t(b,a)\\
+    \text{(A4)} t(a, t(b,d)) = t(t(a,b), d)
+
+* (A1) boundary condition
+* (A2) monotonicity
+* (A3) commutative
+* (A4) associative
 
 s(x)
 ^^^^
 
-s is the function for the union
+s-norm is the function for the union
 
 .. math::
+
+    \text{(A1)} s(a,0) = a\\
+    \text{(A2)} b \leq d \Rightarrow s(a,b) \leq s(a,d)\\
+    \text{(A3)} s(a,b) = s(b,a)\\
+    \text{(A4)} s(a, s(b,d)) = s(s(a,b), d)\\
+
+* (A1) boundary condition
+* (A2) monotonicity
+* (A3) commutative
+* (A4) associative
+
+duals
+^^^^^
+
+a t-norm and s-norm form a dual with regard to a c-norm, if:
+
+* c(t(a,b) = s(c(a), c(b))
+* c(s(a,b) = t(c(a), c(b))
+
+Now, if s and t are dual to c, then (c,s,t) is a dual triple.
+
+Why are dual triples important?
+
+Dual triples allow equivalence transformations of fuzzy set expressions.§
+Without dual triples, DeMorgans law is not guaranteed to work.
+
+Relations
+=========
+
+generally speaking: reltations of variables are a subset of or equal to the kartesian
+product of those varables.
+
+Fuzzy relations return a degree of membership to the realtion for given input.
+
+The membership matrix R is defined as 
+
+.. math::
+
+    R \in [0,1]^{|X|, |Y|}\\
+    \text{with input variables } X, Y\\
+    R^{-1} = t(R)
+
+operators
+---------
+
+the max-min-composition is denoted as following
+
+.. math::
+
+    \text{with fuzzy relations } P(X,Y), Q(Y,Z)\\
+    R(x,z) = (P \circ Q)(x,z) = max-min_{y \in Y}{P(x,y), Q(y,z)}
+
+|
+
+the max-min composition is
+
+* assoziative
+* commutative
+
+therefore :
+
+.. math::
+
+    (P(X<Y) \circ Q(Y,Z))^{-1} = Q^{-1}(Z,Y) \circ P^{-1}(Y,X)
+
+the max-min-composition replaces the crisp matrix multiplication
+
+Logic
+=====
+
+linguistic variables and terms
+------------------------------
+
+inference from fuzzy statements
+-------------------------------
+
+Approximate Reasoning
+=====================
+
+Control
+=======
+
+Clustering
+==========
+
+Crisp K clustering algorithm
+----------------------------
+
+1. for k in {1,...,K}:
+    * C_k = {}
+2. for x in {x_1,...,x_N}:
+    * assign x to some cluster C_k
+3. t = 0; D(t) = inf;
+4. while D(t-1) - D(t) >= epsilon:
+    * t += 1
+    * for k in {1,...,K}:
+        + x~_k = 1/| C_k | * SUM_{x in C_k}(x)
+        + for i in {1,...,N}:
+            - d_ik = d(x_i,x~_k)
+        + choose k*, so that: d_ik* = min{d_ik : k in {1,...,K}}
+        + assign x_i to C_k*
+    * D(t) = SUM_{k in {1,...,K}}(SUM_{x in C_k}(d(x, x~_k)))
