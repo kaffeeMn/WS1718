@@ -112,3 +112,12 @@ in elitism, the best parent is not replaced by a worse individual.
 
 variation
 ---------
+
+Design of EA
+============
+
+To design a sufficient EA three tasks need to be mastered
+
+1. Choice of an appropriate problem representation
+2. Choice/ design of variation operators acting in problem representation
+3. Choice of strategy parameters (including initialization)
