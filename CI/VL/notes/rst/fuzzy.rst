@@ -243,6 +243,38 @@ functions. The fuzzy implication has the following axioms:
 Approximate Reasoning
 =====================
 
+FITA VS FATI
+------------
+
+FITA is the approach of "first interference them aggregate"
+
+1. In FITA we need to firstly transform each rule by an appropraite fuzzy implication
+    Imp(.,.) to a relation R
+2. we determine B'(y) = R(x,y)oA'(x) for all Implications in R
+3. we aggregate to B'(y) = betta(B_1'(y), ..., B_n'(y))
+
+FATI is the approach of "first aggregate then interference"
+
+1. In FITA we need to firstly transform each rule by an appropraite fuzzy implication
+    Imp(.,.) to a relation R
+2. we aggregate to R'(x, y) = aplpha(R_1(x, y), ..., R_n(x, y))
+3. we determine B'(y) = R'(x, y)oA'(x) (superrelation inference)
+
+choices for R
+-------------
+
+Mamdani
+
+.. math::
+
+    R(x,y) = min{A(x), B(x)}
+
+Larsen
+
+.. math::
+
+    R(x, y) = A(x) * B(x)
+
 Control
 =======
 
