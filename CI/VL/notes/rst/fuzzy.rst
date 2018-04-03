@@ -338,7 +338,7 @@ Clustering
 ==========
 
 The motivation for fuzzy clustering is to have a lot of data points and sort them 
-into classes(crisp membership).
+into classes with vague of fuzzy membership.
 
 Crisp K clustering algorithm
 ----------------------------
