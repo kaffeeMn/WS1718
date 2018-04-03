@@ -212,8 +212,33 @@ Logic
 linguistic variables and terms
 ------------------------------
 
+p: *temperature* is **high**
+
+the proposition consists fo a linguistic *variable* and **term**
+
+in fuzzy logic a term are numbers in [0,1]
+
+The Trueness of the proposition is T(p) = high(temperature)
+
 inference from fuzzy statements
 -------------------------------
+
+IF heat is hot THEN energy consumption is high
+
+We need to determine the trueness of the implication. There are multiple implication
+functions. The fuzzy implication has the following axioms:
+
+.. math::
+
+    \text{monotone first argument } a \leq b \text{ implies } Imp(a,x) \leq Imp(b,x)\\
+    \text{monotone second argument } a \leq b \text{ implies } Imp(x,a) \leq Imp(x,b)\\
+    \text{dominance of falseness } Imp(0,a) = 1\\
+    \text{neutrality of trueness } Imp(1,b) = b\\
+    \text{identity } Imp(a,a) = 1\\
+    \text{exchange property } Imp(a, Imp(b,x)) = Imp(n, IMp(a,x))\\
+    \text{boundary condition } Imp(a,b) = 1 IF a \leq b\\
+    \text{contraposition } Imp(a,b) = Imp(c(b), c(a))\\
+    \text{continuity} \\
 
 Approximate Reasoning
 =====================
