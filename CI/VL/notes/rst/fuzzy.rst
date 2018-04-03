@@ -1,5 +1,6 @@
 .. todo::
-   involutive complement
+   controler
+
 ##########
 Fuzzy Sets
 ##########
@@ -278,8 +279,66 @@ Larsen
 Control
 =======
 
+input: reference value w
+output: process value y
+
+open loop control
+-----------------
+
+the openloop control works, if there is no noise to the system process.
+
+the control hands the control parameter u to the system process, that calculates
+the output y.
+
+closed loop control
+-------------------
+
+works like the open loop control, except that noise (d) is applied to the system 
+process. a control deviation is the passed back to the control.
+
+the control deviation is the reference value w substracted by the process value y
+
+defuzzification
+---------------
+
+maximum method
+^^^^^^^^^^^^^^
+
+choosing the argmax of a B'_x(y)
+
+* suitable for pattern recognition/ classification
+* decision for a single alternative ampng finitely many alternatives
+
+The problem, when using the maximum method for a fuzzy controler ist, that the output
+values are (usually) discontinous, since maxima of the methods in B do not align
+fluently.
+
+maximum mean value
+^^^^^^^^^^^^^^^^^^
+
+choosing the mean of all argmax in B'_x(y)
+
+There are possibilities, where that is misleadign and the leaps still exist.
+
+center of maxima method
+^^^^^^^^^^^^^^^^^^^^^^^
+
+chooseing the center of all maxima. That way closer to the area with most maxima.
+
+Still can be misleading and leaps exist.
+
+center of gravivty
+^^^^^^^^^^^^^^^^^^
+
+chooses the center of gravity for the area covered by B'_x
+
+gives a continous curve for output values.
+
 Clustering
 ==========
+
+The motivation for fuzzy clustering is to have a lot of data points and sort them 
+into classes(crisp membership).
 
 Crisp K clustering algorithm
 ----------------------------
