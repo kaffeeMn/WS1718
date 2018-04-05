@@ -134,7 +134,7 @@ how many neurons in how many layers are need?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 layers: 2 if not arbitrary, 3 otherwise
-neurons: 5 borders -> 5 neurons + 1 and neuron = 6 Neuron
+neurons: 5 borders -> 5 neurons + 1 AND neuron = 6 Neuron
 
 sketch the net
 ^^^^^^^^^^^^^^
@@ -189,10 +189,39 @@ phi(x) = cos(|| x ||_2)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 determing weights
-=================
+-----------------
 
 how do you typically determine wights for an MLP?
--------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 how do you typically determine wights for an RBF net?
-----------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+f(x) = 3x_1 + 2x_2 + 4x_1 x_2, extract W, Theta for local minima withc x_1, x_2 in {0,1}
+----------------------------------------------------------------------------------------
+
+|
+
+EA and swarm intelligence
+=========================
+
+mutation and covariance
+-----------------------
+
+typical mutation in R^n
+^^^^^^^^^^^^^^^^^^^^^^^
+
+purpose of covariance matrix in CMA-ES
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+geno-phenotype mapping
+----------------------
+
+what is the purpose
+^^^^^^^^^^^^^^^^^^^
+
+what is the ad- and disadvantage of a geno-phenotype mapping
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+main difference between single and multi-objective optimization
+---------------------------------------------------------------
