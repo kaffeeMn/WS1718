@@ -176,17 +176,41 @@ sketch the net
 RBF wich ones are RBF, are they local?
 ======================================
 
-phi(x) = exp(- SUM^{n}_{i=1} (| x_i |))
+a function is a radial basis function, if:
+
+.. math::
+    \exists \phi : \R \rightarrow \R :
+    \forall x \in X : \theta (x,c) = \phi (|| x - c ||)
+
+a RBF is local, if:
+
+.. math::
+    \phi(r) \rightarrow_{r \rightarrow \infty} 0
+
+theta(x) = exp(- SUM^{n}_{i=1} (| x_i |))
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-phi(x) = exp(- SUM^{n}_{i=1} ( x_i^2 ))
+yes sum of all phi
+
+local cause e^(-|x|) converges to 0 for x -> infinity
+
+theta(x) = exp(- SUM^{n}_{i=1} ( x_i^2 ))
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-phi(x) = exp( max_{i in {1,...,n}} {| x_i |} )
+yes sum of all phi
+
+local cause e^(-(x^2)) converges to 0 for x -> infinity
+
+theta(x) = exp( max_{i in {1,...,n}} {| x_i |} )
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-phi(x) = cos(|| x ||_2)
+no not a sum of all phi
+
+
+theta(x) = cos(|| x ||_2)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+no not a sum of all phi
 
 determing weights
 -----------------
@@ -194,11 +218,23 @@ determing weights
 how do you typically determine wights for an MLP?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+back propagation
+
 how do you typically determine wights for an RBF net?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-f(x) = 3x_1 + 2x_2 + 4x_1 x_2, extract W, Theta for local minima withc x_1, x_2 in {0,1}
-----------------------------------------------------------------------------------------
+solving a linear equation
+
+extract W, Theta for local minima
+---------------------------------
+f(x) = 3 x_1 + 2 x_2 + 4 x_1 x_2
+
+determine W, Theta; find local minima with x_1, x_2 in {0,1}
+
+Theta = {3,2}
+W mit w_12 = w_21 = -4
+
+E(x) = -0.5 * {x_1,x_2} * t({} * {}
 
 |
 
@@ -211,8 +247,18 @@ mutation and covariance
 typical mutation in R^n
 ^^^^^^^^^^^^^^^^^^^^^^^
 
+with parents as vector X, offspring as vector Y
+
+Y = X + Z
+
+where Z is a vector with random values
+
 purpose of covariance matrix in CMA-ES
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+supports R^n
+
+takes action for random value for variation and mutation of offspring
 
 geno-phenotype mapping
 ----------------------
@@ -220,8 +266,18 @@ geno-phenotype mapping
 what is the purpose
 ^^^^^^^^^^^^^^^^^^^
 
+genotype bitstrings are mapped to phenotypes. 
+
+A small changes in genotype shoul lead to small changes in phenotype. That 
+way a steady variation of offspring can be guaranteed
+
 what is the ad- and disadvantage of a geno-phenotype mapping
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 main difference between single and multi-objective optimization
 ---------------------------------------------------------------
+
+A single objective optimaztion generates the optimal solution for just one objective.
+
+When another objective is introduced things get more complicated and an optimal
+compromise between all objectives has to be found.
