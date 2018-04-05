@@ -1,0 +1,198 @@
+################################
+Proctocol of the exam 23.03.2017
+################################
+
+Fuzzy
+=====
+
+axioms of an s norm?
+--------------------
+
+1. (A1) boundary condition s(a,0) = a
+2. (A2) monotony b <= c -> s(a,b) <= s(a,c)
+3. (A3) comutative s(a,b) = s(b,a)
+4. (A4) assosiative s(a,s(b,c)) = s(s(a,b),c)
+
+given function f(x) = 1 - x^4
+-----------------------------
+
+show that f is a decreasing generator
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+f(1) = 1 - 1^4 = 0
+
+f is continous
+
+|
+
+monotone decreasing, since
+
+with a >= b:
+
+f(a) = 1 - a^4
+f(b) = 1 - b^4
+
+f(a) <=^! f(b)
+
+1-a^4 <=^! 1-b^4
+- (a^4) <= - (b^4)
+
+alternatively:
+
+f' = -4x <= 0
+
+construct the t-norm
+^^^^^^^^^^^^^^^^^^^^
+
+t = f^-1 (min{f(0), f(a) + f(b)})
+
+y = 1 - x^4
+x^4 = 1 - y
+x = (1 - y)^1/4
+f^-1(x) = (1 - y)^1/4
+
+t = (1 - min{1, 2 - a^4 - b^4})^1/4
+t = (a^4 + b^4 - 1)^1/4
+
+under which conditions are t and s dual to c?
+---------------------------------------------
+
+the conditions are:
+
+c(t(a,b)) = s(c(a), c(b))
+c(s(a,b)) = t(c(a), c(b))
+
+QL Implication
+--------------
+
+general form
+^^^^^^^^^^^^
+
+logical approach
+
+a => b === n(a) or (a and b)
+
+Imp(a,b) = s(c(a), t(a,b))
+
+s(a,b) = a+b-ab; t(a,b)=ab; c(a)=1-a
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Imp(a,b) = s(c(a), t(a,b))
+= c(a) + t(a,b) - c(a)*t(a,b)
+= 1-a + ab - (1-a)*ab
+= 1-a + ab (1-1+a)
+= 1-a + (a^2)b
+
+under which conditions are FITA and FATI equivalent?
+----------------------------------------------------
+
+1. aplha(.) = beta(.)
+2. supt-t-composition with arbitrary t-norm
+
+|
+
+Artificial NN
+=============
+
+Given (x1 or n(x2)) and (n(x1) or x3) and (x1 or x2 or x3)
+----------------------------------------------------------
+
+.. :: 
+            +---+
+    x1 -----|>=1|
+            |   |-------------------+
+    x2 ----o+---+                   |
+                                    |
+                                    +---+---+
+            +---+                       |>=3|
+    x1 ----o|>=1|-----------------------|   |---
+            |   |                       |   |
+    x2 -----+---+                   +---+---+
+                                    |
+                                    |
+            +---+                   |
+    x1 -----|>=1|                   |
+            |   |                   |
+    x2 -----|   |-------------------+
+            |   |
+    x3 -----+---+
+    
+
+given a graph of a
+-------------------
+
+shape of graph:
+
+.. ::
+  (0,3) |\
+        | \(1,2)
+        |  +----+(4,2)
+        |       |
+  (0,0) +-------+(4,0)
+
+how many neurons in how many layers are need?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+layers: 2 if not arbitrary, 3 otherwise
+neurons: 5 borders -> 5 neurons + 1 and neuron = 6 Neuron
+
+sketch the net
+^^^^^^^^^^^^^^
+
+.. ::
+        1   +---+
+    x  -----|>= |
+        0   | 0 |-------------------+
+    y  -----+---+                   |
+                                    |
+                                    +---+---+
+         0  +---+                       |>= |
+    x  -----|>= |-----------------------| 5 |---
+         1  | 0 |                       |   |
+    y  -----+---+    +------------------|   |
+                     |                  |   |
+                     |   +--------------|   |
+        -1  +---+    |   |              |   |
+    x  -----|>= |    |   |  +-----------|   |
+         0  |-4 |    |   |  |           |   |
+    y  -----+---+----+   |  |  +--------+---+
+                         |  |  |
+        -1  +---+        |  |  |
+    x  -----|>= |        |  |  |
+         0  |-4 |        |  |  |
+    y  -----+---+--------+  |  |
+                            |  |
+         0  +---+           |  |
+    x  -----|>= |           |  |
+        -1  |-2 |           |  |
+    y  -----+---+-----------+  |
+                               |
+        -1  +---+--------------+
+    x  -----|>= |           
+        -1  |-3 |           
+    y  -----+---+
+    
+    
+RBF wich ones are RBF, are they local?
+======================================
+
+phi(x) = exp(- SUM^{n}_{i=1} (| x_i |))
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+phi(x) = exp(- SUM^{n}_{i=1} ( x_i^2 ))
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+phi(x) = exp( max_{i in {1,...,n}} {| x_i |} )
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+phi(x) = cos(|| x ||_2)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+determing weights
+=================
+
+how do you typically determine wights for an MLP?
+-------------------------------------------------
+
+how do you typically determine wights for an RBF net?
+----------------------------------------------------
