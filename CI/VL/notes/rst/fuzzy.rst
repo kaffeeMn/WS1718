@@ -207,6 +207,22 @@ therefore :
 
 the max-min-composition replaces the crisp matrix multiplication
 
+|
+
+another composition is the sup-t composition and the max-prod composition
+
+max-prod:
+
+.. math::
+
+    (P \cdot Q)(x,z) = max_{y \in Y}\{P(x,y) * Q(y,z)\}\\
+    
+sup-t composition:
+
+.. math::
+
+    (P \circ Q)(x,z) = sup_{y \in Y}\{t(P(x,y0, Q(y,z))\}
+
 Logic
 =====
 

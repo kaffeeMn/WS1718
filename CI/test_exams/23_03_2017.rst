@@ -173,8 +173,8 @@ sketch the net
     y  -----+---+
     
     
-RBF wich ones are RBF, are they local?
-======================================
+RBF which ones are RBF, are they local?
+=======================================
 
 a function is a radial basis function, if:
 
