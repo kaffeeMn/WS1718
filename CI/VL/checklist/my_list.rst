@@ -18,7 +18,7 @@ t-norm is the intersection
 
 the t-norm can be solved using the generator aswell
 
-t(a,b) = g^-1(min{g(0), g(a) + g(b)) 
+t(a,b) = g^-1(min{g(0), g(a) + g(b)}) 
 
 |
 
